@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FEEF50D0-E46D-409A-8110-471BE2A815CE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>housing</RootNamespace>
+    <AssemblyName>housing</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper, Version=30.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.30.0.1\lib\net47\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=4.0.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.4.0.0\lib\net47\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1774.30, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1774.30\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.1774.30, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1774.30\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.1774.30, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1774.30\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit, Version=4.0.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.4.0.0\lib\net47\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AdminContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminContact.Designer.cs">
+      <DependentUpon>AdminContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomElements\CustomComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomElements\CustomRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomElements\CustomTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomElements\RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomElements\RoundLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomElements\RoundPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomElements\RoundPanelListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomElements\RoundTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomElements\RoundTextBox.Designer.cs">
+      <DependentUpon>RoundTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminAgenda.Designer.cs">
+      <DependentUpon>AdminAgenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminAttendance.Designer.cs">
+      <DependentUpon>AdminAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminChores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminChores.Designer.cs">
+      <DependentUpon>AdminChores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminComplaints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminComplaints.Designer.cs">
+      <DependentUpon>AdminComplaints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMain.Designer.cs">
+      <DependentUpon>AdminMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminStock.Designer.cs">
+      <DependentUpon>AdminStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForgetManager.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="PersonManager.cs" />
+    <Compile Include="Tenant\TenantStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\TenantStock.Designer.cs">
+      <DependentUpon>TenantStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\TenantComplaints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\TenantComplaints.Designer.cs">
+      <DependentUpon>TenantComplaints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\TenantAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\TenantAgenda.Designer.cs">
+      <DependentUpon>TenantAgenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\TenantChores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\TenantChores.Designer.cs">
+      <DependentUpon>TenantChores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\TenantAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\TenantAttendance.Designer.cs">
+      <DependentUpon>TenantAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\Contact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guest\Contact.Designer.cs">
+      <DependentUpon>Contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\Rules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guest\Rules.Designer.cs">
+      <DependentUpon>Rules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\Announce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guest\Announce.Designer.cs">
+      <DependentUpon>Announce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\TenantMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\TenantMain.Designer.cs">
+      <DependentUpon>TenantMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guest\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
+    <EmbeddedResource Include="Admin\AdminChores.resx">
+      <DependentUpon>AdminChores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminMain.resx">
+      <DependentUpon>AdminMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminContact.resx">
+      <DependentUpon>AdminContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomElements\RoundTextBox.resx">
+      <DependentUpon>RoundTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminAgenda.resx">
+      <DependentUpon>AdminAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminAttendance.resx">
+      <DependentUpon>AdminAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminComplaints.resx">
+      <DependentUpon>AdminComplaints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminStock.resx">
+      <DependentUpon>AdminStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guest\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\TenantAttendance.resx">
+      <DependentUpon>TenantAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\TenantComplaints.resx">
+      <DependentUpon>TenantComplaints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\TenantMain.resx">
+      <DependentUpon>TenantMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\TenantStock.resx">
+      <DependentUpon>TenantStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\TenantAgenda.resx">
+      <DependentUpon>TenantAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\TenantChores.resx">
+      <DependentUpon>TenantChores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guest\Contact.resx">
+      <DependentUpon>Contact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guest\Rules.resx">
+      <DependentUpon>Rules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guest\Announce.resx">
+      <DependentUpon>Announce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attendance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agenda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\complaints.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1774.30\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1774.30\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.1774.30\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.1774.30\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
+</Project>
