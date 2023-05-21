@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,40 @@ namespace housing
 
         private void Contact_Load(object sender, EventArgs e)
         {
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string[] files = Directory.GetFiles(desktopPath, "contact.txt", SearchOption.AllDirectories);
 
+            if (files.Length > 0)
+            {
+                string fullPath = files.First();
+                string[] lines = File.ReadAllLines(fullPath);
+
+                try
+                {
+                    lbPhone.Text = string.IsNullOrEmpty(lines[0])
+                        ? "Telephone Number: +3113 204 0149"
+                        : "Telephone Number: " + lines[0];
+
+                    lbWapp.Text = string.IsNullOrEmpty(lines[1])
+                        ? "WhatsApp: +31 6 83 40 60 07"
+                        : "WhatsApp: " + lines[1];
+
+                    lbEmail.Text = string.IsNullOrEmpty(lines[2])
+                        ? "Email Address: info@studenthousingholland.com"
+                        : "Email Address: " + lines[2];
+
+                    lbAddress.Text = string.IsNullOrEmpty(lines[3])
+                        ? "Visiting address: Willem II 6A, 5038 BG, Tilburg"
+                        : "Visiting address: " + lines[3];
+                }
+                catch (Exception)
+                {
+                }
+            }
+            else
+            {
+                Console.WriteLine("contact.txt not found on the desktop.");
+            }
         }
     }
 }

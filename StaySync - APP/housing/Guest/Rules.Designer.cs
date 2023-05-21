@@ -117,6 +117,7 @@
             this.btnInfo.Text = "More Info";
             this.btnInfo.TextColor = System.Drawing.Color.White;
             this.btnInfo.UseVisualStyleBackColor = false;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // roundPanelListBox1
             // 
@@ -139,6 +140,7 @@
             this.lbHouseRules.Name = "lbHouseRules";
             this.lbHouseRules.Size = new System.Drawing.Size(687, 272);
             this.lbHouseRules.TabIndex = 10;
+            this.lbHouseRules.DoubleClick += new System.EventHandler(this.lbHouseRules_DoubleClick);
             // 
             // btnRefresh
             // 
@@ -159,6 +161,7 @@
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.TextColor = System.Drawing.Color.White;
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // Rules
             // 

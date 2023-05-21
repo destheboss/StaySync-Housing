@@ -126,6 +126,7 @@
             this.btnChange.Text = "Change";
             this.btnChange.TextColor = System.Drawing.Color.White;
             this.btnChange.UseVisualStyleBackColor = false;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // tbxAddress
             // 

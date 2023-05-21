@@ -31,6 +31,7 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.roundPanel1 = new housing.CustomElements.RoundPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tbxAddOrRemove = new housing.CustomElements.RoundTextBox();
             this.roundPanelListBox1 = new housing.CustomElements.RoundPanelListBox();
             this.TBCcategory = new housing.CustomElements.CustomTabControl();
@@ -44,6 +45,7 @@
             this.BTNaddStock = new housing.CustomElements.RoundButton();
             this.panelTop.SuspendLayout();
             this.roundPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.roundPanelListBox1.SuspendLayout();
             this.TBCcategory.SuspendLayout();
             this.SuspendLayout();
@@ -82,12 +84,7 @@
             this.roundPanel1.BackgroundImage = global::housing.Properties.Resources.background1;
             this.roundPanel1.BorderColor = System.Drawing.Color.White;
             this.roundPanel1.BorderWidth = 5;
-            this.roundPanel1.Controls.Add(this.tbxAddOrRemove);
-            this.roundPanel1.Controls.Add(this.roundPanelListBox1);
-            this.roundPanel1.Controls.Add(this.CMBitem);
-            this.roundPanel1.Controls.Add(this.CMBcategory);
-            this.roundPanel1.Controls.Add(this.btnRemoveStock);
-            this.roundPanel1.Controls.Add(this.BTNaddStock);
+            this.roundPanel1.Controls.Add(this.panel2);
             this.roundPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.roundPanel1.IsBorder = false;
             this.roundPanel1.IsFill = true;
@@ -96,6 +93,20 @@
             this.roundPanel1.Radius = 20;
             this.roundPanel1.Size = new System.Drawing.Size(946, 442);
             this.roundPanel1.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panel2.Controls.Add(this.tbxAddOrRemove);
+            this.panel2.Controls.Add(this.roundPanelListBox1);
+            this.panel2.Controls.Add(this.CMBitem);
+            this.panel2.Controls.Add(this.CMBcategory);
+            this.panel2.Controls.Add(this.btnRemoveStock);
+            this.panel2.Controls.Add(this.BTNaddStock);
+            this.panel2.Location = new System.Drawing.Point(13, 23);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(921, 396);
+            this.panel2.TabIndex = 19;
             // 
             // tbxAddOrRemove
             // 
@@ -106,7 +117,7 @@
             this.tbxAddOrRemove.BorderSize = 2;
             this.tbxAddOrRemove.Font = new System.Drawing.Font("Cascadia Code", 10F);
             this.tbxAddOrRemove.ForeColor = System.Drawing.Color.White;
-            this.tbxAddOrRemove.Location = new System.Drawing.Point(627, 231);
+            this.tbxAddOrRemove.Location = new System.Drawing.Point(611, 206);
             this.tbxAddOrRemove.Margin = new System.Windows.Forms.Padding(4);
             this.tbxAddOrRemove.Multiline = false;
             this.tbxAddOrRemove.Name = "tbxAddOrRemove";
@@ -115,17 +126,17 @@
             this.tbxAddOrRemove.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.tbxAddOrRemove.PlaceholderText = "< increment number >";
             this.tbxAddOrRemove.Size = new System.Drawing.Size(254, 33);
-            this.tbxAddOrRemove.TabIndex = 41;
+            this.tbxAddOrRemove.TabIndex = 35;
             this.tbxAddOrRemove.Texts = "";
             this.tbxAddOrRemove.UnderlinedStyle = false;
             // 
             // roundPanelListBox1
             // 
             this.roundPanelListBox1.Controls.Add(this.TBCcategory);
-            this.roundPanelListBox1.Location = new System.Drawing.Point(64, 65);
+            this.roundPanelListBox1.Location = new System.Drawing.Point(48, 40);
             this.roundPanelListBox1.Name = "roundPanelListBox1";
             this.roundPanelListBox1.Size = new System.Drawing.Size(509, 312);
-            this.roundPanelListBox1.TabIndex = 36;
+            this.roundPanelListBox1.TabIndex = 0;
             // 
             // TBCcategory
             // 
@@ -194,12 +205,12 @@
             this.CMBitem.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
             this.CMBitem.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.CMBitem.ListTextColor = System.Drawing.Color.White;
-            this.CMBitem.Location = new System.Drawing.Point(627, 190);
+            this.CMBitem.Location = new System.Drawing.Point(611, 165);
             this.CMBitem.MinimumSize = new System.Drawing.Size(200, 30);
             this.CMBitem.Name = "CMBitem";
             this.CMBitem.Padding = new System.Windows.Forms.Padding(1);
             this.CMBitem.Size = new System.Drawing.Size(254, 30);
-            this.CMBitem.TabIndex = 40;
+            this.CMBitem.TabIndex = 33;
             this.CMBitem.Texts = "";
             // 
             // CMBcategory
@@ -215,12 +226,12 @@
             this.CMBcategory.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
             this.CMBcategory.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.CMBcategory.ListTextColor = System.Drawing.Color.White;
-            this.CMBcategory.Location = new System.Drawing.Point(627, 150);
+            this.CMBcategory.Location = new System.Drawing.Point(611, 125);
             this.CMBcategory.MinimumSize = new System.Drawing.Size(200, 30);
             this.CMBcategory.Name = "CMBcategory";
             this.CMBcategory.Padding = new System.Windows.Forms.Padding(1);
             this.CMBcategory.Size = new System.Drawing.Size(254, 30);
-            this.CMBcategory.TabIndex = 39;
+            this.CMBcategory.TabIndex = 32;
             this.CMBcategory.Texts = "";
             // 
             // btnRemoveStock
@@ -235,10 +246,10 @@
             this.btnRemoveStock.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveStock.ForeColor = System.Drawing.Color.White;
             this.btnRemoveStock.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRemoveStock.Location = new System.Drawing.Point(762, 279);
+            this.btnRemoveStock.Location = new System.Drawing.Point(746, 254);
             this.btnRemoveStock.Name = "btnRemoveStock";
             this.btnRemoveStock.Size = new System.Drawing.Size(121, 43);
-            this.btnRemoveStock.TabIndex = 38;
+            this.btnRemoveStock.TabIndex = 18;
             this.btnRemoveStock.Text = "Stock ↓";
             this.btnRemoveStock.TextColor = System.Drawing.Color.White;
             this.btnRemoveStock.UseVisualStyleBackColor = false;
@@ -255,10 +266,10 @@
             this.BTNaddStock.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNaddStock.ForeColor = System.Drawing.Color.White;
             this.BTNaddStock.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BTNaddStock.Location = new System.Drawing.Point(624, 279);
+            this.BTNaddStock.Location = new System.Drawing.Point(608, 254);
             this.BTNaddStock.Name = "BTNaddStock";
             this.BTNaddStock.Size = new System.Drawing.Size(121, 43);
-            this.BTNaddStock.TabIndex = 37;
+            this.BTNaddStock.TabIndex = 11;
             this.BTNaddStock.Text = "Stock ↑";
             this.BTNaddStock.TextColor = System.Drawing.Color.White;
             this.BTNaddStock.UseVisualStyleBackColor = false;
@@ -280,6 +291,7 @@
             this.Text = "GuestAttendance";
             this.panelTop.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.roundPanelListBox1.ResumeLayout(false);
             this.TBCcategory.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -291,6 +303,7 @@
         private System.Windows.Forms.Panel panelTop;
         private CustomElements.RoundPanel roundPanel1;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Panel panel2;
         private CustomElements.RoundTextBox tbxAddOrRemove;
         private CustomElements.RoundPanelListBox roundPanelListBox1;
         private CustomElements.CustomTabControl TBCcategory;

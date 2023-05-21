@@ -234,6 +234,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GuestContact";
+            this.Load += new System.EventHandler(this.Contact_Load);
             this.panelTop.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
             this.roundPanel1.PerformLayout();

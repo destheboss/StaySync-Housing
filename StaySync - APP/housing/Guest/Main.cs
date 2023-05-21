@@ -1,4 +1,5 @@
-﻿using System;
+﻿using housing.CustomElements;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -94,13 +95,13 @@ namespace housing
                 }
                 else
                 {
-                    MessageBox.Show("Incorrect password");
+                    var result = RJMessageBox.Show("Incorrect password", "", MessageBoxButtons.OK);
                     return;
                 }
             }
             else
             {
-                MessageBox.Show("Input a correct password");
+                var result = RJMessageBox.Show("Input a correct password", "", MessageBoxButtons.OK);
             }
         }
 

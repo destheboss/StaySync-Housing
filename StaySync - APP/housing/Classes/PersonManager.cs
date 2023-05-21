@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Permissions;
+using housing.CustomElements;
 
 
 namespace housing
@@ -28,7 +29,7 @@ namespace housing
             FileStream fs = null;
             StreamReader sr = null;
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string fileName = "Tenants.txt";
+            string fileName = "tenants.txt";
             bool fileFound = false;
             while (!fileFound)
             {
@@ -69,7 +70,7 @@ namespace housing
                 }
                 else
                 {
-                    MessageBox.Show("The Tenant.txt file was not found on desktop.");
+                    var result = RJMessageBox.Show("The tenant file was not found on desktop.", "", MessageBoxButtons.OK);
                 }
             }
         }
@@ -86,7 +87,7 @@ namespace housing
                 if (p.DoesTheCodeMatch(code))
                 {
                     p.CreateUser();
-                    MessageBox.Show("Welcome back!");
+                    var result = RJMessageBox.Show("Welcome back!", "", MessageBoxButtons.OK);
                     return true;
                 }
             }

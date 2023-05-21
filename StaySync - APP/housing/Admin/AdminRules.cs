@@ -1,5 +1,4 @@
 ﻿using housing.Classes;
-using housing.CustomElements;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,27 +12,22 @@ using System.Windows.Forms;
 
 namespace housing
 {
-    public partial class Rules : Form
+    public partial class AdminRules : Form
     {
         private houseruleManager rules;
-        public Rules()
+        public AdminRules()
         {
             InitializeComponent();
             rules = new houseruleManager();
             LoadRules();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void RefreshRuleList()
         {
-            this.lbHouseRules.Items.Clear();
+            this.lbxRules.Items.Clear();
             foreach (var rule in rules.GetRules())
             {
-                this.lbHouseRules.Items.Add(rule.GetHouseRule());
+                this.lbxRules.Items.Add(rule.GetHouseRule());
             }
         }
 
@@ -60,36 +54,44 @@ namespace housing
             }
         }
 
-        private void btnInfo_Click(object sender, EventArgs e)
+        private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (lbHouseRules.SelectedIndex > -1)
+            string rule = tbxMessage.Texts;
+            if (!String.IsNullOrEmpty(rule))
             {
-                int index = this.lbHouseRules.SelectedIndex;
-                if (index > -1)
+                rules.AddHouseRule(rule);
+                RefreshRuleList();
+                tbxMessage.Texts = "";
+                MessageBox.Show("Rule Added.");
+            }
+            else
+            {
+                MessageBox.Show("Please supply a valid message");
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (lbxRules.SelectedIndex > -1)
+            {
+                int index = this.lbxRules.SelectedIndex;
                 {
                     index++;
-                    DialogResult result = RJMessageBox.Show(rules.GetRuleInfoBasedOnId(index));
+                    rules.DeleteRule(index);
+                    MessageBox.Show("Rule deleted.");
+                    RefreshRuleList();
                 }
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void AdminRules_Leave(object sender, EventArgs e)
         {
-            RefreshRuleList();
+            rules.WriteRules();
         }
 
-        private void lbHouseRules_DoubleClick(object sender, EventArgs e)
+        private void AdminRules_ParentChanged(object sender, EventArgs e)
         {
-            if (lbHouseRules.SelectedIndex > -1)
-            {
-                int index = this.lbHouseRules.SelectedIndex;
-                if (index > -1)
-                {
-                    index++;
-                    DialogResult result = RJMessageBox.Show(rules.GetRuleInfoBasedOnId(index));
-
-                }
-            }
+                        rules.WriteRules();
         }
     }
 }

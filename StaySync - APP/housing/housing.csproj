@@ -95,12 +95,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminRules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminRules.Designer.cs">
+      <DependentUpon>AdminRules.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AdminContact.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin\AdminContact.Designer.cs">
       <DependentUpon>AdminContact.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\contact.cs" />
+    <Compile Include="Classes\contactManager.cs" />
+    <Compile Include="Classes\houserule.cs" />
+    <Compile Include="Classes\houseruleManager.cs" />
     <Compile Include="CustomElements\CustomComboBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -110,6 +120,13 @@
     <Compile Include="CustomElements\CustomTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomElements\FormMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomElements\FormMessageBox.designer.cs">
+      <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomElements\RJMessageBox.cs" />
     <Compile Include="CustomElements\RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -164,9 +181,9 @@
     <Compile Include="Admin\AdminStock.Designer.cs">
       <DependentUpon>AdminStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="ForgetManager.cs" />
-    <Compile Include="Person.cs" />
-    <Compile Include="PersonManager.cs" />
+    <Compile Include="Classes\ForgetManager.cs" />
+    <Compile Include="Classes\Person.cs" />
+    <Compile Include="Classes\PersonManager.cs" />
     <Compile Include="Tenant\TenantStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,7 +246,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Classes\User.cs" />
+    <EmbeddedResource Include="Admin\AdminRules.resx">
+      <DependentUpon>AdminRules.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminChores.resx">
       <DependentUpon>AdminChores.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +258,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminContact.resx">
       <DependentUpon>AdminContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminStock.resx">
+      <DependentUpon>AdminStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomElements\FormMessageBox.resx">
+      <DependentUpon>FormMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomElements\RoundTextBox.resx">
       <DependentUpon>RoundTextBox.cs</DependentUpon>
@@ -250,9 +276,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminComplaints.resx">
       <DependentUpon>AdminComplaints.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\AdminStock.resx">
-      <DependentUpon>AdminStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Guest\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

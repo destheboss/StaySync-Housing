@@ -69,7 +69,7 @@ namespace housing
 
         private void btnRules_Click(object sender, EventArgs e)
         {
-            openChildForm(new Rules());
+            openChildForm(new AdminRules());
         }
 
         private void btnContact_Click(object sender, EventArgs e)
