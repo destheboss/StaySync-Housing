@@ -42,7 +42,7 @@ namespace housing.Classes
         public string GetRuleInfoBasedOnId(int id)
         {
             var rule = this.GetRule(id);
-            return rule.GetHouseRule();
+            return rule.GetHouseRuleMessage();
         }
 
         public void DeleteRule(int id)

@@ -118,7 +118,7 @@
             this.tbxMessage.PlaceholderText = "";
             this.tbxMessage.Size = new System.Drawing.Size(386, 272);
             this.tbxMessage.TabIndex = 28;
-            this.tbxMessage.Texts = "";
+            this.tbxMessage.Texts = "< add a rule >";
             this.tbxMessage.UnderlinedStyle = true;
             // 
             // btnDelete

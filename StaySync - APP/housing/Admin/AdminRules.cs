@@ -1,4 +1,5 @@
 ﻿using housing.Classes;
+using housing.CustomElements;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,7 +51,7 @@ namespace housing
             }
             catch (IOException ex)
             {
-                MessageBox.Show("Error reading file: " + ex.Message);
+                RJMessageBox.Show("Error reading file: " + ex.Message);
             }
         }
 
@@ -62,11 +63,11 @@ namespace housing
                 rules.AddHouseRule(rule);
                 RefreshRuleList();
                 tbxMessage.Texts = "";
-                MessageBox.Show("Rule Added.");
+                RJMessageBox.Show("Rule added.", "", MessageBoxButtons.OK);
             }
             else
             {
-                MessageBox.Show("Please supply a valid message");
+                RJMessageBox.Show("Please supply a valid message.", "", MessageBoxButtons.OK);
             }
         }
 
@@ -78,7 +79,7 @@ namespace housing
                 {
                     index++;
                     rules.DeleteRule(index);
-                    MessageBox.Show("Rule deleted.");
+                    RJMessageBox.Show("Rule deleted.", "", MessageBoxButtons.OK);
                     RefreshRuleList();
                 }
             }
@@ -91,7 +92,7 @@ namespace housing
 
         private void AdminRules_ParentChanged(object sender, EventArgs e)
         {
-                        rules.WriteRules();
+            rules.WriteRules();
         }
     }
 }

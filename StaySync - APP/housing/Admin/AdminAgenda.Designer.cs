@@ -32,7 +32,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.roundPanel1 = new housing.CustomElements.RoundPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnRefresh = new housing.CustomElements.RoundButton();
+            this.btnDelete = new housing.CustomElements.RoundButton();
             this.roundPanelListBox1 = new housing.CustomElements.RoundPanelListBox();
             this.lbxEvents = new System.Windows.Forms.ListBox();
             this.btnCreate = new housing.CustomElements.RoundButton();
@@ -89,7 +89,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.panel2.Controls.Add(this.btnRefresh);
+            this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.roundPanelListBox1);
             this.panel2.Controls.Add(this.btnCreate);
             this.panel2.Location = new System.Drawing.Point(13, 23);
@@ -97,25 +97,26 @@
             this.panel2.Size = new System.Drawing.Size(921, 396);
             this.panel2.TabIndex = 16;
             // 
-            // btnRefresh
+            // btnDelete
             // 
-            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.btnRefresh.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.btnRefresh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.btnRefresh.BorderRadius = 14;
-            this.btnRefresh.BorderSize = 0;
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefresh.Location = new System.Drawing.Point(766, 117);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(121, 43);
-            this.btnRefresh.TabIndex = 17;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.TextColor = System.Drawing.Color.White;
-            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.btnDelete.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.btnDelete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.btnDelete.BorderRadius = 14;
+            this.btnDelete.BorderSize = 0;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.Location = new System.Drawing.Point(766, 117);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(121, 43);
+            this.btnDelete.TabIndex = 17;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.TextColor = System.Drawing.Color.White;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // roundPanelListBox1
             // 
@@ -123,7 +124,7 @@
             this.roundPanelListBox1.Controls.Add(this.lbxEvents);
             this.roundPanelListBox1.Location = new System.Drawing.Point(38, 65);
             this.roundPanelListBox1.Name = "roundPanelListBox1";
-            this.roundPanelListBox1.Size = new System.Drawing.Size(565, 272);
+            this.roundPanelListBox1.Size = new System.Drawing.Size(682, 272);
             this.roundPanelListBox1.TabIndex = 16;
             // 
             // lbxEvents
@@ -137,8 +138,9 @@
             this.lbxEvents.ItemHeight = 16;
             this.lbxEvents.Location = new System.Drawing.Point(0, 0);
             this.lbxEvents.Name = "lbxEvents";
-            this.lbxEvents.Size = new System.Drawing.Size(565, 272);
+            this.lbxEvents.Size = new System.Drawing.Size(682, 272);
             this.lbxEvents.TabIndex = 10;
+            this.lbxEvents.DoubleClick += new System.EventHandler(this.lbxEvents_DoubleClick);
             // 
             // btnCreate
             // 
@@ -159,6 +161,7 @@
             this.btnCreate.Text = "Create";
             this.btnCreate.TextColor = System.Drawing.Color.White;
             this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // AdminAgenda
             // 
@@ -175,6 +178,8 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GuestAttendance";
+            this.Leave += new System.EventHandler(this.AdminAgenda_Leave);
+            this.ParentChanged += new System.EventHandler(this.AdminAgenda_ParentChanged);
             this.panelTop.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -189,7 +194,7 @@
         private CustomElements.RoundPanel roundPanel1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panel2;
-        private CustomElements.RoundButton btnRefresh;
+        private CustomElements.RoundButton btnDelete;
         private CustomElements.RoundPanelListBox roundPanelListBox1;
         private System.Windows.Forms.ListBox lbxEvents;
         private CustomElements.RoundButton btnCreate;

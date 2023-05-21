@@ -34,7 +34,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tbxNewChore = new housing.CustomElements.RoundTextBox();
             this.roundPanelListBox1 = new housing.CustomElements.RoundPanelListBox();
-            this.lbxAnnouncements = new System.Windows.Forms.ListBox();
+            this.lbxChores = new System.Windows.Forms.ListBox();
             this.lbAddChore = new System.Windows.Forms.Label();
             this.btnAdd = new housing.CustomElements.RoundButton();
             this.panelTop.SuspendLayout();
@@ -124,25 +124,25 @@
             // roundPanelListBox1
             // 
             this.roundPanelListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.roundPanelListBox1.Controls.Add(this.lbxAnnouncements);
+            this.roundPanelListBox1.Controls.Add(this.lbxChores);
             this.roundPanelListBox1.Location = new System.Drawing.Point(38, 65);
             this.roundPanelListBox1.Name = "roundPanelListBox1";
             this.roundPanelListBox1.Size = new System.Drawing.Size(565, 272);
             this.roundPanelListBox1.TabIndex = 16;
             // 
-            // lbxAnnouncements
+            // lbxChores
             // 
-            this.lbxAnnouncements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.lbxAnnouncements.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbxAnnouncements.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxAnnouncements.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbxAnnouncements.ForeColor = System.Drawing.Color.White;
-            this.lbxAnnouncements.FormattingEnabled = true;
-            this.lbxAnnouncements.ItemHeight = 16;
-            this.lbxAnnouncements.Location = new System.Drawing.Point(0, 0);
-            this.lbxAnnouncements.Name = "lbxAnnouncements";
-            this.lbxAnnouncements.Size = new System.Drawing.Size(565, 272);
-            this.lbxAnnouncements.TabIndex = 10;
+            this.lbxChores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.lbxChores.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbxChores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbxChores.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxChores.ForeColor = System.Drawing.Color.White;
+            this.lbxChores.FormattingEnabled = true;
+            this.lbxChores.ItemHeight = 16;
+            this.lbxChores.Location = new System.Drawing.Point(0, 0);
+            this.lbxChores.Name = "lbxChores";
+            this.lbxChores.Size = new System.Drawing.Size(565, 272);
+            this.lbxChores.TabIndex = 10;
             // 
             // lbAddChore
             // 
@@ -208,7 +208,7 @@
         private System.Windows.Forms.Panel panel2;
         private CustomElements.RoundTextBox tbxNewChore;
         private CustomElements.RoundPanelListBox roundPanelListBox1;
-        private System.Windows.Forms.ListBox lbxAnnouncements;
+        private System.Windows.Forms.ListBox lbxChores;
         private System.Windows.Forms.Label lbAddChore;
         private CustomElements.RoundButton btnAdd;
     }

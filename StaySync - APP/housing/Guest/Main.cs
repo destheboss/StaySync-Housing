@@ -95,13 +95,13 @@ namespace housing
                 }
                 else
                 {
-                    var result = RJMessageBox.Show("Incorrect password", "", MessageBoxButtons.OK);
+                    RJMessageBox.Show("Incorrect password", "", MessageBoxButtons.OK);
                     return;
                 }
             }
             else
             {
-                var result = RJMessageBox.Show("Input a correct password", "", MessageBoxButtons.OK);
+                RJMessageBox.Show("Input a correct password", "", MessageBoxButtons.OK);
             }
         }
 

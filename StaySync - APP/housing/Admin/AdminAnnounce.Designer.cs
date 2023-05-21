@@ -1,6 +1,6 @@
 ﻿namespace housing
 {
-    partial class TenantAgenda
+    partial class AdminAnnounce
     {
         /// <summary>
         /// Required designer variable.
@@ -32,8 +32,10 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.roundPanel1 = new housing.CustomElements.RoundPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tbxMessage = new housing.CustomElements.RoundTextBox();
+            this.btnDelete = new housing.CustomElements.RoundButton();
             this.roundPanelListBox1 = new housing.CustomElements.RoundPanelListBox();
-            this.lbxEvents = new System.Windows.Forms.ListBox();
+            this.lbxAnnounce = new System.Windows.Forms.ListBox();
             this.btnCreate = new housing.CustomElements.RoundButton();
             this.panelTop.SuspendLayout();
             this.roundPanel1.SuspendLayout();
@@ -65,7 +67,7 @@
             this.btnClose.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnClose.Size = new System.Drawing.Size(130, 53);
             this.btnClose.TabIndex = 13;
-            this.btnClose.Text = "  Tenant";
+            this.btnClose.Text = "  Admin";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClose.UseVisualStyleBackColor = true;
@@ -88,6 +90,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panel2.Controls.Add(this.tbxMessage);
+            this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.roundPanelListBox1);
             this.panel2.Controls.Add(this.btnCreate);
             this.panel2.Location = new System.Drawing.Point(13, 23);
@@ -95,29 +99,71 @@
             this.panel2.Size = new System.Drawing.Size(921, 396);
             this.panel2.TabIndex = 16;
             // 
+            // tbxMessage
+            // 
+            this.tbxMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.tbxMessage.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
+            this.tbxMessage.BorderFocusColor = System.Drawing.Color.White;
+            this.tbxMessage.BorderRadius = 23;
+            this.tbxMessage.BorderSize = 2;
+            this.tbxMessage.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxMessage.ForeColor = System.Drawing.Color.White;
+            this.tbxMessage.Location = new System.Drawing.Point(20, 32);
+            this.tbxMessage.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxMessage.Multiline = true;
+            this.tbxMessage.Name = "tbxMessage";
+            this.tbxMessage.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.tbxMessage.PasswordChar = false;
+            this.tbxMessage.PlaceholderColor = System.Drawing.Color.White;
+            this.tbxMessage.PlaceholderText = "";
+            this.tbxMessage.Size = new System.Drawing.Size(386, 272);
+            this.tbxMessage.TabIndex = 28;
+            this.tbxMessage.Texts = "< add an announcement >";
+            this.tbxMessage.UnderlinedStyle = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.btnDelete.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.btnDelete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.btnDelete.BorderRadius = 14;
+            this.btnDelete.BorderSize = 0;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.Location = new System.Drawing.Point(441, 322);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(121, 43);
+            this.btnDelete.TabIndex = 17;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.TextColor = System.Drawing.Color.White;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // roundPanelListBox1
             // 
             this.roundPanelListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.roundPanelListBox1.Controls.Add(this.lbxEvents);
-            this.roundPanelListBox1.Location = new System.Drawing.Point(38, 65);
+            this.roundPanelListBox1.Controls.Add(this.lbxAnnounce);
+            this.roundPanelListBox1.Location = new System.Drawing.Point(441, 32);
             this.roundPanelListBox1.Name = "roundPanelListBox1";
-            this.roundPanelListBox1.Size = new System.Drawing.Size(682, 272);
+            this.roundPanelListBox1.Size = new System.Drawing.Size(457, 272);
             this.roundPanelListBox1.TabIndex = 16;
             // 
-            // lbxEvents
+            // lbxAnnounce
             // 
-            this.lbxEvents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.lbxEvents.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbxEvents.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxEvents.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbxEvents.ForeColor = System.Drawing.Color.White;
-            this.lbxEvents.FormattingEnabled = true;
-            this.lbxEvents.ItemHeight = 16;
-            this.lbxEvents.Location = new System.Drawing.Point(0, 0);
-            this.lbxEvents.Name = "lbxEvents";
-            this.lbxEvents.Size = new System.Drawing.Size(682, 272);
-            this.lbxEvents.TabIndex = 10;
-            this.lbxEvents.DoubleClick += new System.EventHandler(this.lbxEvents_DoubleClick);
+            this.lbxAnnounce.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.lbxAnnounce.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbxAnnounce.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbxAnnounce.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxAnnounce.ForeColor = System.Drawing.Color.White;
+            this.lbxAnnounce.FormattingEnabled = true;
+            this.lbxAnnounce.ItemHeight = 16;
+            this.lbxAnnounce.Location = new System.Drawing.Point(0, 0);
+            this.lbxAnnounce.Name = "lbxAnnounce";
+            this.lbxAnnounce.Size = new System.Drawing.Size(457, 272);
+            this.lbxAnnounce.TabIndex = 10;
             // 
             // btnCreate
             // 
@@ -131,7 +177,7 @@
             this.btnCreate.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.ForeColor = System.Drawing.Color.White;
             this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreate.Location = new System.Drawing.Point(766, 62);
+            this.btnCreate.Location = new System.Drawing.Point(20, 322);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(121, 43);
             this.btnCreate.TabIndex = 11;
@@ -140,7 +186,7 @@
             this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // TenantAgenda
+            // AdminAnnounce
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -151,12 +197,12 @@
             this.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "TenantAgenda";
+            this.Name = "AdminAnnounce";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GuestAttendance";
-            this.Leave += new System.EventHandler(this.TenantAgenda_Leave);
-            this.ParentChanged += new System.EventHandler(this.TenantAgenda_ParentChanged);
+            this.Leave += new System.EventHandler(this.AdminAnnounce_Leave);
+            this.ParentChanged += new System.EventHandler(this.AdminAnnounce_ParentChanged);
             this.panelTop.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -171,8 +217,10 @@
         private CustomElements.RoundPanel roundPanel1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panel2;
+        private CustomElements.RoundButton btnDelete;
         private CustomElements.RoundPanelListBox roundPanelListBox1;
-        private System.Windows.Forms.ListBox lbxEvents;
+        private System.Windows.Forms.ListBox lbxAnnounce;
         private CustomElements.RoundButton btnCreate;
+        private CustomElements.RoundTextBox tbxMessage;
     }
 }

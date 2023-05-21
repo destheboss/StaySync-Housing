@@ -1,4 +1,5 @@
 ﻿using housing.Classes;
+using housing.CustomElements;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,11 +32,11 @@ namespace housing
             string address = tbxAddress.Texts;
 
             if (string.IsNullOrWhiteSpace(phone) && string.IsNullOrWhiteSpace(wapp) && string.IsNullOrWhiteSpace(email) && string.IsNullOrWhiteSpace(address))
-                MessageBox.Show("Please input at least one detail.");
+            { RJMessageBox.Show("Please input at least one detail."); }
             else
             {
                 contact.AddContact(phone, wapp, email, address);
-                MessageBox.Show("Changes were made.");
+                RJMessageBox.Show("Changes were made.");
             }
             contact.Write();
         }

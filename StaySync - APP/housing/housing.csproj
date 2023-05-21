@@ -95,6 +95,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminAnnounce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminAnnounce.Designer.cs">
+      <DependentUpon>AdminAnnounce.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AdminRules.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,8 +113,18 @@
     <Compile Include="Admin\AdminContact.Designer.cs">
       <DependentUpon>AdminContact.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Agenda.cs" />
+    <Compile Include="Classes\AgendaManager.cs" />
+    <Compile Include="Classes\Announcement.cs" />
+    <Compile Include="Classes\AnnouncementManager.cs" />
     <Compile Include="Classes\contact.cs" />
     <Compile Include="Classes\contactManager.cs" />
+    <Compile Include="Classes\CreateEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\CreateEvent.Designer.cs">
+      <DependentUpon>CreateEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\houserule.cs" />
     <Compile Include="Classes\houseruleManager.cs" />
     <Compile Include="CustomElements\CustomComboBox.cs">
@@ -184,6 +200,12 @@
     <Compile Include="Classes\ForgetManager.cs" />
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\PersonManager.cs" />
+    <Compile Include="Tenant\TenantAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\TenantAgenda.Designer.cs">
+      <DependentUpon>TenantAgenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tenant\TenantStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,12 +217,6 @@
     </Compile>
     <Compile Include="Tenant\TenantComplaints.Designer.cs">
       <DependentUpon>TenantComplaints.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tenant\TenantAgenda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tenant\TenantAgenda.Designer.cs">
-      <DependentUpon>TenantAgenda.cs</DependentUpon>
     </Compile>
     <Compile Include="Tenant\TenantChores.cs">
       <SubType>Form</SubType>
@@ -247,6 +263,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\User.cs" />
+    <EmbeddedResource Include="Admin\AdminAnnounce.resx">
+      <DependentUpon>AdminAnnounce.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminRules.resx">
       <DependentUpon>AdminRules.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminStock.resx">
       <DependentUpon>AdminStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\CreateEvent.resx">
+      <DependentUpon>CreateEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomElements\FormMessageBox.resx">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
@@ -280,6 +302,9 @@
     <EmbeddedResource Include="Guest\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\TenantAgenda.resx">
+      <DependentUpon>TenantAgenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tenant\TenantAttendance.resx">
       <DependentUpon>TenantAttendance.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,9 +316,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tenant\TenantStock.resx">
       <DependentUpon>TenantStock.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tenant\TenantAgenda.resx">
-      <DependentUpon>TenantAgenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tenant\TenantChores.resx">
       <DependentUpon>TenantChores.cs</DependentUpon>

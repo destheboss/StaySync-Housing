@@ -33,13 +33,11 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.roundPanel1 = new housing.CustomElements.RoundPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tbxAnnouncementIndex = new housing.CustomElements.RoundTextBox();
             this.roundPanelListBox1 = new housing.CustomElements.RoundPanelListBox();
             this.lbxAnnouncements = new System.Windows.Forms.ListBox();
             this.btnRefresh = new housing.CustomElements.RoundButton();
-            this.lblSelectAnn = new System.Windows.Forms.Label();
-            this.roundButton1 = new housing.CustomElements.RoundButton();
             this.tbxCodeInput = new housing.CustomElements.RoundTextBox();
+            this.btnInfo = new housing.CustomElements.RoundButton();
             this.panelTop.SuspendLayout();
             this.roundPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -94,37 +92,13 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.panel2.Controls.Add(this.tbxAnnouncementIndex);
+            this.panel2.Controls.Add(this.btnInfo);
             this.panel2.Controls.Add(this.roundPanelListBox1);
             this.panel2.Controls.Add(this.btnRefresh);
-            this.panel2.Controls.Add(this.lblSelectAnn);
-            this.panel2.Controls.Add(this.roundButton1);
             this.panel2.Location = new System.Drawing.Point(13, 24);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(921, 396);
             this.panel2.TabIndex = 14;
-            // 
-            // tbxAnnouncementIndex
-            // 
-            this.tbxAnnouncementIndex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.tbxAnnouncementIndex.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
-            this.tbxAnnouncementIndex.BorderFocusColor = System.Drawing.Color.White;
-            this.tbxAnnouncementIndex.BorderRadius = 12;
-            this.tbxAnnouncementIndex.BorderSize = 2;
-            this.tbxAnnouncementIndex.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxAnnouncementIndex.ForeColor = System.Drawing.Color.White;
-            this.tbxAnnouncementIndex.Location = new System.Drawing.Point(643, 199);
-            this.tbxAnnouncementIndex.Margin = new System.Windows.Forms.Padding(4);
-            this.tbxAnnouncementIndex.Multiline = false;
-            this.tbxAnnouncementIndex.Name = "tbxAnnouncementIndex";
-            this.tbxAnnouncementIndex.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbxAnnouncementIndex.PasswordChar = false;
-            this.tbxAnnouncementIndex.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.tbxAnnouncementIndex.PlaceholderText = "< number >";
-            this.tbxAnnouncementIndex.Size = new System.Drawing.Size(121, 32);
-            this.tbxAnnouncementIndex.TabIndex = 17;
-            this.tbxAnnouncementIndex.Texts = "";
-            this.tbxAnnouncementIndex.UnderlinedStyle = true;
             // 
             // roundPanelListBox1
             // 
@@ -132,7 +106,7 @@
             this.roundPanelListBox1.Controls.Add(this.lbxAnnouncements);
             this.roundPanelListBox1.Location = new System.Drawing.Point(38, 65);
             this.roundPanelListBox1.Name = "roundPanelListBox1";
-            this.roundPanelListBox1.Size = new System.Drawing.Size(565, 272);
+            this.roundPanelListBox1.Size = new System.Drawing.Size(687, 272);
             this.roundPanelListBox1.TabIndex = 16;
             // 
             // lbxAnnouncements
@@ -146,8 +120,9 @@
             this.lbxAnnouncements.ItemHeight = 16;
             this.lbxAnnouncements.Location = new System.Drawing.Point(0, 0);
             this.lbxAnnouncements.Name = "lbxAnnouncements";
-            this.lbxAnnouncements.Size = new System.Drawing.Size(565, 272);
+            this.lbxAnnouncements.Size = new System.Drawing.Size(687, 272);
             this.lbxAnnouncements.TabIndex = 10;
+            this.lbxAnnouncements.DoubleClick += new System.EventHandler(this.lbxAnnouncements_DoubleClick);
             // 
             // btnRefresh
             // 
@@ -168,38 +143,7 @@
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.TextColor = System.Drawing.Color.White;
             this.btnRefresh.UseVisualStyleBackColor = false;
-            // 
-            // lblSelectAnn
-            // 
-            this.lblSelectAnn.AutoSize = true;
-            this.lblSelectAnn.BackColor = System.Drawing.Color.Transparent;
-            this.lblSelectAnn.Font = new System.Drawing.Font("Cascadia Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectAnn.ForeColor = System.Drawing.Color.White;
-            this.lblSelectAnn.Location = new System.Drawing.Point(642, 173);
-            this.lblSelectAnn.Name = "lblSelectAnn";
-            this.lblSelectAnn.Size = new System.Drawing.Size(217, 21);
-            this.lblSelectAnn.TabIndex = 13;
-            this.lblSelectAnn.Text = "Select Announcement No.\r\n";
-            // 
-            // roundButton1
-            // 
-            this.roundButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.roundButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.roundButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.roundButton1.BorderRadius = 14;
-            this.roundButton1.BorderSize = 0;
-            this.roundButton1.FlatAppearance.BorderSize = 0;
-            this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton1.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton1.ForeColor = System.Drawing.Color.White;
-            this.roundButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.roundButton1.Location = new System.Drawing.Point(643, 238);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(244, 43);
-            this.roundButton1.TabIndex = 15;
-            this.roundButton1.Text = "More Details";
-            this.roundButton1.TextColor = System.Drawing.Color.White;
-            this.roundButton1.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // tbxCodeInput
             // 
@@ -223,6 +167,27 @@
             this.tbxCodeInput.Texts = "";
             this.tbxCodeInput.UnderlinedStyle = true;
             // 
+            // btnInfo
+            // 
+            this.btnInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.btnInfo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.btnInfo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.btnInfo.BorderRadius = 14;
+            this.btnInfo.BorderSize = 0;
+            this.btnInfo.FlatAppearance.BorderSize = 0;
+            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfo.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfo.ForeColor = System.Drawing.Color.White;
+            this.btnInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInfo.Location = new System.Drawing.Point(766, 117);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(121, 43);
+            this.btnInfo.TabIndex = 17;
+            this.btnInfo.Text = "More Info";
+            this.btnInfo.TextColor = System.Drawing.Color.White;
+            this.btnInfo.UseVisualStyleBackColor = false;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
             // Announce
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -241,7 +206,6 @@
             this.panelTop.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.roundPanelListBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -253,12 +217,10 @@
         private CustomElements.RoundPanel roundPanel1;
         private System.Windows.Forms.Button btnClose;
         private CustomElements.RoundButton btnRefresh;
-        private System.Windows.Forms.Label lblSelectAnn;
-        private CustomElements.RoundButton roundButton1;
         private CustomElements.RoundTextBox tbxCodeInput;
         private System.Windows.Forms.Panel panel2;
         private CustomElements.RoundPanelListBox roundPanelListBox1;
         private System.Windows.Forms.ListBox lbxAnnouncements;
-        private CustomElements.RoundTextBox tbxAnnouncementIndex;
+        private CustomElements.RoundButton btnInfo;
     }
 }

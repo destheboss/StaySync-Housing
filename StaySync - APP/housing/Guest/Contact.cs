@@ -1,4 +1,5 @@
-﻿using System;
+﻿using housing.CustomElements;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -60,7 +61,7 @@ namespace housing
             }
             else
             {
-                Console.WriteLine("contact.txt not found on the desktop.");
+                RJMessageBox.Show("The contact file was not found on desktop.");
             }
         }
     }

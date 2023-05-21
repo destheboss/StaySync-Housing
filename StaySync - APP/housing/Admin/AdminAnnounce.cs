@@ -7,34 +7,28 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace housing
 {
-    public partial class Announce : Form
+    public partial class AdminAnnounce : Form
     {
         private AnnouncementManager announcements;
-        public Announce()
+        public AdminAnnounce()
         {
             InitializeComponent();
             announcements = new AnnouncementManager();
             LoadAnnouncements();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void RefreshAnnouncementList()
         {
-            this.lbxAnnouncements.Items.Clear();
+            this.lbxAnnounce.Items.Clear();
             foreach (var announcement in announcements.GetAnnouncements())
             {
-                this.lbxAnnouncements.Items.Add(announcement.GetAnnouncement());
+                this.lbxAnnounce.Items.Add(announcement.GetAnnouncement());
             }
         }
 
@@ -61,35 +55,44 @@ namespace housing
             }
         }
 
-        private void btnInfo_Click(object sender, EventArgs e)
+        private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (lbxAnnouncements.SelectedIndex > -1)
+            string announce = tbxMessage.Texts;
+            if (!String.IsNullOrEmpty(announce))
             {
-                int index = this.lbxAnnouncements.SelectedIndex;
-                if (index > -1)
+                announcements.AddAnnouncement(announce);
+                RefreshAnnouncementList();
+                tbxMessage.Texts = "";
+                RJMessageBox.Show("Announcement added.", "", MessageBoxButtons.OK);
+            }
+            else
+            {
+                RJMessageBox.Show("Please supply a valid message.", "", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (lbxAnnounce.SelectedIndex > -1)
+            {
+                int index = this.lbxAnnounce.SelectedIndex;
                 {
                     index++;
-                    RJMessageBox.Show(announcements.GetAnnouncementMessageBasedOnId(index));
+                    announcements.DeleteAnnouncement(index);
+                    RJMessageBox.Show("Announcement deleted.", "", MessageBoxButtons.OK);
+                    RefreshAnnouncementList();
                 }
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void AdminAnnounce_Leave(object sender, EventArgs e)
         {
-            RefreshAnnouncementList();
+            announcements.WriteToFile();
         }
 
-        private void lbxAnnouncements_DoubleClick(object sender, EventArgs e)
+        private void AdminAnnounce_ParentChanged(object sender, EventArgs e)
         {
-            if (lbxAnnouncements.SelectedIndex > -1)
-            {
-                int index = this.lbxAnnouncements.SelectedIndex;
-                if (index > -1)
-                {
-                    index++;
-                    RJMessageBox.Show(announcements.GetAnnouncementMessageBasedOnId(index));
-                }
-            }
+            announcements.WriteToFile();
         }
     }
 }

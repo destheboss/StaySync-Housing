@@ -18,7 +18,7 @@ namespace housing
             manager = m;
             InitializeComponent();
             hideSubMenu();
-            openChildForm(new Announce());
+            openChildForm(new AdminAnnounce());
         }
         private Form activeForm = null;
         private void openChildForm(Form childForm)
@@ -56,7 +56,7 @@ namespace housing
 
         private void btnAnnounce_Click(object sender, EventArgs e)
         {
-            openChildForm(new Announce());
+            openChildForm(new AdminAnnounce());
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)

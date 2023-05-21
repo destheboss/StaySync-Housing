@@ -56,7 +56,6 @@ namespace housing
             }
             catch (IOException ex)
             {
-                MessageBox.Show("Error reading file: " + ex.Message);
             }
         }
 
@@ -68,7 +67,7 @@ namespace housing
                 if (index > -1)
                 {
                     index++;
-                    DialogResult result = RJMessageBox.Show(rules.GetRuleInfoBasedOnId(index));
+                    RJMessageBox.Show(rules.GetRuleInfoBasedOnId(index));
                 }
             }
         }
@@ -86,7 +85,7 @@ namespace housing
                 if (index > -1)
                 {
                     index++;
-                    DialogResult result = RJMessageBox.Show(rules.GetRuleInfoBasedOnId(index));
+                    RJMessageBox.Show(rules.GetRuleInfoBasedOnId(index));
 
                 }
             }
