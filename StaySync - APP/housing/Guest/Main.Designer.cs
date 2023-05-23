@@ -41,9 +41,9 @@
             this.panelBackground = new housing.CustomElements.RoundPanel();
             this.Forgotbtn = new housing.CustomElements.RoundButton();
             this.btnLogin = new housing.CustomElements.RoundButton();
-            this.tbxCodeInput = new housing.CustomElements.RoundTextBox();
             this.pictureQR = new System.Windows.Forms.PictureBox();
             this.lbWelcome = new housing.CustomElements.RoundLabel();
+            this.tbxCodeInput = new housing.CustomElements.RoundTextBox();
             this.panelSideMenu.SuspendLayout();
             this.panelInformation.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -265,6 +265,28 @@
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // pictureQR
+            // 
+            this.pictureQR.BackColor = System.Drawing.Color.Transparent;
+            this.pictureQR.Image = global::housing.Properties.Resources.QR;
+            this.pictureQR.Location = new System.Drawing.Point(412, 67);
+            this.pictureQR.Name = "pictureQR";
+            this.pictureQR.Size = new System.Drawing.Size(193, 191);
+            this.pictureQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureQR.TabIndex = 1;
+            this.pictureQR.TabStop = false;
+            // 
+            // lbWelcome
+            // 
+            this.lbWelcome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.lbWelcome.Font = new System.Drawing.Font("Cascadia Code", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWelcome.ForeColor = System.Drawing.Color.White;
+            this.lbWelcome.Location = new System.Drawing.Point(241, 282);
+            this.lbWelcome.Name = "lbWelcome";
+            this.lbWelcome.Size = new System.Drawing.Size(535, 46);
+            this.lbWelcome.TabIndex = 0;
+            this.lbWelcome.Text = "Hello Guest! Please scan the QR code to LOG IN!";
+            // 
             // tbxCodeInput
             // 
             this.tbxCodeInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
@@ -287,28 +309,6 @@
             this.tbxCodeInput.Texts = "";
             this.tbxCodeInput.UnderlinedStyle = true;
             this.tbxCodeInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxCodeInput_KeyPress);
-            // 
-            // pictureQR
-            // 
-            this.pictureQR.BackColor = System.Drawing.Color.Transparent;
-            this.pictureQR.Image = global::housing.Properties.Resources.QR;
-            this.pictureQR.Location = new System.Drawing.Point(412, 67);
-            this.pictureQR.Name = "pictureQR";
-            this.pictureQR.Size = new System.Drawing.Size(193, 191);
-            this.pictureQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureQR.TabIndex = 1;
-            this.pictureQR.TabStop = false;
-            // 
-            // lbWelcome
-            // 
-            this.lbWelcome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.lbWelcome.Font = new System.Drawing.Font("Cascadia Code", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWelcome.ForeColor = System.Drawing.Color.White;
-            this.lbWelcome.Location = new System.Drawing.Point(241, 282);
-            this.lbWelcome.Name = "lbWelcome";
-            this.lbWelcome.Size = new System.Drawing.Size(535, 46);
-            this.lbWelcome.TabIndex = 0;
-            this.lbWelcome.Text = "Hello Guest! Please scan the QR code to LOG IN!";
             // 
             // Main
             // 
@@ -349,11 +349,11 @@
         private System.Windows.Forms.Button btnInformation;
         private System.Windows.Forms.Button btnContact;
         private CustomElements.RoundPanel panelBackground;
-        private CustomElements.RoundTextBox tbxCodeInput;
         private System.Windows.Forms.PictureBox pictureQR;
         private CustomElements.RoundLabel lbWelcome;
         private CustomElements.RoundButton Forgotbtn;
         private CustomElements.RoundButton btnLogin;
+        private CustomElements.RoundTextBox tbxCodeInput;
     }
 }
 

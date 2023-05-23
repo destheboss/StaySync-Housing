@@ -33,12 +33,12 @@ namespace CustomMessageBox.Private
             this.labelCaption = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.panelButtons = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panelBody = new System.Windows.Forms.Panel();
             this.labelMessage = new System.Windows.Forms.Label();
             this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.panelTitleBar.SuspendLayout();
             this.panelButtons.SuspendLayout();
             this.panelBody.SuspendLayout();
@@ -96,20 +96,6 @@ namespace CustomMessageBox.Private
             this.panelButtons.Size = new System.Drawing.Size(346, 60);
             this.panelButtons.TabIndex = 1;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Cascadia Mono", 10F);
-            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Location = new System.Drawing.Point(231, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 35);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
@@ -155,7 +141,7 @@ namespace CustomMessageBox.Private
             this.labelMessage.AutoSize = true;
             this.labelMessage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelMessage.Font = new System.Drawing.Font("Cascadia Mono", 10F);
-            this.labelMessage.ForeColor = System.Drawing.Color.White;
+            this.labelMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.labelMessage.Location = new System.Drawing.Point(10, 10);
             this.labelMessage.MaximumSize = new System.Drawing.Size(600, 0);
             this.labelMessage.Name = "labelMessage";
@@ -172,6 +158,20 @@ namespace CustomMessageBox.Private
             this.pictureBoxIcon.Size = new System.Drawing.Size(100, 50);
             this.pictureBoxIcon.TabIndex = 2;
             this.pictureBoxIcon.TabStop = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Cascadia Mono", 10F);
+            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button3.Location = new System.Drawing.Point(231, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(100, 35);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // FormMessageBox
             // 
@@ -201,7 +201,6 @@ namespace CustomMessageBox.Private
 
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Panel panelButtons;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnClose;
@@ -209,6 +208,7 @@ namespace CustomMessageBox.Private
         private System.Windows.Forms.Label labelMessage;
         private System.Windows.Forms.PictureBox pictureBoxIcon;
         private System.Windows.Forms.Label labelCaption;
+        private System.Windows.Forms.Button button3;
     }
 }
 

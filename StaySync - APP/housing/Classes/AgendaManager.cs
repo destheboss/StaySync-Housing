@@ -60,9 +60,8 @@ namespace housing.Classes
                     sw.WriteLine($"{evt.ID};{evt.Day};{evt.Month};{evt.Year};{evt.Start};{evt.End};{evt.Title};{evt.Desc}");
                 }
             }
-            catch (IOException ex)
+            catch (IOException)
             {
-                // Handle exception
             }
             finally
             {
@@ -71,11 +70,6 @@ namespace housing.Classes
                     sw.Close();
                 }
             }
-        }
-
-        public void ClearAgendas()
-        {
-            allAgendas.Clear();
         }
     }
 }

@@ -97,25 +97,24 @@
             // 
             // roundPanelListBox1
             // 
-            this.roundPanelListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.roundPanelListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.roundPanelListBox1.Controls.Add(this.lbxEvents);
             this.roundPanelListBox1.Location = new System.Drawing.Point(38, 65);
             this.roundPanelListBox1.Name = "roundPanelListBox1";
-            this.roundPanelListBox1.Size = new System.Drawing.Size(682, 272);
+            this.roundPanelListBox1.Size = new System.Drawing.Size(689, 272);
             this.roundPanelListBox1.TabIndex = 16;
             // 
             // lbxEvents
             // 
             this.lbxEvents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.lbxEvents.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbxEvents.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxEvents.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbxEvents.ForeColor = System.Drawing.Color.White;
+            this.lbxEvents.Font = new System.Drawing.Font("Cascadia Code", 9.75F);
+            this.lbxEvents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.lbxEvents.FormattingEnabled = true;
-            this.lbxEvents.ItemHeight = 16;
-            this.lbxEvents.Location = new System.Drawing.Point(0, 0);
+            this.lbxEvents.ItemHeight = 17;
+            this.lbxEvents.Location = new System.Drawing.Point(-14, 9);
             this.lbxEvents.Name = "lbxEvents";
-            this.lbxEvents.Size = new System.Drawing.Size(682, 272);
+            this.lbxEvents.Size = new System.Drawing.Size(703, 255);
             this.lbxEvents.TabIndex = 10;
             this.lbxEvents.DoubleClick += new System.EventHandler(this.lbxEvents_DoubleClick);
             // 
@@ -129,14 +128,14 @@
             this.btnCreate.FlatAppearance.BorderSize = 0;
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreate.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.ForeColor = System.Drawing.Color.White;
+            this.btnCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreate.Location = new System.Drawing.Point(766, 62);
+            this.btnCreate.Location = new System.Drawing.Point(768, 62);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(121, 43);
             this.btnCreate.TabIndex = 11;
             this.btnCreate.Text = "Create";
-            this.btnCreate.TextColor = System.Drawing.Color.White;
+            this.btnCreate.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 

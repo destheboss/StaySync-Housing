@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,21 +29,37 @@ namespace housing.Classes
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            agenda.AddAgenda(Convert.ToInt32(cmbDay.Texts),
-                             Convert.ToInt32(cmbMonth.Texts),
-                             Convert.ToInt32(cmbYear.Texts),
-                             cmbStartTime.Texts,
-                             cmbEndTime.Texts,
-                             tbxTitle.Texts.ToUpper(),
-                             tbxDescription.Texts);
-            cmbDay.SelectedItem = null;
-            cmbMonth.SelectedItem = null;
-            cmbYear.SelectedItem = null;
-            cmbStartTime.SelectedItem = null;
-            cmbEndTime.SelectedItem = null;
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(tbxTitle.Texts) && !string.IsNullOrWhiteSpace(tbxDescription.Texts))
+                {
+                    agenda.AddAgenda(Convert.ToInt32(cmbDay.Texts),
+                                 Convert.ToInt32(cmbMonth.Texts),
+                                 Convert.ToInt32(cmbYear.Texts),
+                                 cmbStartTime.Texts,
+                                 cmbEndTime.Texts,
+                                 tbxTitle.Texts.ToUpper(),
+                                 tbxDescription.Texts);
+                    RJMessageBox.Show("The event was created.", "", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    RJMessageBox.Show("Please fill in the information first.", "", MessageBoxButtons.OK);
+                }
+            }
+            catch (Exception)
+            {
+
+                RJMessageBox.Show("Please fill in the information first.", "", MessageBoxButtons.OK);
+            }
+
+            cmbDay.SelectedItem = "XX";
+            cmbMonth.SelectedItem = "XX";
+            cmbYear.SelectedItem = "XXXX";
+            cmbStartTime.SelectedItem = "XX:XX";
+            cmbEndTime.SelectedItem = "XX:XX";
             tbxTitle.Texts = "";
             tbxDescription.Texts = "";
-            RJMessageBox.Show("The event was created.", "", MessageBoxButtons.OK);
             agenda.WriteToFile();
         }
     }

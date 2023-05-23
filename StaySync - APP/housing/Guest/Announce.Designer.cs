@@ -33,11 +33,11 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.roundPanel1 = new housing.CustomElements.RoundPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnInfo = new housing.CustomElements.RoundButton();
             this.roundPanelListBox1 = new housing.CustomElements.RoundPanelListBox();
             this.lbxAnnouncements = new System.Windows.Forms.ListBox();
             this.btnRefresh = new housing.CustomElements.RoundButton();
             this.tbxCodeInput = new housing.CustomElements.RoundTextBox();
-            this.btnInfo = new housing.CustomElements.RoundButton();
             this.panelTop.SuspendLayout();
             this.roundPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -100,9 +100,30 @@
             this.panel2.Size = new System.Drawing.Size(921, 396);
             this.panel2.TabIndex = 14;
             // 
+            // btnInfo
+            // 
+            this.btnInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.btnInfo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.btnInfo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.btnInfo.BorderRadius = 14;
+            this.btnInfo.BorderSize = 0;
+            this.btnInfo.FlatAppearance.BorderSize = 0;
+            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfo.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInfo.Location = new System.Drawing.Point(766, 117);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(121, 43);
+            this.btnInfo.TabIndex = 17;
+            this.btnInfo.Text = "More Info";
+            this.btnInfo.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnInfo.UseVisualStyleBackColor = false;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
             // roundPanelListBox1
             // 
-            this.roundPanelListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.roundPanelListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.roundPanelListBox1.Controls.Add(this.lbxAnnouncements);
             this.roundPanelListBox1.Location = new System.Drawing.Point(38, 65);
             this.roundPanelListBox1.Name = "roundPanelListBox1";
@@ -113,14 +134,13 @@
             // 
             this.lbxAnnouncements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.lbxAnnouncements.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbxAnnouncements.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxAnnouncements.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbxAnnouncements.ForeColor = System.Drawing.Color.White;
+            this.lbxAnnouncements.Font = new System.Drawing.Font("Cascadia Code", 9.75F);
+            this.lbxAnnouncements.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.lbxAnnouncements.FormattingEnabled = true;
-            this.lbxAnnouncements.ItemHeight = 16;
-            this.lbxAnnouncements.Location = new System.Drawing.Point(0, 0);
+            this.lbxAnnouncements.ItemHeight = 17;
+            this.lbxAnnouncements.Location = new System.Drawing.Point(-6, 7);
             this.lbxAnnouncements.Name = "lbxAnnouncements";
-            this.lbxAnnouncements.Size = new System.Drawing.Size(687, 272);
+            this.lbxAnnouncements.Size = new System.Drawing.Size(693, 255);
             this.lbxAnnouncements.TabIndex = 10;
             this.lbxAnnouncements.DoubleClick += new System.EventHandler(this.lbxAnnouncements_DoubleClick);
             // 
@@ -134,14 +154,14 @@
             this.btnRefresh.FlatAppearance.BorderSize = 0;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRefresh.Location = new System.Drawing.Point(766, 62);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(121, 43);
             this.btnRefresh.TabIndex = 11;
             this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.TextColor = System.Drawing.Color.White;
+            this.btnRefresh.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
@@ -166,27 +186,6 @@
             this.tbxCodeInput.TabIndex = 14;
             this.tbxCodeInput.Texts = "";
             this.tbxCodeInput.UnderlinedStyle = true;
-            // 
-            // btnInfo
-            // 
-            this.btnInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.btnInfo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.btnInfo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.btnInfo.BorderRadius = 14;
-            this.btnInfo.BorderSize = 0;
-            this.btnInfo.FlatAppearance.BorderSize = 0;
-            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfo.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInfo.ForeColor = System.Drawing.Color.White;
-            this.btnInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInfo.Location = new System.Drawing.Point(766, 117);
-            this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(121, 43);
-            this.btnInfo.TabIndex = 17;
-            this.btnInfo.Text = "More Info";
-            this.btnInfo.TextColor = System.Drawing.Color.White;
-            this.btnInfo.UseVisualStyleBackColor = false;
-            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // Announce
             // 

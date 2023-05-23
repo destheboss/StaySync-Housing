@@ -30,11 +30,19 @@ namespace housing
 
         private void RefreshRuleList()
         {
-            this.lbHouseRules.Items.Clear();
-            foreach (var rule in rules.GetRules())
+            try
             {
-                this.lbHouseRules.Items.Add(rule.GetHouseRule());
+                this.lbHouseRules.Items.Clear();
+                foreach (var rule in rules.GetRules())
+                {
+                    this.lbHouseRules.Items.Add(rule.GetHouseRule());
+                }
             }
+            catch (Exception)
+            {
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
+            }
+
         }
 
         public void LoadRules()
@@ -45,7 +53,6 @@ namespace housing
                 string[] files = Directory.GetFiles(desktopPath, "rules.txt", SearchOption.AllDirectories);
                 string fullPath = files.First();
 
-                // Read all lines once and store them in lines array.
                 string[] lines = File.ReadAllLines(fullPath);
 
                 foreach (string line in lines)
@@ -54,22 +61,35 @@ namespace housing
                     RefreshRuleList();
                 }
             }
-            catch (IOException ex)
+            catch (IOException)
             {
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
             }
         }
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
-            if (lbHouseRules.SelectedIndex > -1)
+            try
             {
-                int index = this.lbHouseRules.SelectedIndex;
-                if (index > -1)
+                if (lbHouseRules.SelectedIndex > -1)
                 {
-                    index++;
-                    RJMessageBox.Show(rules.GetRuleInfoBasedOnId(index));
+                    int index = this.lbHouseRules.SelectedIndex;
+                    if (index > -1)
+                    {
+                        index++;
+                        RJMessageBox.Show(rules.GetRuleInfoBasedOnId(index));
+                    }
+                }
+                else
+                {
+                    RJMessageBox.Show("Please select a rule first.", "", MessageBoxButtons.OK);
                 }
             }
+            catch (Exception)
+            {
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
+            }
+
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -79,15 +99,22 @@ namespace housing
 
         private void lbHouseRules_DoubleClick(object sender, EventArgs e)
         {
-            if (lbHouseRules.SelectedIndex > -1)
+            try
             {
-                int index = this.lbHouseRules.SelectedIndex;
-                if (index > -1)
+                if (lbHouseRules.SelectedIndex > -1)
                 {
-                    index++;
-                    RJMessageBox.Show(rules.GetRuleInfoBasedOnId(index));
+                    int index = this.lbHouseRules.SelectedIndex;
+                    if (index > -1)
+                    {
+                        index++;
+                        RJMessageBox.Show(rules.GetRuleInfoBasedOnId(index));
 
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
             }
         }
     }

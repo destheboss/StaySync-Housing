@@ -128,10 +128,10 @@
             this.tbxDescription.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.tbxDescription.PasswordChar = false;
             this.tbxDescription.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.tbxDescription.PlaceholderText = "";
+            this.tbxDescription.PlaceholderText = "< add a description >";
             this.tbxDescription.Size = new System.Drawing.Size(612, 107);
             this.tbxDescription.TabIndex = 44;
-            this.tbxDescription.Texts = "< add a description >";
+            this.tbxDescription.Texts = "";
             this.tbxDescription.UnderlinedStyle = false;
             // 
             // lbTitle
@@ -591,14 +591,14 @@
             this.btnCreate.FlatAppearance.BorderSize = 0;
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreate.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.ForeColor = System.Drawing.Color.White;
+            this.btnCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCreate.Location = new System.Drawing.Point(257, 394);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(140, 43);
             this.btnCreate.TabIndex = 11;
             this.btnCreate.Text = "Create";
-            this.btnCreate.TextColor = System.Drawing.Color.White;
+            this.btnCreate.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 

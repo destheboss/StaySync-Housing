@@ -26,11 +26,19 @@ namespace housing
 
         private void RefreshAgendaList()
         {
-            lbxEvents.Items.Clear();
-            foreach (var agenda in manager.GetAllAgendas())
+            try
             {
-                lbxEvents.Items.Add(agenda.GetAgendaInfo());
+                lbxEvents.Items.Clear();
+                foreach (var agenda in manager.GetAllAgendas())
+                {
+                    lbxEvents.Items.Add(agenda.GetAgendaInfo());
+                }
             }
+            catch (Exception)
+            {
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
+            }
+
         }
 
         public void LoadAgendas()
@@ -46,7 +54,7 @@ namespace housing
                 foreach (string line in lines)
                 {
                     string[] agendaData = line.Split(';');
-                    if (agendaData.Length >= 8) // ensure all necessary data is present
+                    if (agendaData.Length >= 8)
                     {
                         int day, month, year;
                         if (int.TryParse(agendaData[1], out day) &&
@@ -67,17 +75,25 @@ namespace housing
                 }
                 RefreshAgendaList();
             }
-            catch (IOException ex)
+            catch (IOException)
             {
-                RJMessageBox.Show("Error reading file: " + ex.Message);
+                RJMessageBox.Show("The file could not be read.");
             }
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            CreateEvent addAgenda = new CreateEvent(manager);
-            addAgenda.Show();
-            addAgenda.FormClosed += new FormClosedEventHandler(CreateEvent_FormClosed);
+            try
+            {
+                CreateEvent addAgenda = new CreateEvent(manager);
+                addAgenda.Show();
+                addAgenda.FormClosed += new FormClosedEventHandler(CreateEvent_FormClosed);
+            }
+            catch (Exception)
+            {
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
+            }
+
         }
 
         private void CreateEvent_FormClosed(object sender, FormClosedEventArgs e)
@@ -87,25 +103,32 @@ namespace housing
 
         private void lbxEvents_DoubleClick(object sender, EventArgs e)
         {
-            if (lbxEvents.SelectedItem != null)
+            try
             {
-                string selectedInfo = lbxEvents.SelectedItem.ToString();
-                if (int.TryParse(selectedInfo.Split('-')[0], out int selectedId))
+                if (lbxEvents.SelectedItem != null)
                 {
-                    Agenda selectedAgenda = manager.GetAgendaBasedOnId(selectedId);
-                    if (selectedAgenda != null)
+                    string selectedInfo = lbxEvents.SelectedItem.ToString();
+                    if (int.TryParse(selectedInfo.Split('╠')[0], out int selectedId))
                     {
-                        RJMessageBox.Show(selectedAgenda.DescriptionList);
+                        Agenda selectedAgenda = manager.GetAgendaBasedOnId(selectedId);
+                        if (selectedAgenda != null)
+                        {
+                            RJMessageBox.Show(selectedAgenda.DescriptionList);
+                        }
+                        else
+                        {
+                            RJMessageBox.Show("Selected agenda not found.");
+                        }
                     }
                     else
                     {
-                        RJMessageBox.Show("Selected agenda not found.");
+                        RJMessageBox.Show("Could not parse selected item.");
                     }
                 }
-                else
-                {
-                    RJMessageBox.Show("Could not parse selected item.");
-                }
+            }
+            catch (Exception)
+            {
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
             }
         }
 

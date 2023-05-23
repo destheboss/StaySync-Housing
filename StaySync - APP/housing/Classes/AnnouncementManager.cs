@@ -69,16 +69,17 @@ namespace housing.Classes
 
                     foreach (Announcement a in AllAnnouncements)
                     {
-                        sw.WriteLine(a.GetAnnouncementMessage());
+                        sw.WriteLine(a.WriteAnnouncementMessage());
                     }
                 }
                 else
                 {
-                    DialogResult result = RJMessageBox.Show("The announcements were not found on desktop.");
+                    DialogResult result = RJMessageBox.Show("The file could not be read.");
                 }
             }
-            catch (IOException ex)
+            catch (IOException)
             {
+                RJMessageBox.Show("The file could not be read.", "", MessageBoxButtons.OK);
             }
             finally
             {

@@ -107,18 +107,18 @@
             this.tbxMessage.BorderRadius = 23;
             this.tbxMessage.BorderSize = 2;
             this.tbxMessage.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxMessage.ForeColor = System.Drawing.Color.White;
+            this.tbxMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.tbxMessage.Location = new System.Drawing.Point(20, 32);
             this.tbxMessage.Margin = new System.Windows.Forms.Padding(4);
             this.tbxMessage.Multiline = true;
             this.tbxMessage.Name = "tbxMessage";
             this.tbxMessage.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.tbxMessage.PasswordChar = false;
-            this.tbxMessage.PlaceholderColor = System.Drawing.Color.White;
-            this.tbxMessage.PlaceholderText = "";
+            this.tbxMessage.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.tbxMessage.PlaceholderText = "< add a rule >";
             this.tbxMessage.Size = new System.Drawing.Size(386, 272);
             this.tbxMessage.TabIndex = 28;
-            this.tbxMessage.Texts = "< add a rule >";
+            this.tbxMessage.Texts = "";
             this.tbxMessage.UnderlinedStyle = true;
             // 
             // btnDelete
@@ -131,20 +131,20 @@
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.Location = new System.Drawing.Point(441, 322);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(121, 43);
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.TextColor = System.Drawing.Color.White;
+            this.btnDelete.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // roundPanelListBox1
             // 
-            this.roundPanelListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.roundPanelListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.roundPanelListBox1.Controls.Add(this.lbxRules);
             this.roundPanelListBox1.Location = new System.Drawing.Point(441, 32);
             this.roundPanelListBox1.Name = "roundPanelListBox1";
@@ -155,14 +155,13 @@
             // 
             this.lbxRules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.lbxRules.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbxRules.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxRules.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbxRules.ForeColor = System.Drawing.Color.White;
+            this.lbxRules.Font = new System.Drawing.Font("Cascadia Code", 9.75F);
+            this.lbxRules.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.lbxRules.FormattingEnabled = true;
-            this.lbxRules.ItemHeight = 16;
-            this.lbxRules.Location = new System.Drawing.Point(0, 0);
+            this.lbxRules.ItemHeight = 17;
+            this.lbxRules.Location = new System.Drawing.Point(-7, 7);
             this.lbxRules.Name = "lbxRules";
-            this.lbxRules.Size = new System.Drawing.Size(457, 272);
+            this.lbxRules.Size = new System.Drawing.Size(464, 255);
             this.lbxRules.TabIndex = 10;
             // 
             // btnCreate
@@ -175,14 +174,14 @@
             this.btnCreate.FlatAppearance.BorderSize = 0;
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreate.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.ForeColor = System.Drawing.Color.White;
+            this.btnCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCreate.Location = new System.Drawing.Point(20, 322);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(121, 43);
             this.btnCreate.TabIndex = 11;
             this.btnCreate.Text = "Create";
-            this.btnCreate.TextColor = System.Drawing.Color.White;
+            this.btnCreate.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 

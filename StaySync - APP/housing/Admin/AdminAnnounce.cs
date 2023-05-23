@@ -25,11 +25,19 @@ namespace housing
 
         private void RefreshAnnouncementList()
         {
-            this.lbxAnnounce.Items.Clear();
-            foreach (var announcement in announcements.GetAnnouncements())
+            try
             {
-                this.lbxAnnounce.Items.Add(announcement.GetAnnouncement());
+                this.lbxAnnounce.Items.Clear();
+                foreach (var announcement in announcements.GetAnnouncements())
+                {
+                    this.lbxAnnounce.Items.Add(announcement.GetAnnouncement());
+                }
             }
+            catch (Exception)
+            {
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
+            }
+
         }
 
         public void LoadAnnouncements()
@@ -40,7 +48,6 @@ namespace housing
                 string[] files = Directory.GetFiles(desktopPath, "announcement.txt", SearchOption.AllDirectories);
                 string fullPath = files.First();
 
-                // Read all lines once and store them in lines array.
                 string[] lines = File.ReadAllLines(fullPath);
 
                 foreach (string line in lines)
@@ -49,40 +56,60 @@ namespace housing
                     RefreshAnnouncementList();
                 }
             }
-            catch (IOException ex)
+            catch (IOException)
             {
-                RJMessageBox.Show("Error reading file: " + ex.Message);
+                RJMessageBox.Show("The file could not be read.");
             }
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            string announce = tbxMessage.Texts;
-            if (!String.IsNullOrEmpty(announce))
+            try
             {
-                announcements.AddAnnouncement(announce);
-                RefreshAnnouncementList();
-                tbxMessage.Texts = "";
-                RJMessageBox.Show("Announcement added.", "", MessageBoxButtons.OK);
+                string announce = tbxMessage.Texts;
+                if (!String.IsNullOrEmpty(announce))
+                {
+                    announcements.AddAnnouncement(announce);
+                    RefreshAnnouncementList();
+                    tbxMessage.Texts = "";
+                    RJMessageBox.Show("Announcement added.", "", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    RJMessageBox.Show("Please supply a valid message.", "", MessageBoxButtons.OK);
+                }
             }
-            else
+            catch (Exception)
             {
-                RJMessageBox.Show("Please supply a valid message.", "", MessageBoxButtons.OK);
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
             }
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (lbxAnnounce.SelectedIndex > -1)
+            try
             {
-                int index = this.lbxAnnounce.SelectedIndex;
+                if (lbxAnnounce.SelectedIndex > -1)
                 {
-                    index++;
-                    announcements.DeleteAnnouncement(index);
-                    RJMessageBox.Show("Announcement deleted.", "", MessageBoxButtons.OK);
-                    RefreshAnnouncementList();
+                    int index = this.lbxAnnounce.SelectedIndex;
+                    {
+                        index++;
+                        announcements.DeleteAnnouncement(index);
+                        RJMessageBox.Show("Announcement deleted.", "", MessageBoxButtons.OK);
+                        RefreshAnnouncementList();
+                    }
+                }
+                else
+                {
+                    RJMessageBox.Show("Please select an announcement first.", "", MessageBoxButtons.OK);
                 }
             }
+            catch (Exception)
+            {
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
+            }
+
         }
 
         private void AdminAnnounce_Leave(object sender, EventArgs e)

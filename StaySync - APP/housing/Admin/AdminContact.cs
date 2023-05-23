@@ -24,21 +24,28 @@ namespace housing
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            contact.DeleteContacts();
-
-            string phone = tbxPhone.Texts;
-            string wapp = tbxWapp.Texts;
-            string email = tbxEmail.Texts;
-            string address = tbxAddress.Texts;
-
-            if (string.IsNullOrWhiteSpace(phone) && string.IsNullOrWhiteSpace(wapp) && string.IsNullOrWhiteSpace(email) && string.IsNullOrWhiteSpace(address))
-            { RJMessageBox.Show("Please input at least one detail."); }
-            else
+            try
             {
-                contact.AddContact(phone, wapp, email, address);
-                RJMessageBox.Show("Changes were made.");
+                contact.DeleteContacts();
+
+                string phone = tbxPhone.Texts;
+                string wapp = tbxWapp.Texts;
+                string email = tbxEmail.Texts;
+                string address = tbxAddress.Texts;
+
+                if (string.IsNullOrWhiteSpace(phone) && string.IsNullOrWhiteSpace(wapp) && string.IsNullOrWhiteSpace(email) && string.IsNullOrWhiteSpace(address))
+                { RJMessageBox.Show("Please input at least one detail."); }
+                else
+                {
+                    contact.AddContact(phone, wapp, email, address);
+                    RJMessageBox.Show("Changes were made.");
+                }
+                contact.Write();
             }
-            contact.Write();
+            catch (Exception)
+            {
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
+            }
         }
     }
 }

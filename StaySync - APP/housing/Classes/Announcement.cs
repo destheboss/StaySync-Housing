@@ -13,10 +13,14 @@
 
         public string GetAnnouncement()
         {
-            return $"{this.ID} - {this.Message}";
+            return $"  ■ {this.Message}";
         }
 
         public string GetAnnouncementMessage()
+        {
+            return $"▶ {this.Message} ◀";
+        }
+        public string WriteAnnouncementMessage()
         {
             return $"{this.Message}";
         }

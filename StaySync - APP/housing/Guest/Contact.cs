@@ -61,7 +61,7 @@ namespace housing
             }
             else
             {
-                RJMessageBox.Show("The contact file was not found on desktop.");
+                RJMessageBox.Show("The file could not be read.");
             }
         }
     }

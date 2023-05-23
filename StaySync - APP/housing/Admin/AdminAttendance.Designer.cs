@@ -122,7 +122,7 @@
             this.btnAbsent.Name = "btnAbsent";
             this.btnAbsent.Size = new System.Drawing.Size(118, 43);
             this.btnAbsent.TabIndex = 18;
-            this.btnAbsent.Text = "Absent";
+            this.btnAbsent.Text = "Absent ❎";
             this.btnAbsent.TextColor = System.Drawing.Color.White;
             this.btnAbsent.UseVisualStyleBackColor = false;
             this.btnAbsent.Click += new System.EventHandler(this.btnAbsent_Click);
@@ -212,7 +212,7 @@
             this.btnPresent.Name = "btnPresent";
             this.btnPresent.Size = new System.Drawing.Size(115, 43);
             this.btnPresent.TabIndex = 11;
-            this.btnPresent.Text = "Present";
+            this.btnPresent.Text = "Present ☑";
             this.btnPresent.TextColor = System.Drawing.Color.White;
             this.btnPresent.UseVisualStyleBackColor = false;
             this.btnPresent.Click += new System.EventHandler(this.btnPresent_Click);

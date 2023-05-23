@@ -66,10 +66,10 @@ namespace housing.Classes
                 sw = new StreamWriter(fullPath, false);
                 foreach (houserule rule in houserules)
                 {
-                    sw.WriteLine(rule.GetHouseRuleMessage());
+                    sw.WriteLine(rule.WriteHouseRuleMessage());
                 }
             }
-            catch (IOException ex)
+            catch (IOException)
             { }
             finally
             { if (sw != null) { sw.Close(); } }

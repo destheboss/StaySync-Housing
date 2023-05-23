@@ -108,20 +108,20 @@
             this.btnInfo.FlatAppearance.BorderSize = 0;
             this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInfo.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInfo.ForeColor = System.Drawing.Color.White;
+            this.btnInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInfo.Location = new System.Drawing.Point(766, 117);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Size = new System.Drawing.Size(121, 43);
             this.btnInfo.TabIndex = 17;
             this.btnInfo.Text = "More Info";
-            this.btnInfo.TextColor = System.Drawing.Color.White;
+            this.btnInfo.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnInfo.UseVisualStyleBackColor = false;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // roundPanelListBox1
             // 
-            this.roundPanelListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.roundPanelListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.roundPanelListBox1.Controls.Add(this.lbHouseRules);
             this.roundPanelListBox1.Location = new System.Drawing.Point(38, 65);
             this.roundPanelListBox1.Name = "roundPanelListBox1";
@@ -132,13 +132,13 @@
             // 
             this.lbHouseRules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.lbHouseRules.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbHouseRules.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouseRules.ForeColor = System.Drawing.Color.White;
+            this.lbHouseRules.Font = new System.Drawing.Font("Cascadia Code", 9.75F);
+            this.lbHouseRules.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.lbHouseRules.FormattingEnabled = true;
-            this.lbHouseRules.ItemHeight = 16;
-            this.lbHouseRules.Location = new System.Drawing.Point(0, 0);
+            this.lbHouseRules.ItemHeight = 17;
+            this.lbHouseRules.Location = new System.Drawing.Point(-6, 8);
             this.lbHouseRules.Name = "lbHouseRules";
-            this.lbHouseRules.Size = new System.Drawing.Size(687, 272);
+            this.lbHouseRules.Size = new System.Drawing.Size(693, 255);
             this.lbHouseRules.TabIndex = 10;
             this.lbHouseRules.DoubleClick += new System.EventHandler(this.lbHouseRules_DoubleClick);
             // 
@@ -152,14 +152,14 @@
             this.btnRefresh.FlatAppearance.BorderSize = 0;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRefresh.Location = new System.Drawing.Point(766, 62);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(121, 43);
             this.btnRefresh.TabIndex = 11;
             this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.TextColor = System.Drawing.Color.White;
+            this.btnRefresh.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 

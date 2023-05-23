@@ -10,12 +10,6 @@ namespace housing.Classes
     {
         public int ID { get; set; }
         public string HouseRule { get; set; }
-
-        public houserule(string houserule)
-        {
-            this.HouseRule = houserule;
-        }
-
         public houserule(int id, string houserule)
         {
             this.ID = id;
@@ -24,10 +18,15 @@ namespace housing.Classes
 
         public string GetHouseRule()
         {
-            return $"{this.ID} - {this.HouseRule}";
+            return $"  ■ {this.HouseRule}";
         }
 
         public string GetHouseRuleMessage()
+        {
+            return $"▶ {this.HouseRule} ◀";
+        }
+
+        public string WriteHouseRuleMessage()
         {
             return $"{this.HouseRule}";
         }

@@ -281,14 +281,14 @@
             this.btnSubmit.FlatAppearance.BorderSize = 0;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnSubmit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSubmit.Location = new System.Drawing.Point(766, 290);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(121, 43);
             this.btnSubmit.TabIndex = 18;
             this.btnSubmit.Text = "Submit";
-            this.btnSubmit.TextColor = System.Drawing.Color.White;
+            this.btnSubmit.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnSubmit.UseVisualStyleBackColor = false;
             // 
             // btnViewComplaints
@@ -301,14 +301,14 @@
             this.btnViewComplaints.FlatAppearance.BorderSize = 0;
             this.btnViewComplaints.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewComplaints.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewComplaints.ForeColor = System.Drawing.Color.White;
+            this.btnViewComplaints.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnViewComplaints.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewComplaints.Location = new System.Drawing.Point(294, 226);
             this.btnViewComplaints.Name = "btnViewComplaints";
             this.btnViewComplaints.Size = new System.Drawing.Size(172, 43);
             this.btnViewComplaints.TabIndex = 11;
             this.btnViewComplaints.Text = "View Complaints";
-            this.btnViewComplaints.TextColor = System.Drawing.Color.White;
+            this.btnViewComplaints.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnViewComplaints.UseVisualStyleBackColor = false;
             // 
             // TenantComplaints

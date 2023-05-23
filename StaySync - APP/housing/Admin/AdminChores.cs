@@ -94,7 +94,7 @@ namespace housing
             try
             {
                 var selectedChoreInfo = (string)lbxChores.SelectedItem;
-                var separatorIndex = selectedChoreInfo.IndexOf('|');
+                var separatorIndex = selectedChoreInfo.IndexOf('╠');
                 if (separatorIndex >= 0)
                 {
                     var choreId = int.Parse(selectedChoreInfo.Substring(0, separatorIndex).Trim()) - 1;
@@ -109,7 +109,7 @@ namespace housing
             }
             catch (Exception)
             {
-                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
+                RJMessageBox.Show("Please select a chore first.", "", MessageBoxButtons.OK);
             }
         }
 
@@ -139,7 +139,7 @@ namespace housing
                 {
                     string selectedChoreInfo = lbxChores.SelectedItem.ToString();
 
-                    int separatorIndex = selectedChoreInfo.IndexOf('|');
+                    int separatorIndex = selectedChoreInfo.IndexOf('╠');
                     if (separatorIndex >= 0)
                     {
                         int choreId;
@@ -151,14 +151,14 @@ namespace housing
 
                             if (selectedChore != null)
                             {
-                                RJMessageBox.Show($"{selectedChore.GetChoreInfoBasedOnId()} - Status: {(selectedChore.IsCompleted ? "Completed" : "Not Completed")}", "", MessageBoxButtons.OK);
+                                RJMessageBox.Show($" ▶ {(selectedChore.IsCompleted ? "Completed" : "Not Completed")} ◀", $"{selectedChore.GetChoreInfoBasedOnId()}", MessageBoxButtons.OK);
                                 return;
                             }
                         }
                     }
                 }
 
-                RJMessageBox.Show("Invalid chore selected.", "", MessageBoxButtons.OK);
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
             }
             catch (Exception)
             {

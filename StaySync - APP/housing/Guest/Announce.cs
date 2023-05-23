@@ -46,7 +46,6 @@ namespace housing
                 string[] files = Directory.GetFiles(desktopPath, "announcement.txt", SearchOption.AllDirectories);
                 string fullPath = files.First();
 
-                // Read all lines once and store them in lines array.
                 string[] lines = File.ReadAllLines(fullPath);
 
                 foreach (string line in lines)
@@ -55,9 +54,9 @@ namespace housing
                     RefreshAnnouncementList();
                 }
             }
-            catch (IOException ex)
+            catch (IOException)
             {
-                RJMessageBox.Show("Error reading file: " + ex.Message);
+                RJMessageBox.Show("The file could not be read");
             }
         }
 
@@ -71,6 +70,10 @@ namespace housing
                     index++;
                     RJMessageBox.Show(announcements.GetAnnouncementMessageBasedOnId(index));
                 }
+            }
+            else
+            {
+                RJMessageBox.Show("Please select an announcement first.", "", MessageBoxButtons.OK);
             }
         }
 

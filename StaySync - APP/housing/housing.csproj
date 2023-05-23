@@ -269,17 +269,17 @@
     <EmbeddedResource Include="Admin\AdminAnnounce.resx">
       <DependentUpon>AdminAnnounce.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\AdminRules.resx">
-      <DependentUpon>AdminRules.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminChores.resx">
       <DependentUpon>AdminChores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\AdminMain.resx">
-      <DependentUpon>AdminMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminContact.resx">
       <DependentUpon>AdminContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminRules.resx">
+      <DependentUpon>AdminRules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminMain.resx">
+      <DependentUpon>AdminMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminStock.resx">
       <DependentUpon>AdminStock.cs</DependentUpon>

@@ -19,7 +19,6 @@ namespace housing.Classes
         public string Description { get; set; }
         public string DescriptionList { get; set; }
 
-        // Constructor for creating the Agenda
         public Agenda(int id, int day, int month, int year, string start, string end, string title, string desc)
         {
             this.ID = id;
@@ -30,30 +29,13 @@ namespace housing.Classes
             this.End = end;
             this.Title = title;
             this.Desc = desc;
-            this.DescriptionList = $"{title}: {desc} \nDate: {day}-{month}-{year} \nStart: {start} | End: {end}";
-            this.Description = $"{title}: {desc} | Date: {day}-{month}-{year} | Start: {start} | End: {end}";
+            this.DescriptionList = $"▶ {desc} ◀ \nDate: {day}/{month}/{year} \nStart: {start} ⦿ End: {end}";
+            this.Description = $"{day}-{month}-{year} ■ {title}";
         }
 
-        // Default Constructor
-        public Agenda() { }
-
-        // Method for displaying info
         public string GetAgendaInfo()
         {
-            return $"{ID} - {Description}";
-        }
-
-        // Method for getting just the message
-        public string GetAgendaMessage()
-        {
-            if (this.Description.Contains(":"))
-            {
-                return this.Description.Split(':')[1].Trim();
-            }
-            else
-            {
-                return this.Description;
-            }
+            return $"{ID}  ╠ {Description}";
         }
     }
 }

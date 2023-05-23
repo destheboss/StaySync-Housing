@@ -33,7 +33,7 @@ namespace housing.Classes
         {
             string status = IsCompleted ? "Completed" : "Not Completed";
             string personInfo = AssignedPerson == null ? "No one" : GetAssignedPersonFullName();
-            return $"{ID + 1} | {ChoreName} - {status} - Assigned to: {personInfo}";
+            return $"{ID + 1}  ╠ {status} ■ {ChoreName} ⦿ {personInfo}  ";
         }
     }
 }

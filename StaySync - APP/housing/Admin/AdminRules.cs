@@ -25,11 +25,19 @@ namespace housing
 
         private void RefreshRuleList()
         {
-            this.lbxRules.Items.Clear();
-            foreach (var rule in rules.GetRules())
+            try
             {
-                this.lbxRules.Items.Add(rule.GetHouseRule());
+                this.lbxRules.Items.Clear();
+                foreach (var rule in rules.GetRules())
+                {
+                    this.lbxRules.Items.Add(rule.GetHouseRule());
+                }
             }
+            catch (Exception)
+            {
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
+            }
+
         }
 
         public void LoadRules()
@@ -40,7 +48,6 @@ namespace housing
                 string[] files = Directory.GetFiles(desktopPath, "rules.txt", SearchOption.AllDirectories);
                 string fullPath = files.First();
 
-                // Read all lines once and store them in lines array.
                 string[] lines = File.ReadAllLines(fullPath);
 
                 foreach (string line in lines)
@@ -49,40 +56,60 @@ namespace housing
                     RefreshRuleList();
                 }
             }
-            catch (IOException ex)
+            catch (IOException)
             {
-                RJMessageBox.Show("Error reading file: " + ex.Message);
+                RJMessageBox.Show("The file could not be read.");
             }
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            string rule = tbxMessage.Texts;
-            if (!String.IsNullOrEmpty(rule))
+            try
             {
-                rules.AddHouseRule(rule);
-                RefreshRuleList();
-                tbxMessage.Texts = "";
-                RJMessageBox.Show("Rule added.", "", MessageBoxButtons.OK);
+                string rule = tbxMessage.Texts;
+                if (!String.IsNullOrEmpty(rule))
+                {
+                    rules.AddHouseRule(rule);
+                    RefreshRuleList();
+                    tbxMessage.Texts = "";
+                    RJMessageBox.Show("Rule added.", "", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    RJMessageBox.Show("Please supply a valid message.", "", MessageBoxButtons.OK);
+                }
             }
-            else
+            catch (Exception)
             {
-                RJMessageBox.Show("Please supply a valid message.", "", MessageBoxButtons.OK);
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
             }
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (lbxRules.SelectedIndex > -1)
+            try
             {
-                int index = this.lbxRules.SelectedIndex;
+                if (lbxRules.SelectedIndex > -1)
                 {
-                    index++;
-                    rules.DeleteRule(index);
-                    RJMessageBox.Show("Rule deleted.", "", MessageBoxButtons.OK);
-                    RefreshRuleList();
+                    int index = this.lbxRules.SelectedIndex;
+                    {
+                        index++;
+                        rules.DeleteRule(index);
+                        RJMessageBox.Show("Rule deleted.", "", MessageBoxButtons.OK);
+                        RefreshRuleList();
+                    }
+                }
+                else
+                {
+                    RJMessageBox.Show("Please select a rule first.", "", MessageBoxButtons.OK);
                 }
             }
+            catch (Exception)
+            {
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
+            }
+
         }
 
         private void AdminRules_Leave(object sender, EventArgs e)

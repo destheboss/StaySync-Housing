@@ -232,17 +232,17 @@ public partial class FormMessageBox : Form
         {
             case MessageBoxDefaultButton.Button1://Focus button 1
                 button1.Select();
-                button1.ForeColor = Color.White;
+                button1.ForeColor = Color.Black;
                 button1.Font = new Font(button1.Font, FontStyle.Regular);
                 break;
             case MessageBoxDefaultButton.Button2://Focus button 2
                 button2.Select();
-                button2.ForeColor = Color.White;
+                button2.ForeColor = Color.Black;
                 button2.Font = new Font(button2.Font, FontStyle.Regular);
                 break;
             case MessageBoxDefaultButton.Button3://Focus button 3
                 button3.Select();
-                button3.ForeColor = Color.White;
+                button3.ForeColor = Color.Black;
                 button3.Font = new Font(button3.Font, FontStyle.Regular);
                 break;
         }
