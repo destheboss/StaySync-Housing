@@ -74,32 +74,39 @@ namespace housing
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (this._manager.IsTheInputAcceptable(tbxCodeInput.Texts))
+            try
             {
-                if (this._manager.IsThePersonInTheCSV(Convert.ToInt32(tbxCodeInput.Texts)))
+                if (this._manager.IsTheInputAcceptable(tbxCodeInput.Texts))
                 {
-                    if (this._manager.IsThePersonAdmin())
+                    if (this._manager.IsThePersonInTheCSV(Convert.ToInt32(tbxCodeInput.Texts)))
                     {
-                        AdminMain windowOpen = new AdminMain(this._manager);
-                        this.Hide();
-                        windowOpen.ShowDialog();
-                        this.Close();
+                        if (this._manager.IsThePersonAdmin())
+                        {
+                            AdminMain windowOpen = new AdminMain(this._manager);
+                            this.Hide();
+                            windowOpen.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            TenantMain windowOpen = new TenantMain(this._manager);
+                            this.Hide();
+                            windowOpen.ShowDialog();
+                            this.Close();
+                        }
                     }
                     else
                     {
-                        TenantMain windowOpen = new TenantMain(this._manager);
-                        this.Hide();
-                        windowOpen.ShowDialog();
-                        this.Close();
+                        RJMessageBox.Show("Incorrect password", "", MessageBoxButtons.OK);
+                        return;
                     }
                 }
                 else
                 {
-                    RJMessageBox.Show("Incorrect password", "", MessageBoxButtons.OK);
-                    return;
+                    RJMessageBox.Show("Input a correct password", "", MessageBoxButtons.OK);
                 }
             }
-            else
+            catch (Exception)
             {
                 RJMessageBox.Show("Input a correct password", "", MessageBoxButtons.OK);
             }

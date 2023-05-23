@@ -35,9 +35,10 @@
             this.btnRefresh = new housing.CustomElements.RoundButton();
             this.roundPanelListBox1 = new housing.CustomElements.RoundPanelListBox();
             this.dgvChores = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChoreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AssignedPerson = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFinish = new housing.CustomElements.RoundButton();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTop.SuspendLayout();
             this.roundPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -119,6 +120,7 @@
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.TextColor = System.Drawing.Color.White;
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // roundPanelListBox1
             // 
@@ -126,7 +128,7 @@
             this.roundPanelListBox1.Controls.Add(this.dgvChores);
             this.roundPanelListBox1.Location = new System.Drawing.Point(38, 65);
             this.roundPanelListBox1.Name = "roundPanelListBox1";
-            this.roundPanelListBox1.Size = new System.Drawing.Size(565, 272);
+            this.roundPanelListBox1.Size = new System.Drawing.Size(682, 272);
             this.roundPanelListBox1.TabIndex = 16;
             // 
             // dgvChores
@@ -137,8 +139,9 @@
             this.dgvChores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvChores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnName,
-            this.ColumnStatus});
+            this.ID,
+            this.ChoreName,
+            this.AssignedPerson});
             this.dgvChores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvChores.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.dgvChores.Location = new System.Drawing.Point(0, 0);
@@ -146,8 +149,33 @@
             this.dgvChores.ReadOnly = true;
             this.dgvChores.RowHeadersWidth = 62;
             this.dgvChores.RowTemplate.Height = 28;
-            this.dgvChores.Size = new System.Drawing.Size(565, 272);
+            this.dgvChores.Size = new System.Drawing.Size(682, 272);
             this.dgvChores.TabIndex = 2;
+            this.dgvChores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChores_CellClick);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // ChoreName
+            // 
+            this.ChoreName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ChoreName.HeaderText = "Chore";
+            this.ChoreName.MinimumWidth = 8;
+            this.ChoreName.Name = "ChoreName";
+            this.ChoreName.ReadOnly = true;
+            // 
+            // AssignedPerson
+            // 
+            this.AssignedPerson.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AssignedPerson.HeaderText = "Assigned to:";
+            this.AssignedPerson.MinimumWidth = 8;
+            this.AssignedPerson.Name = "AssignedPerson";
+            this.AssignedPerson.ReadOnly = true;
+            this.AssignedPerson.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // btnFinish
             // 
@@ -168,23 +196,7 @@
             this.btnFinish.Text = "Finish Chore";
             this.btnFinish.TextColor = System.Drawing.Color.White;
             this.btnFinish.UseVisualStyleBackColor = false;
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnName.HeaderText = "Chore";
-            this.ColumnName.MinimumWidth = 8;
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.ReadOnly = true;
-            // 
-            // ColumnStatus
-            // 
-            this.ColumnStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnStatus.HeaderText = "Assigned to:";
-            this.ColumnStatus.MinimumWidth = 8;
-            this.ColumnStatus.Name = "ColumnStatus";
-            this.ColumnStatus.ReadOnly = true;
-            this.ColumnStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // TenantChores
             // 
@@ -201,6 +213,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GuestAttendance";
+            this.Load += new System.EventHandler(this.TenantChores_Load);
             this.panelTop.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -220,7 +233,8 @@
         private CustomElements.RoundPanelListBox roundPanelListBox1;
         private System.Windows.Forms.DataGridView dgvChores;
         private CustomElements.RoundButton btnFinish;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChoreName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AssignedPerson;
     }
 }

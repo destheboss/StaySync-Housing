@@ -70,7 +70,7 @@ namespace housing
                 }
                 else
                 {
-                    var result = RJMessageBox.Show("The tenant file was not found on desktop.", "", MessageBoxButtons.OK);
+                    RJMessageBox.Show("The file could not be read.", "", MessageBoxButtons.OK);
                 }
             }
         }
@@ -87,7 +87,7 @@ namespace housing
                 if (p.DoesTheCodeMatch(code))
                 {
                     p.CreateUser();
-                    var result = RJMessageBox.Show("Welcome back!", "", MessageBoxButtons.OK);
+                    RJMessageBox.Show("Welcome back!", "", MessageBoxButtons.OK);
                     return true;
                 }
             }
@@ -98,6 +98,33 @@ namespace housing
         {
             User User = new User();
             return User.IsItAdmin();
+        }
+
+        public Person GetPersonByFullName(string firstName, string lastName)
+        {
+            return _persons.FirstOrDefault(person =>
+                person.FirstName.Trim().ToLower() == firstName.Trim().ToLower() &&
+                person.LastName.Trim().ToLower() == lastName.Trim().ToLower()
+            );
+        }
+
+        public List<Person> GetPersons()
+        {
+            return _persons;
+        }
+        public Person GetRandomPerson()
+        {
+            var tenants = _persons.Where(p => p.IsAdmin.ToLower() == "no").ToList();
+            if (tenants.Any())
+            {
+                Random rand = new Random();
+                int index = rand.Next(tenants.Count);
+                return tenants[index];
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

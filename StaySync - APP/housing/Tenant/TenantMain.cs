@@ -80,12 +80,12 @@ namespace housing
 
         private void btnEqualizer_Click(object sender, EventArgs e)
         {
-            openChildForm(new TenantAttendance());
+            openChildForm(new TenantAttendance(manager));
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            openChildForm(new TenantChores());
+            openChildForm(new TenantChores(manager));
         }
 
         private void button2_Click(object sender, EventArgs e)

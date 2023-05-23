@@ -117,6 +117,9 @@
     <Compile Include="Classes\AgendaManager.cs" />
     <Compile Include="Classes\Announcement.cs" />
     <Compile Include="Classes\AnnouncementManager.cs" />
+    <Compile Include="Classes\AttendanceManager.cs" />
+    <Compile Include="Classes\Chore.cs" />
+    <Compile Include="Classes\ChoreManager.cs" />
     <Compile Include="Classes\contact.cs" />
     <Compile Include="Classes\contactManager.cs" />
     <Compile Include="Classes\CreateEvent.cs">
