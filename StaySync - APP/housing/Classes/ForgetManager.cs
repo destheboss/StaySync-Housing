@@ -1,5 +1,6 @@
 ﻿using CsvHelper;
 using housing;
+using housing.CustomElements;
 using MimeKit;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SmtpClient = MailKit.Net.Smtp.SmtpClient;
@@ -22,39 +24,33 @@ namespace housing
         {
             if (String.IsNullOrEmpty(phoneNumber))
             {
-                MessageBox.Show("Enter a phone number first.");
+                RJMessageBox.Show("Enter a phone number first.");
                 return false;
             }
-            foreach (char c in phoneNumber)
+            string pattern = @"^\+?(\d[\d-. ]+)?(\([\d-. ]+\))?[\d-. ]+\d$";
+            if (Regex.IsMatch(phoneNumber, pattern))
             {
-                if (c == '+')
-                {
-                    if (phoneNumber.Length == 12)
-                    {
-                        return true;
-                    }
-                }
+                return true;
             }
-            MessageBox.Show("Invalid phone number try again.");
+            RJMessageBox.Show("Invalid phone number try again.");
             return false;
         }
 
         public void GenerateNumber()
         {
             Random random = new Random();
-            this.randomNumber = random.Next(1000000, 10000000);
+            this.randomNumber = random.Next(100000, 1000000);
         }
 
         public void ItIsSMSTime(string phoneNumber)
         {
-            //might make it a seperate class to make sure
             WebClient client = new WebClient();
             string to, message;
             to = phoneNumber;
             message = Convert.ToString(this.randomNumber);
-            string baseURL = "https://platform.clickatell.com/messages/http/send?apiKey=cBmEQv2yRreYo9d9SVK2cA==&to=" + to + "'&content=" + message + "'";
+            string baseURL = "https://platform.clickatell.com/messages/http/send?apiKey=GYJ6ChDFTZmLgzO2-erqRw==&to=" + to + "'&content=" + "Your verification code is: " + message;
             client.OpenRead(baseURL);
-            MessageBox.Show("An SMS has been sent containing a code");
+            RJMessageBox.Show("An SMS has been sent containing a code");
         }
 
         public bool IsRandomNumberCorrect(int input)
@@ -77,10 +73,10 @@ namespace housing
         public void ItIsMailTime(string email, int code)
         {
             var to = email;
-            var from = "implement@svenverstegen.tech";
-            var subject = "your QR code";
-            var password = "poeppoep";
-            var host = "mail.svenverstegen.tech";
+            var from = "help.staysync@gmail.com";
+            var subject = "Your QR code";
+            var password = "dpinlfdbxlxaduyx";
+            var host = "smtp.gmail.com";
             var port = 587;
 
             using (var client = new SmtpClient())
@@ -95,22 +91,21 @@ namespace housing
 
                 var message = new MimeMessage();
 
-                message.From.Add(new MailboxAddress("noReply", from));
-                message.To.Add(new MailboxAddress("Mrs. Chanandler Bong", to));
+                message.From.Add(new MailboxAddress("StaySync Support", from));
+                message.To.Add(new MailboxAddress("Claudiu Gabriel Badea", to));
                 message.Subject = subject;
                 message.Body = bodyBuilder.ToMessageBody();
 
                 try
                 {
-                    client.Connect(host, port, MailKit.Security.SecureSocketOptions.None);
+                    client.Connect(host, port, MailKit.Security.SecureSocketOptions.StartTls);
                     client.Authenticate(from, password);
                     client.Send(message);
                     client.Disconnect(true);
-                    MessageBox.Show("A mail containing a picture of your code as well as the code itself has been send to your email adress.");
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show(ex.ToString());
+                    RJMessageBox.Show("Something went wrong.");
                 }
             }
         }

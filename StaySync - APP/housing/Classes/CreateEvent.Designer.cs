@@ -214,7 +214,7 @@
             this.tbxTitle.BorderRadius = 0;
             this.tbxTitle.BorderSize = 2;
             this.tbxTitle.Font = new System.Drawing.Font("Cascadia Code", 10F);
-            this.tbxTitle.ForeColor = System.Drawing.Color.White;
+            this.tbxTitle.ForeColor = System.Drawing.Color.Black;
             this.tbxTitle.Location = new System.Drawing.Point(23, 204);
             this.tbxTitle.Margin = new System.Windows.Forms.Padding(4);
             this.tbxTitle.Multiline = false;
@@ -235,7 +235,7 @@
             this.cmbEndTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.cmbEndTime.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
             this.cmbEndTime.BorderSize = 1;
-            this.cmbEndTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmbEndTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEndTime.Font = new System.Drawing.Font("Cascadia Code", 10F);
             this.cmbEndTime.ForeColor = System.Drawing.Color.Black;
             this.cmbEndTime.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
@@ -337,7 +337,7 @@
             "23:30",
             "23:45"});
             this.cmbEndTime.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.cmbEndTime.ListTextColor = System.Drawing.Color.White;
+            this.cmbEndTime.ListTextColor = System.Drawing.Color.Black;
             this.cmbEndTime.Location = new System.Drawing.Point(337, 137);
             this.cmbEndTime.MinimumSize = new System.Drawing.Size(200, 30);
             this.cmbEndTime.Name = "cmbEndTime";
@@ -353,7 +353,7 @@
             this.cmbStartTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.cmbStartTime.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
             this.cmbStartTime.BorderSize = 1;
-            this.cmbStartTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmbStartTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStartTime.Font = new System.Drawing.Font("Cascadia Code", 10F);
             this.cmbStartTime.ForeColor = System.Drawing.Color.Black;
             this.cmbStartTime.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
@@ -455,7 +455,7 @@
             "23:30",
             "23:45"});
             this.cmbStartTime.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.cmbStartTime.ListTextColor = System.Drawing.Color.White;
+            this.cmbStartTime.ListTextColor = System.Drawing.Color.Black;
             this.cmbStartTime.Location = new System.Drawing.Point(23, 137);
             this.cmbStartTime.MinimumSize = new System.Drawing.Size(200, 30);
             this.cmbStartTime.Name = "cmbStartTime";
@@ -471,7 +471,7 @@
             this.cmbYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.cmbYear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
             this.cmbYear.BorderSize = 1;
-            this.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbYear.Font = new System.Drawing.Font("Cascadia Code", 10F);
             this.cmbYear.ForeColor = System.Drawing.Color.Black;
             this.cmbYear.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
@@ -485,7 +485,7 @@
             "2029",
             "2030"});
             this.cmbYear.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.cmbYear.ListTextColor = System.Drawing.Color.White;
+            this.cmbYear.ListTextColor = System.Drawing.Color.Black;
             this.cmbYear.Location = new System.Drawing.Point(435, 69);
             this.cmbYear.MinimumSize = new System.Drawing.Size(200, 30);
             this.cmbYear.Name = "cmbYear";
@@ -501,7 +501,7 @@
             this.cmbMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.cmbMonth.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
             this.cmbMonth.BorderSize = 1;
-            this.cmbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMonth.Font = new System.Drawing.Font("Cascadia Code", 10F);
             this.cmbMonth.ForeColor = System.Drawing.Color.Black;
             this.cmbMonth.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
@@ -519,7 +519,7 @@
             "11",
             "12"});
             this.cmbMonth.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.cmbMonth.ListTextColor = System.Drawing.Color.White;
+            this.cmbMonth.ListTextColor = System.Drawing.Color.Black;
             this.cmbMonth.Location = new System.Drawing.Point(229, 69);
             this.cmbMonth.MinimumSize = new System.Drawing.Size(200, 30);
             this.cmbMonth.Name = "cmbMonth";
@@ -535,7 +535,7 @@
             this.cmbDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.cmbDay.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
             this.cmbDay.BorderSize = 1;
-            this.cmbDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmbDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDay.Font = new System.Drawing.Font("Cascadia Code", 10F);
             this.cmbDay.ForeColor = System.Drawing.Color.Black;
             this.cmbDay.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
@@ -572,7 +572,7 @@
             "30",
             "31"});
             this.cmbDay.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.cmbDay.ListTextColor = System.Drawing.Color.White;
+            this.cmbDay.ListTextColor = System.Drawing.Color.Black;
             this.cmbDay.Location = new System.Drawing.Point(23, 69);
             this.cmbDay.MinimumSize = new System.Drawing.Size(200, 30);
             this.cmbDay.Name = "cmbDay";

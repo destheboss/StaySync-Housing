@@ -74,7 +74,7 @@ namespace housing.Classes
                 }
                 else
                 {
-                    DialogResult result = RJMessageBox.Show("The file could not be read.");
+                    RJMessageBox.Show("The file could not be read.");
                 }
             }
             catch (IOException)

@@ -1,28 +1,29 @@
-﻿using housing.Classes;
-using housing.CustomElements;
+﻿using housing.CustomElements;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
-namespace housing
+namespace housing.Classes
 {
-    public partial class AdminComplaints : Form
+    public partial class ComplaintViewer : Form
     {
+        private User _user = new User();
         private ComplaintViewerManager _manager = new ComplaintViewerManager();
-        public AdminComplaints()
+
+        public ComplaintViewer()
         {
             InitializeComponent();
-            InitializeDataGridView(dgvPeople);
+            InitializeDataGridView(dgvAboutYou);
             InitializeDataGridView(dgvRoom);
             InitializeDataGridView(dgvGeneral);
-            InitializeDataGridView(dgvAdmins);
+            this.btnClose.DialogResult = DialogResult.Cancel;
         }
 
         private void InitializeDataGridView(DataGridView dataGridView)
@@ -70,15 +71,41 @@ namespace housing
                 column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
         }
+   
 
-        private void AdminComplaints_Load(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            ReloadComplaints();
+            this.Close();
+        }
+
+        private void ComplaintViewer_Load(object sender, EventArgs e)
+        {
+            this._manager.LoadComplaints();
+            List<Complaint> complaints = this._manager.Complaints;
+            foreach (Complaint c in complaints)
+            {
+                string whoOrWhere = string.IsNullOrEmpty(c.WhoOrWhere) ? "-" : c.WhoOrWhere;
+
+                if (c.Subject == "GENERAL")
+                {
+                    dgvGeneral.Rows.Add(c.ID, c.From, c.Subject, whoOrWhere, c.ComplaintText);
+                }
+
+                if (c.Subject == "ROOM")
+                {
+                    dgvRoom.Rows.Add(c.ID, c.From, c.Subject, whoOrWhere, c.ComplaintText);
+                }
+
+                if (c.Subject == "TENANT" && whoOrWhere == this._user.GetName())
+                {
+                    dgvAboutYou.Rows.Add(c.ID, c.From, c.Subject, whoOrWhere, c.ComplaintText);
+                }
+            }
         }
 
         private void dgvAboutYou_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ShowComplaintDetails(dgvPeople);
+            ShowComplaintDetails(dgvAboutYou);
         }
 
         private void dgvRoom_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -89,11 +116,6 @@ namespace housing
         private void dgvGeneral_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ShowComplaintDetails(dgvGeneral);
-        }
-
-        private void dgvAdmins_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            ShowComplaintDetails(dgvAdmins);
         }
 
         private void ShowComplaintDetails(DataGridView dataGridView)
@@ -116,96 +138,13 @@ namespace housing
 
                     string formattedText = $"▶ {from} ◀ \nSubject: {subject} \nWho/Where: {whoOrWhere} \nComplaint: {complaintText}";
 
-                    RJMessageBox.Show(formattedText, "Complaint Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RJMessageBox.Show(formattedText, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception)
             {
                 RJMessageBox.Show("Something went wrong.");
             }
-
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DataGridView currentDataGridView = GetCurrentDataGridView();
-                if (currentDataGridView != null && currentDataGridView.SelectedRows.Count > 0)
-                {
-                    DataGridViewRow row = currentDataGridView.SelectedRows[0];
-                    int complaintId = Convert.ToInt32(row.Cells["ID"].Value);
-                    _manager.ResolveComplaint(complaintId);
-                    ReloadComplaints();
-                }
-            }
-            catch (Exception)
-            {
-                RJMessageBox.Show("Something went wrong.");
-            }
-
-        }
-
-        private void ReloadComplaints()
-        {
-            ClearDataGrids();
-            _manager.LoadComplaints();
-            List<Complaint> complaints = _manager.Complaints;
-            foreach (Complaint c in complaints)
-            {
-                AddComplaintToGrid(c);
-            }
-        }
-
-        private void ClearDataGrids()
-        {
-            dgvPeople.Rows.Clear();
-            dgvRoom.Rows.Clear();
-            dgvGeneral.Rows.Clear();
-            dgvAdmins.Rows.Clear();
-        }
-
-        private void AddComplaintToGrid(Complaint c)
-        {
-            string whoOrWhere = string.IsNullOrEmpty(c.WhoOrWhere) ? "-" : c.WhoOrWhere;
-            if (c.Subject == "GENERAL")
-            {
-                dgvGeneral.Rows.Add(c.ID, c.From, c.Subject, whoOrWhere, c.ComplaintText);
-            }
-            else if (c.Subject == "ROOM")
-            {
-                dgvRoom.Rows.Add(c.ID, c.From, c.Subject, whoOrWhere, c.ComplaintText);
-            }
-            else if (c.Subject == "TENANT")
-            {
-                dgvPeople.Rows.Add(c.ID, c.From, c.Subject, whoOrWhere, c.ComplaintText);
-            }
-            else if (c.Subject == "ADMIN")
-            {
-                dgvAdmins.Rows.Add(c.ID, c.From, c.Subject, whoOrWhere, c.ComplaintText);
-            }
-        }
-
-        private DataGridView GetCurrentDataGridView()
-        {
-            if (tbComplaints.SelectedTab == tabGeneral)
-            {
-                return dgvGeneral;
-            }
-            else if (tbComplaints.SelectedTab == tabRoom)
-            {
-                return dgvRoom;
-            }
-            else if (tbComplaints.SelectedTab == tabPeople)
-            {
-                return dgvPeople;
-            }
-            else if (tbComplaints.SelectedTab == tabAdmins)
-            {
-                return dgvAdmins;
-            }
-
-            return null;
         }
     }
 }

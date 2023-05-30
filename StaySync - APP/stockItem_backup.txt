@@ -1,0 +1,40 @@
+Bread,7,0,Loafs of Bread
+Butter,3,0,Sticks of Butter
+Milk,6,0,Cartons of Milk
+Meat,7,0,Pieces of Meat
+Soup,13,0,Cans of Soup
+Canned Beans,8,0,Cans of Beans
+Noodles,12,0,Cups of Noodles
+Salt,4,0,Bags of Salt
+Tea,23,0,Teabags
+Sugar,4,0,Bags of Sugar
+Bleach,9,1,Bottles of Bleach
+Dish Soap,6,1,Bottles of Dish Soap
+Sponge,4,1,Unused Sponges
+Microfiber Cloth,13,1,Unused Microfiber Cloths
+Duster Pads,8,1,Disposable Duster Pads
+Toilet Bowl Cleaner,4,1,Bottles of Toilet Cleaner
+Floor Cleaner,6,1,Bottles of Floor Cleaner
+Anti-lime Spray,3,1,Bottles of Anti-lime Spray
+DishWashing Brush,8,1,Usable DishWashing Brushes
+Rubber Gloves,9,1,Pairs of Rubber Gloves
+Toothpaste,6,2,Tubes of Toothpaste
+Toilet Paper,10,2,Rolls of Toilet Paper
+Shampoo,6,2,Bottles of Shampoo
+Toothbrush,6,2,New Toothbrushes
+Soap,12,2,Bars of Soap
+Moisturiser,4,2,Bottles of Moisturiser
+Aspirin,12,2,Packs of Aspirin
+Sunscreen,17,2,Bottles of Sunscreen
+Bandage,12,2,Packs of Bandages
+Deodorant,12,2,Spraycans of Deodorant
+Fork,14,3,Forks
+Knife,14,3,Knives
+Spoon,14,3,Spoons
+Plate,14,3,Plates
+Cup,14,3,Cups
+Glass,14,3,Glasses
+Spatula,6,3,Spatulas
+Tongs,6,3,Tongs
+Pan,4,6,Pans
+Pot,50,6,Pots

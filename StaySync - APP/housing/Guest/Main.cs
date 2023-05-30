@@ -1,4 +1,5 @@
-﻿using housing.CustomElements;
+﻿using housing.Classes;
+using housing.CustomElements;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -114,7 +115,10 @@ namespace housing
 
         private void Forgotbtn_Click(object sender, EventArgs e)
         {
-
+            Forgot windowOpen = new Forgot(this._manager);
+            this.Hide();
+            windowOpen.ShowDialog();
+            this.Close();
         }
 
         private void Main_Load(object sender, EventArgs e)

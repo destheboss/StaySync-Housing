@@ -32,27 +32,28 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.roundPanel1 = new housing.CustomElements.RoundPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.noneRbtn = new housing.CustomElements.CustomRadioButton();
-            this.byTenantCMB = new housing.CustomElements.CustomComboBox();
-            this.byNoneRbtn = new housing.CustomElements.CustomRadioButton();
-            this.byTenantRbtn = new housing.CustomElements.CustomRadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.roundPanelListBox1 = new housing.CustomElements.RoundPanelListBox();
-            this.complaintsLB = new System.Windows.Forms.ListBox();
-            this.roomCMB = new housing.CustomElements.CustomComboBox();
-            this.adminCMB = new housing.CustomElements.CustomComboBox();
-            this.tenantCMB = new housing.CustomElements.CustomComboBox();
-            this.generalRbtn = new housing.CustomElements.CustomRadioButton();
-            this.roomRbtn = new housing.CustomElements.CustomRadioButton();
-            this.adminRbtn = new housing.CustomElements.CustomRadioButton();
-            this.tenantRbtn = new housing.CustomElements.CustomRadioButton();
-            this.lbName = new System.Windows.Forms.Label();
+            this.tbComplaints = new housing.CustomElements.CustomTabControl();
+            this.tabPeople = new System.Windows.Forms.TabPage();
+            this.dgvPeople = new System.Windows.Forms.DataGridView();
+            this.tabRoom = new System.Windows.Forms.TabPage();
+            this.dgvRoom = new System.Windows.Forms.DataGridView();
+            this.tabGeneral = new System.Windows.Forms.TabPage();
+            this.dgvGeneral = new System.Windows.Forms.DataGridView();
+            this.tabAdmins = new System.Windows.Forms.TabPage();
+            this.dgvAdmins = new System.Windows.Forms.DataGridView();
             this.btnDelete = new housing.CustomElements.RoundButton();
-            this.btnSort = new housing.CustomElements.RoundButton();
             this.panelTop.SuspendLayout();
             this.roundPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.roundPanelListBox1.SuspendLayout();
+            this.tbComplaints.SuspendLayout();
+            this.tabPeople.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).BeginInit();
+            this.tabRoom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).BeginInit();
+            this.tabGeneral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGeneral)).BeginInit();
+            this.tabAdmins.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAdmins)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTop
@@ -102,267 +103,140 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.panel2.Controls.Add(this.noneRbtn);
-            this.panel2.Controls.Add(this.byTenantCMB);
-            this.panel2.Controls.Add(this.byNoneRbtn);
-            this.panel2.Controls.Add(this.byTenantRbtn);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.roundPanelListBox1);
-            this.panel2.Controls.Add(this.roomCMB);
-            this.panel2.Controls.Add(this.adminCMB);
-            this.panel2.Controls.Add(this.tenantCMB);
-            this.panel2.Controls.Add(this.generalRbtn);
-            this.panel2.Controls.Add(this.roomRbtn);
-            this.panel2.Controls.Add(this.adminRbtn);
-            this.panel2.Controls.Add(this.tenantRbtn);
-            this.panel2.Controls.Add(this.lbName);
+            this.panel2.Controls.Add(this.tbComplaints);
             this.panel2.Controls.Add(this.btnDelete);
-            this.panel2.Controls.Add(this.btnSort);
             this.panel2.Location = new System.Drawing.Point(13, 23);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(921, 396);
             this.panel2.TabIndex = 18;
             // 
-            // noneRbtn
+            // tbComplaints
             // 
-            this.noneRbtn.AutoSize = true;
-            this.noneRbtn.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.noneRbtn.ForeColor = System.Drawing.Color.White;
-            this.noneRbtn.Location = new System.Drawing.Point(30, 217);
-            this.noneRbtn.MinimumSize = new System.Drawing.Size(0, 21);
-            this.noneRbtn.Name = "noneRbtn";
-            this.noneRbtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.noneRbtn.Size = new System.Drawing.Size(68, 21);
-            this.noneRbtn.TabIndex = 42;
-            this.noneRbtn.TabStop = true;
-            this.noneRbtn.Text = "None";
-            this.noneRbtn.UnCheckedColor = System.Drawing.Color.White;
-            this.noneRbtn.UseVisualStyleBackColor = true;
+            this.tbComplaints.Controls.Add(this.tabPeople);
+            this.tbComplaints.Controls.Add(this.tabRoom);
+            this.tbComplaints.Controls.Add(this.tabGeneral);
+            this.tbComplaints.Controls.Add(this.tabAdmins);
+            this.tbComplaints.Location = new System.Drawing.Point(35, 47);
+            this.tbComplaints.Name = "tbComplaints";
+            this.tbComplaints.SelectedIndex = 0;
+            this.tbComplaints.Size = new System.Drawing.Size(682, 305);
+            this.tbComplaints.TabIndex = 49;
             // 
-            // byTenantCMB
+            // tabPeople
             // 
-            this.byTenantCMB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.byTenantCMB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.byTenantCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.byTenantCMB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
-            this.byTenantCMB.BorderSize = 1;
-            this.byTenantCMB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.byTenantCMB.Font = new System.Drawing.Font("Cascadia Code", 10F);
-            this.byTenantCMB.ForeColor = System.Drawing.Color.White;
-            this.byTenantCMB.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
-            this.byTenantCMB.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.byTenantCMB.ListTextColor = System.Drawing.Color.White;
-            this.byTenantCMB.Location = new System.Drawing.Point(239, 303);
-            this.byTenantCMB.MinimumSize = new System.Drawing.Size(200, 30);
-            this.byTenantCMB.Name = "byTenantCMB";
-            this.byTenantCMB.Padding = new System.Windows.Forms.Padding(1);
-            this.byTenantCMB.Size = new System.Drawing.Size(227, 30);
-            this.byTenantCMB.TabIndex = 41;
-            this.byTenantCMB.Texts = "";
+            this.tabPeople.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.tabPeople.Controls.Add(this.dgvPeople);
+            this.tabPeople.Location = new System.Drawing.Point(4, 25);
+            this.tabPeople.Name = "tabPeople";
+            this.tabPeople.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPeople.Size = new System.Drawing.Size(674, 276);
+            this.tabPeople.TabIndex = 0;
+            this.tabPeople.Text = "People";
             // 
-            // byNoneRbtn
+            // dgvPeople
             // 
-            this.byNoneRbtn.AutoSize = true;
-            this.byNoneRbtn.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.byNoneRbtn.ForeColor = System.Drawing.Color.White;
-            this.byNoneRbtn.Location = new System.Drawing.Point(30, 352);
-            this.byNoneRbtn.MinimumSize = new System.Drawing.Size(0, 21);
-            this.byNoneRbtn.Name = "byNoneRbtn";
-            this.byNoneRbtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.byNoneRbtn.Size = new System.Drawing.Size(68, 21);
-            this.byNoneRbtn.TabIndex = 38;
-            this.byNoneRbtn.TabStop = true;
-            this.byNoneRbtn.Text = "None";
-            this.byNoneRbtn.UnCheckedColor = System.Drawing.Color.White;
-            this.byNoneRbtn.UseVisualStyleBackColor = true;
+            this.dgvPeople.AllowUserToAddRows = false;
+            this.dgvPeople.AllowUserToDeleteRows = false;
+            this.dgvPeople.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.dgvPeople.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPeople.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPeople.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.dgvPeople.Location = new System.Drawing.Point(3, 3);
+            this.dgvPeople.Name = "dgvPeople";
+            this.dgvPeople.ReadOnly = true;
+            this.dgvPeople.RowHeadersWidth = 62;
+            this.dgvPeople.RowTemplate.Height = 28;
+            this.dgvPeople.Size = new System.Drawing.Size(668, 270);
+            this.dgvPeople.TabIndex = 6;
+            this.dgvPeople.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAboutYou_CellDoubleClick);
             // 
-            // byTenantRbtn
+            // tabRoom
             // 
-            this.byTenantRbtn.AutoSize = true;
-            this.byTenantRbtn.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.byTenantRbtn.ForeColor = System.Drawing.Color.White;
-            this.byTenantRbtn.Location = new System.Drawing.Point(30, 311);
-            this.byTenantRbtn.MinimumSize = new System.Drawing.Size(0, 21);
-            this.byTenantRbtn.Name = "byTenantRbtn";
-            this.byTenantRbtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.byTenantRbtn.Size = new System.Drawing.Size(84, 21);
-            this.byTenantRbtn.TabIndex = 37;
-            this.byTenantRbtn.TabStop = true;
-            this.byTenantRbtn.Text = "Tenant";
-            this.byTenantRbtn.UnCheckedColor = System.Drawing.Color.White;
-            this.byTenantRbtn.UseVisualStyleBackColor = true;
+            this.tabRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.tabRoom.Controls.Add(this.dgvRoom);
+            this.tabRoom.Location = new System.Drawing.Point(4, 25);
+            this.tabRoom.Name = "tabRoom";
+            this.tabRoom.Padding = new System.Windows.Forms.Padding(3);
+            this.tabRoom.Size = new System.Drawing.Size(603, 275);
+            this.tabRoom.TabIndex = 1;
+            this.tabRoom.Text = "Rooms";
             // 
-            // label1
+            // dgvRoom
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.label1.Location = new System.Drawing.Point(25, 261);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 25);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Sort by SENDER:";
+            this.dgvRoom.AllowUserToAddRows = false;
+            this.dgvRoom.AllowUserToDeleteRows = false;
+            this.dgvRoom.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.dgvRoom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.dgvRoom.Location = new System.Drawing.Point(3, 3);
+            this.dgvRoom.Name = "dgvRoom";
+            this.dgvRoom.ReadOnly = true;
+            this.dgvRoom.RowHeadersWidth = 62;
+            this.dgvRoom.RowTemplate.Height = 28;
+            this.dgvRoom.Size = new System.Drawing.Size(597, 269);
+            this.dgvRoom.TabIndex = 6;
+            this.dgvRoom.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoom_CellDoubleClick);
             // 
-            // roundPanelListBox1
+            // tabGeneral
             // 
-            this.roundPanelListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.roundPanelListBox1.Controls.Add(this.complaintsLB);
-            this.roundPanelListBox1.Location = new System.Drawing.Point(504, 17);
-            this.roundPanelListBox1.Name = "roundPanelListBox1";
-            this.roundPanelListBox1.Size = new System.Drawing.Size(383, 208);
-            this.roundPanelListBox1.TabIndex = 35;
+            this.tabGeneral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.tabGeneral.Controls.Add(this.dgvGeneral);
+            this.tabGeneral.Location = new System.Drawing.Point(4, 25);
+            this.tabGeneral.Name = "tabGeneral";
+            this.tabGeneral.Padding = new System.Windows.Forms.Padding(3);
+            this.tabGeneral.Size = new System.Drawing.Size(603, 275);
+            this.tabGeneral.TabIndex = 2;
+            this.tabGeneral.Text = "General";
             // 
-            // complaintsLB
+            // dgvGeneral
             // 
-            this.complaintsLB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.complaintsLB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.complaintsLB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.complaintsLB.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.complaintsLB.ForeColor = System.Drawing.Color.White;
-            this.complaintsLB.FormattingEnabled = true;
-            this.complaintsLB.ItemHeight = 16;
-            this.complaintsLB.Location = new System.Drawing.Point(0, 0);
-            this.complaintsLB.Name = "complaintsLB";
-            this.complaintsLB.Size = new System.Drawing.Size(383, 208);
-            this.complaintsLB.TabIndex = 10;
+            this.dgvGeneral.AllowUserToAddRows = false;
+            this.dgvGeneral.AllowUserToDeleteRows = false;
+            this.dgvGeneral.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.dgvGeneral.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvGeneral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvGeneral.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.dgvGeneral.Location = new System.Drawing.Point(3, 3);
+            this.dgvGeneral.Name = "dgvGeneral";
+            this.dgvGeneral.ReadOnly = true;
+            this.dgvGeneral.RowHeadersWidth = 62;
+            this.dgvGeneral.RowTemplate.Height = 28;
+            this.dgvGeneral.Size = new System.Drawing.Size(597, 269);
+            this.dgvGeneral.TabIndex = 6;
+            this.dgvGeneral.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGeneral_CellDoubleClick);
             // 
-            // roomCMB
+            // tabAdmins
             // 
-            this.roomCMB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.roomCMB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.roomCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.roomCMB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
-            this.roomCMB.BorderSize = 1;
-            this.roomCMB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.roomCMB.Font = new System.Drawing.Font("Cascadia Code", 10F);
-            this.roomCMB.ForeColor = System.Drawing.Color.White;
-            this.roomCMB.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
-            this.roomCMB.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.roomCMB.ListTextColor = System.Drawing.Color.White;
-            this.roomCMB.Location = new System.Drawing.Point(239, 134);
-            this.roomCMB.MinimumSize = new System.Drawing.Size(200, 30);
-            this.roomCMB.Name = "roomCMB";
-            this.roomCMB.Padding = new System.Windows.Forms.Padding(1);
-            this.roomCMB.Size = new System.Drawing.Size(227, 30);
-            this.roomCMB.TabIndex = 34;
-            this.roomCMB.Texts = "";
+            this.tabAdmins.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.tabAdmins.Controls.Add(this.dgvAdmins);
+            this.tabAdmins.Location = new System.Drawing.Point(4, 25);
+            this.tabAdmins.Name = "tabAdmins";
+            this.tabAdmins.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAdmins.Size = new System.Drawing.Size(603, 275);
+            this.tabAdmins.TabIndex = 3;
+            this.tabAdmins.Text = "Admins";
             // 
-            // adminCMB
+            // dgvAdmins
             // 
-            this.adminCMB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.adminCMB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.adminCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.adminCMB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
-            this.adminCMB.BorderSize = 1;
-            this.adminCMB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.adminCMB.Font = new System.Drawing.Font("Cascadia Code", 10F);
-            this.adminCMB.ForeColor = System.Drawing.Color.White;
-            this.adminCMB.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
-            this.adminCMB.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.adminCMB.ListTextColor = System.Drawing.Color.White;
-            this.adminCMB.Location = new System.Drawing.Point(239, 94);
-            this.adminCMB.MinimumSize = new System.Drawing.Size(200, 30);
-            this.adminCMB.Name = "adminCMB";
-            this.adminCMB.Padding = new System.Windows.Forms.Padding(1);
-            this.adminCMB.Size = new System.Drawing.Size(227, 30);
-            this.adminCMB.TabIndex = 33;
-            this.adminCMB.Texts = "";
-            // 
-            // tenantCMB
-            // 
-            this.tenantCMB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.tenantCMB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.tenantCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.tenantCMB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
-            this.tenantCMB.BorderSize = 1;
-            this.tenantCMB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.tenantCMB.Font = new System.Drawing.Font("Cascadia Code", 10F);
-            this.tenantCMB.ForeColor = System.Drawing.Color.White;
-            this.tenantCMB.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
-            this.tenantCMB.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.tenantCMB.ListTextColor = System.Drawing.Color.White;
-            this.tenantCMB.Location = new System.Drawing.Point(239, 54);
-            this.tenantCMB.MinimumSize = new System.Drawing.Size(200, 30);
-            this.tenantCMB.Name = "tenantCMB";
-            this.tenantCMB.Padding = new System.Windows.Forms.Padding(1);
-            this.tenantCMB.Size = new System.Drawing.Size(227, 30);
-            this.tenantCMB.TabIndex = 32;
-            this.tenantCMB.Texts = "";
-            // 
-            // generalRbtn
-            // 
-            this.generalRbtn.AutoSize = true;
-            this.generalRbtn.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.generalRbtn.ForeColor = System.Drawing.Color.White;
-            this.generalRbtn.Location = new System.Drawing.Point(30, 181);
-            this.generalRbtn.MinimumSize = new System.Drawing.Size(0, 21);
-            this.generalRbtn.Name = "generalRbtn";
-            this.generalRbtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.generalRbtn.Size = new System.Drawing.Size(92, 21);
-            this.generalRbtn.TabIndex = 31;
-            this.generalRbtn.TabStop = true;
-            this.generalRbtn.Text = "General";
-            this.generalRbtn.UnCheckedColor = System.Drawing.Color.White;
-            this.generalRbtn.UseVisualStyleBackColor = true;
-            // 
-            // roomRbtn
-            // 
-            this.roomRbtn.AutoSize = true;
-            this.roomRbtn.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.roomRbtn.ForeColor = System.Drawing.Color.White;
-            this.roomRbtn.Location = new System.Drawing.Point(30, 143);
-            this.roomRbtn.MinimumSize = new System.Drawing.Size(0, 21);
-            this.roomRbtn.Name = "roomRbtn";
-            this.roomRbtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.roomRbtn.Size = new System.Drawing.Size(68, 21);
-            this.roomRbtn.TabIndex = 30;
-            this.roomRbtn.TabStop = true;
-            this.roomRbtn.Text = "Room";
-            this.roomRbtn.UnCheckedColor = System.Drawing.Color.White;
-            this.roomRbtn.UseVisualStyleBackColor = true;
-            // 
-            // adminRbtn
-            // 
-            this.adminRbtn.AutoSize = true;
-            this.adminRbtn.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.adminRbtn.ForeColor = System.Drawing.Color.White;
-            this.adminRbtn.Location = new System.Drawing.Point(30, 103);
-            this.adminRbtn.MinimumSize = new System.Drawing.Size(0, 21);
-            this.adminRbtn.Name = "adminRbtn";
-            this.adminRbtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.adminRbtn.Size = new System.Drawing.Size(76, 21);
-            this.adminRbtn.TabIndex = 29;
-            this.adminRbtn.TabStop = true;
-            this.adminRbtn.Text = "Admin";
-            this.adminRbtn.UnCheckedColor = System.Drawing.Color.White;
-            this.adminRbtn.UseVisualStyleBackColor = true;
-            // 
-            // tenantRbtn
-            // 
-            this.tenantRbtn.AutoSize = true;
-            this.tenantRbtn.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.tenantRbtn.ForeColor = System.Drawing.Color.White;
-            this.tenantRbtn.Location = new System.Drawing.Point(30, 62);
-            this.tenantRbtn.MinimumSize = new System.Drawing.Size(0, 21);
-            this.tenantRbtn.Name = "tenantRbtn";
-            this.tenantRbtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.tenantRbtn.Size = new System.Drawing.Size(84, 21);
-            this.tenantRbtn.TabIndex = 28;
-            this.tenantRbtn.TabStop = true;
-            this.tenantRbtn.Text = "Tenant";
-            this.tenantRbtn.UnCheckedColor = System.Drawing.Color.White;
-            this.tenantRbtn.UseVisualStyleBackColor = true;
-            // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.lbName.Location = new System.Drawing.Point(25, 12);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(188, 25);
-            this.lbName.TabIndex = 19;
-            this.lbName.Text = "Sort by SUBJECT:";
+            this.dgvAdmins.AllowUserToAddRows = false;
+            this.dgvAdmins.AllowUserToDeleteRows = false;
+            this.dgvAdmins.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.dgvAdmins.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAdmins.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAdmins.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAdmins.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.dgvAdmins.Location = new System.Drawing.Point(3, 3);
+            this.dgvAdmins.Name = "dgvAdmins";
+            this.dgvAdmins.ReadOnly = true;
+            this.dgvAdmins.RowHeadersWidth = 62;
+            this.dgvAdmins.RowTemplate.Height = 28;
+            this.dgvAdmins.Size = new System.Drawing.Size(597, 269);
+            this.dgvAdmins.TabIndex = 7;
+            this.dgvAdmins.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdmins_CellDoubleClick);
             // 
             // btnDelete
             // 
@@ -376,33 +250,14 @@
             this.btnDelete.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDelete.Location = new System.Drawing.Point(766, 244);
+            this.btnDelete.Location = new System.Drawing.Point(766, 64);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(121, 43);
             this.btnDelete.TabIndex = 18;
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextColor = System.Drawing.Color.White;
             this.btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // btnSort
-            // 
-            this.btnSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.btnSort.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.btnSort.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.btnSort.BorderRadius = 14;
-            this.btnSort.BorderSize = 0;
-            this.btnSort.FlatAppearance.BorderSize = 0;
-            this.btnSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSort.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSort.ForeColor = System.Drawing.Color.White;
-            this.btnSort.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSort.Location = new System.Drawing.Point(639, 244);
-            this.btnSort.Name = "btnSort";
-            this.btnSort.Size = new System.Drawing.Size(121, 43);
-            this.btnSort.TabIndex = 11;
-            this.btnSort.Text = "Sort";
-            this.btnSort.TextColor = System.Drawing.Color.White;
-            this.btnSort.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // AdminComplaints
             // 
@@ -419,11 +274,19 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GuestAttendance";
+            this.Load += new System.EventHandler(this.AdminComplaints_Load);
             this.panelTop.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.roundPanelListBox1.ResumeLayout(false);
+            this.tbComplaints.ResumeLayout(false);
+            this.tabPeople.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).EndInit();
+            this.tabRoom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).EndInit();
+            this.tabGeneral.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGeneral)).EndInit();
+            this.tabAdmins.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAdmins)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -434,22 +297,15 @@
         private CustomElements.RoundPanel roundPanel1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panel2;
-        private CustomElements.CustomComboBox roomCMB;
-        private CustomElements.CustomComboBox adminCMB;
-        private CustomElements.CustomComboBox tenantCMB;
-        private CustomElements.CustomRadioButton generalRbtn;
-        private CustomElements.CustomRadioButton roomRbtn;
-        private CustomElements.CustomRadioButton adminRbtn;
-        private CustomElements.CustomRadioButton tenantRbtn;
-        private System.Windows.Forms.Label lbName;
         private CustomElements.RoundButton btnDelete;
-        private CustomElements.RoundButton btnSort;
-        private CustomElements.CustomComboBox byTenantCMB;
-        private CustomElements.CustomRadioButton byNoneRbtn;
-        private CustomElements.CustomRadioButton byTenantRbtn;
-        private System.Windows.Forms.Label label1;
-        private CustomElements.RoundPanelListBox roundPanelListBox1;
-        private System.Windows.Forms.ListBox complaintsLB;
-        private CustomElements.CustomRadioButton noneRbtn;
+        private CustomElements.CustomTabControl tbComplaints;
+        private System.Windows.Forms.TabPage tabPeople;
+        private System.Windows.Forms.TabPage tabRoom;
+        private System.Windows.Forms.TabPage tabGeneral;
+        private System.Windows.Forms.TabPage tabAdmins;
+        private System.Windows.Forms.DataGridView dgvPeople;
+        private System.Windows.Forms.DataGridView dgvRoom;
+        private System.Windows.Forms.DataGridView dgvGeneral;
+        private System.Windows.Forms.DataGridView dgvAdmins;
     }
 }

@@ -33,13 +33,41 @@ namespace housing.Classes
             {
                 if (!string.IsNullOrWhiteSpace(tbxTitle.Texts) && !string.IsNullOrWhiteSpace(tbxDescription.Texts))
                 {
-                    agenda.AddAgenda(Convert.ToInt32(cmbDay.Texts),
-                                 Convert.ToInt32(cmbMonth.Texts),
-                                 Convert.ToInt32(cmbYear.Texts),
-                                 cmbStartTime.Texts,
-                                 cmbEndTime.Texts,
-                                 tbxTitle.Texts.ToUpper(),
-                                 tbxDescription.Texts);
+                    int day, month, year;
+                    if (!int.TryParse(cmbDay.Texts, out day) || cmbDay.SelectedItem == null)
+                    {
+                        RJMessageBox.Show("Please select a valid day.", "", MessageBoxButtons.OK);
+                        return;
+                    }
+                    if (!int.TryParse(cmbMonth.Texts, out month) || cmbMonth.SelectedItem == null)
+                    {
+                        RJMessageBox.Show("Please select a valid month.", "", MessageBoxButtons.OK);
+                        return;
+                    }
+                    if (!int.TryParse(cmbYear.Texts, out year) || cmbYear.SelectedItem == null)
+                    {
+                        RJMessageBox.Show("Please select a valid year.", "", MessageBoxButtons.OK);
+                        return;
+                    }
+
+                    string startTime = cmbStartTime.Texts;
+                    if (cmbStartTime.SelectedItem == null)
+                    {
+                        RJMessageBox.Show("Please select a valid start time.", "", MessageBoxButtons.OK);
+                        return;
+                    }
+
+                    string endTime = cmbEndTime.Texts;
+                    if (cmbEndTime.SelectedItem == null)
+                    {
+                        RJMessageBox.Show("Please select a valid end time.", "", MessageBoxButtons.OK);
+                        return;
+                    }
+
+                    string title = tbxTitle.Texts.ToUpper();
+                    string description = tbxDescription.Texts;
+
+                    agenda.AddAgenda(day, month, year, startTime, endTime, title, description);
                     RJMessageBox.Show("The event was created.", "", MessageBoxButtons.OK);
                 }
                 else
@@ -49,7 +77,6 @@ namespace housing.Classes
             }
             catch (Exception)
             {
-
                 RJMessageBox.Show("Please fill in the information first.", "", MessageBoxButtons.OK);
             }
 

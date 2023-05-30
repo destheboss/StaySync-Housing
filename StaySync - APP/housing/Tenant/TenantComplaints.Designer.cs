@@ -118,19 +118,19 @@
             this.roomCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.roomCMB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
             this.roomCMB.BorderSize = 1;
-            this.roomCMB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.roomCMB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.roomCMB.Font = new System.Drawing.Font("Cascadia Code", 10F);
-            this.roomCMB.ForeColor = System.Drawing.Color.White;
+            this.roomCMB.ForeColor = System.Drawing.Color.Black;
             this.roomCMB.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
-            this.roomCMB.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.roomCMB.ListTextColor = System.Drawing.Color.White;
+            this.roomCMB.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.roomCMB.ListTextColor = System.Drawing.Color.Black;
             this.roomCMB.Location = new System.Drawing.Point(239, 168);
             this.roomCMB.MinimumSize = new System.Drawing.Size(200, 30);
             this.roomCMB.Name = "roomCMB";
             this.roomCMB.Padding = new System.Windows.Forms.Padding(1);
             this.roomCMB.Size = new System.Drawing.Size(227, 30);
             this.roomCMB.TabIndex = 34;
-            this.roomCMB.Texts = "";
+            this.roomCMB.Texts = "Room";
             // 
             // adminCMB
             // 
@@ -139,19 +139,19 @@
             this.adminCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.adminCMB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
             this.adminCMB.BorderSize = 1;
-            this.adminCMB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.adminCMB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.adminCMB.Font = new System.Drawing.Font("Cascadia Code", 10F);
-            this.adminCMB.ForeColor = System.Drawing.Color.White;
+            this.adminCMB.ForeColor = System.Drawing.Color.Black;
             this.adminCMB.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
-            this.adminCMB.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.adminCMB.ListTextColor = System.Drawing.Color.White;
+            this.adminCMB.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.adminCMB.ListTextColor = System.Drawing.Color.Black;
             this.adminCMB.Location = new System.Drawing.Point(239, 128);
             this.adminCMB.MinimumSize = new System.Drawing.Size(200, 30);
             this.adminCMB.Name = "adminCMB";
             this.adminCMB.Padding = new System.Windows.Forms.Padding(1);
             this.adminCMB.Size = new System.Drawing.Size(227, 30);
             this.adminCMB.TabIndex = 33;
-            this.adminCMB.Texts = "";
+            this.adminCMB.Texts = "Admin";
             // 
             // tenantCMB
             // 
@@ -160,19 +160,19 @@
             this.tenantCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.tenantCMB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
             this.tenantCMB.BorderSize = 1;
-            this.tenantCMB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.tenantCMB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tenantCMB.Font = new System.Drawing.Font("Cascadia Code", 10F);
-            this.tenantCMB.ForeColor = System.Drawing.Color.White;
+            this.tenantCMB.ForeColor = System.Drawing.Color.Black;
             this.tenantCMB.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
-            this.tenantCMB.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.tenantCMB.ListTextColor = System.Drawing.Color.White;
+            this.tenantCMB.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.tenantCMB.ListTextColor = System.Drawing.Color.Black;
             this.tenantCMB.Location = new System.Drawing.Point(239, 88);
             this.tenantCMB.MinimumSize = new System.Drawing.Size(200, 30);
             this.tenantCMB.Name = "tenantCMB";
             this.tenantCMB.Padding = new System.Windows.Forms.Padding(1);
             this.tenantCMB.Size = new System.Drawing.Size(227, 30);
             this.tenantCMB.TabIndex = 32;
-            this.tenantCMB.Texts = "";
+            this.tenantCMB.Texts = "Tenant";
             // 
             // generalRbtn
             // 
@@ -253,8 +253,8 @@
             this.tbxComplaint.Name = "tbxComplaint";
             this.tbxComplaint.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.tbxComplaint.PasswordChar = false;
-            this.tbxComplaint.PlaceholderColor = System.Drawing.Color.White;
-            this.tbxComplaint.PlaceholderText = "";
+            this.tbxComplaint.PlaceholderColor = System.Drawing.Color.Black;
+            this.tbxComplaint.PlaceholderText = "< complaint >";
             this.tbxComplaint.Size = new System.Drawing.Size(386, 183);
             this.tbxComplaint.TabIndex = 27;
             this.tbxComplaint.Texts = "";
@@ -290,6 +290,7 @@
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnViewComplaints
             // 
@@ -310,6 +311,7 @@
             this.btnViewComplaints.Text = "View Complaints";
             this.btnViewComplaints.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnViewComplaints.UseVisualStyleBackColor = false;
+            this.btnViewComplaints.Click += new System.EventHandler(this.btnViewComplaints_Click);
             // 
             // TenantComplaints
             // 
@@ -326,6 +328,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GuestAttendance";
+            this.Load += new System.EventHandler(this.TenantComplaints_Load);
             this.panelTop.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

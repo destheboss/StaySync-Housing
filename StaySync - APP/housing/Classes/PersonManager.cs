@@ -96,7 +96,7 @@ namespace housing
 
         public bool IsThePersonAdmin()
         {
-            User User = new User();
+                User User = new User();
             return User.IsItAdmin();
         }
 

@@ -1,0 +1,19 @@
+1,Tom Stephenson,GENERAL,,test_1,False
+2,Tom Stephenson,ROOM,101,test_1,False
+3,Tom Stephenson,ADMIN,Ahmedov Nazim,test_1,False
+4,Tom Stephenson,TENANT,John Doe,test_1,False
+5,Marilyn Jackson,GENERAL,,test_2,False
+6,Marilyn Jackson,ROOM,102,test_2,False
+7,Marilyn Jackson,ADMIN,Hristov Desislav,test_2,False
+8,Marilyn Jackson,TENANT,Jamy Lee,test_2,False
+9,Jamy Lee,GENERAL,,test_3,False
+10,Jamy Lee,ROOM,103,test_3,False
+11,Jamy Lee,ADMIN,Tomescu Luca,test_3,False
+12,Jamy Lee,TENANT,Marilyn Jackson,test_3,False
+13,Mary Jones,GENERAL,,test_4,False
+14,Mary Jones,ROOM,201,test_4,False
+15,Mary Jones,ADMIN,Claudiu Badea,test_4,False
+16,Mary Jones,TENANT,Tom Stephenson,test_4,False
+17,John Doe,GENERAL,,test_5,False
+18,John Doe,ROOM,202,test_5,False
+19,John Doe,TENANT,Mary Jones,test_5,False

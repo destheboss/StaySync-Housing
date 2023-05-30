@@ -1,4 +1,5 @@
-﻿using System;
+﻿using housing.CustomElements;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -58,7 +59,7 @@ namespace housing.Classes
                 }
                 else
                 {
-                    Console.WriteLine("The contact file containing the information was not found on desktop.");
+                    RJMessageBox.Show("The file couldn not be read.");
                 }
             }
             catch (IOException) { }
