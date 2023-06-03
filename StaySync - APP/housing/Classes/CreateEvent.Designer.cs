@@ -73,6 +73,8 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(657, 450);
             this.panel2.TabIndex = 17;
+            this.panel2.Click += new System.EventHandler(this.FocusEvent);
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // labelCaption
             // 
@@ -588,6 +590,7 @@
             this.btnCreate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnCreate.BorderRadius = 14;
             this.btnCreate.BorderSize = 0;
+            this.btnCreate.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnCreate.FlatAppearance.BorderSize = 0;
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreate.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

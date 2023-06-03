@@ -39,11 +39,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelBackground = new housing.CustomElements.RoundPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.Forgotbtn = new housing.CustomElements.RoundButton();
             this.btnLogin = new housing.CustomElements.RoundButton();
-            this.pictureQR = new System.Windows.Forms.PictureBox();
-            this.lbWelcome = new housing.CustomElements.RoundLabel();
             this.tbxCodeInput = new housing.CustomElements.RoundTextBox();
+            this.pictureQR = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
             this.panelInformation.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -76,7 +76,7 @@
             this.panelInformation.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInformation.Location = new System.Drawing.Point(0, 137);
             this.panelInformation.Name = "panelInformation";
-            this.panelInformation.Size = new System.Drawing.Size(225, 122);
+            this.panelInformation.Size = new System.Drawing.Size(225, 120);
             this.panelInformation.TabIndex = 14;
             // 
             // btnContact
@@ -164,10 +164,10 @@
             this.btnExit.ForeColor = System.Drawing.Color.Silver;
             this.btnExit.Image = global::housing.Properties.Resources.logout;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 528);
+            this.btnExit.Location = new System.Drawing.Point(0, 533);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(225, 45);
+            this.btnExit.Size = new System.Drawing.Size(225, 40);
             this.btnExit.TabIndex = 12;
             this.btnExit.Text = "  Exit";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -211,11 +211,11 @@
             this.panelBackground.BackgroundImage = global::housing.Properties.Resources.background1;
             this.panelBackground.BorderColor = System.Drawing.Color.White;
             this.panelBackground.BorderWidth = 5;
+            this.panelBackground.Controls.Add(this.label1);
             this.panelBackground.Controls.Add(this.Forgotbtn);
             this.panelBackground.Controls.Add(this.btnLogin);
             this.panelBackground.Controls.Add(this.tbxCodeInput);
             this.panelBackground.Controls.Add(this.pictureQR);
-            this.panelBackground.Controls.Add(this.lbWelcome);
             this.panelBackground.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panelBackground.IsBorder = false;
             this.panelBackground.IsFill = true;
@@ -224,24 +224,37 @@
             this.panelBackground.Radius = 20;
             this.panelBackground.Size = new System.Drawing.Size(1011, 543);
             this.panelBackground.TabIndex = 0;
+            this.panelBackground.Click += new System.EventHandler(this.panelBackground_Click);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.label1.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.label1.Location = new System.Drawing.Point(215, 297);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(586, 21);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Welcome, Guest! To gain entry, please scan the provided QR code!";
             // 
             // Forgotbtn
             // 
-            this.Forgotbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.Forgotbtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.Forgotbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.Forgotbtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.Forgotbtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.Forgotbtn.BorderRadius = 14;
-            this.Forgotbtn.BorderSize = 0;
+            this.Forgotbtn.BorderSize = 2;
+            this.Forgotbtn.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.Forgotbtn.FlatAppearance.BorderSize = 0;
             this.Forgotbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Forgotbtn.Font = new System.Drawing.Font("Cascadia Code", 12.75F);
-            this.Forgotbtn.ForeColor = System.Drawing.Color.White;
-            this.Forgotbtn.Location = new System.Drawing.Point(515, 437);
+            this.Forgotbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.Forgotbtn.Location = new System.Drawing.Point(515, 426);
             this.Forgotbtn.Name = "Forgotbtn";
             this.Forgotbtn.Size = new System.Drawing.Size(150, 40);
             this.Forgotbtn.TabIndex = 4;
-            this.Forgotbtn.Text = "RESET";
-            this.Forgotbtn.TextColor = System.Drawing.Color.White;
+            this.Forgotbtn.Text = "FORGET";
+            this.Forgotbtn.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.Forgotbtn.UseVisualStyleBackColor = false;
             this.Forgotbtn.Click += new System.EventHandler(this.Forgotbtn_Click);
             // 
@@ -252,69 +265,61 @@
             this.btnLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnLogin.BorderRadius = 14;
             this.btnLogin.BorderSize = 0;
+            this.btnLogin.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Cascadia Code", 12.75F);
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(353, 437);
+            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnLogin.Location = new System.Drawing.Point(353, 426);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(150, 40);
             this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "LOG IN";
-            this.btnLogin.TextColor = System.Drawing.Color.White;
+            this.btnLogin.Text = "ENTER";
+            this.btnLogin.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // tbxCodeInput
+            // 
+            this.tbxCodeInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.tbxCodeInput.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.tbxCodeInput.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.tbxCodeInput.BorderRadius = 14;
+            this.tbxCodeInput.BorderSize = 2;
+            this.tbxCodeInput.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxCodeInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.tbxCodeInput.Location = new System.Drawing.Point(383, 358);
+            this.tbxCodeInput.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxCodeInput.Multiline = false;
+            this.tbxCodeInput.Name = "tbxCodeInput";
+            this.tbxCodeInput.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.tbxCodeInput.PasswordChar = true;
+            this.tbxCodeInput.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.tbxCodeInput.PlaceholderText = "< ID >";
+            this.tbxCodeInput.Size = new System.Drawing.Size(250, 32);
+            this.tbxCodeInput.TabIndex = 2;
+            this.tbxCodeInput.Texts = "";
+            this.tbxCodeInput.UnderlinedStyle = false;
+            this.tbxCodeInput._TextChanged += new System.EventHandler(this.tbxCodeInput__TextChanged);
+            this.tbxCodeInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxCodeInput_KeyPress);
+            this.tbxCodeInput.Leave += new System.EventHandler(this.tbxCodeInput_Leave);
             // 
             // pictureQR
             // 
             this.pictureQR.BackColor = System.Drawing.Color.Transparent;
             this.pictureQR.Image = global::housing.Properties.Resources.QR;
-            this.pictureQR.Location = new System.Drawing.Point(412, 67);
+            this.pictureQR.Location = new System.Drawing.Point(412, 76);
             this.pictureQR.Name = "pictureQR";
             this.pictureQR.Size = new System.Drawing.Size(193, 191);
             this.pictureQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureQR.TabIndex = 1;
             this.pictureQR.TabStop = false;
             // 
-            // lbWelcome
-            // 
-            this.lbWelcome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.lbWelcome.Font = new System.Drawing.Font("Cascadia Code", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWelcome.ForeColor = System.Drawing.Color.White;
-            this.lbWelcome.Location = new System.Drawing.Point(241, 282);
-            this.lbWelcome.Name = "lbWelcome";
-            this.lbWelcome.Size = new System.Drawing.Size(535, 46);
-            this.lbWelcome.TabIndex = 0;
-            this.lbWelcome.Text = "Hello Guest! Please scan the QR code to LOG IN!";
-            // 
-            // tbxCodeInput
-            // 
-            this.tbxCodeInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.tbxCodeInput.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(10)))), ((int)(((byte)(35)))));
-            this.tbxCodeInput.BorderFocusColor = System.Drawing.Color.White;
-            this.tbxCodeInput.BorderRadius = 14;
-            this.tbxCodeInput.BorderSize = 2;
-            this.tbxCodeInput.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxCodeInput.ForeColor = System.Drawing.Color.White;
-            this.tbxCodeInput.Location = new System.Drawing.Point(383, 369);
-            this.tbxCodeInput.Margin = new System.Windows.Forms.Padding(4);
-            this.tbxCodeInput.Multiline = false;
-            this.tbxCodeInput.Name = "tbxCodeInput";
-            this.tbxCodeInput.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbxCodeInput.PasswordChar = true;
-            this.tbxCodeInput.PlaceholderColor = System.Drawing.Color.White;
-            this.tbxCodeInput.PlaceholderText = "< ID >";
-            this.tbxCodeInput.Size = new System.Drawing.Size(250, 32);
-            this.tbxCodeInput.TabIndex = 2;
-            this.tbxCodeInput.Texts = "";
-            this.tbxCodeInput.UnderlinedStyle = true;
-            this.tbxCodeInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxCodeInput_KeyPress);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(1266, 573);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelSideMenu);
@@ -350,10 +355,10 @@
         private System.Windows.Forms.Button btnContact;
         private CustomElements.RoundPanel panelBackground;
         private System.Windows.Forms.PictureBox pictureQR;
-        private CustomElements.RoundLabel lbWelcome;
         private CustomElements.RoundButton Forgotbtn;
         private CustomElements.RoundButton btnLogin;
         private CustomElements.RoundTextBox tbxCodeInput;
+        private System.Windows.Forms.Label label1;
     }
 }
 

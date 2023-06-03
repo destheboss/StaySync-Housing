@@ -18,10 +18,12 @@ namespace housing.Classes
             this.AllAnnouncements = new List<Announcement>();
         }
 
-        public void AddAnnouncement(string message)
+        public Announcement AddAnnouncement(string message)
         {
             this.announcementSeeder++;
-            this.AllAnnouncements.Add(new Announcement(announcementSeeder, message));
+            Announcement newAnnouncement = new Announcement(announcementSeeder, message);
+            this.AllAnnouncements.Add(newAnnouncement);
+            return newAnnouncement;
         }
 
         public Announcement[] GetAnnouncements()
@@ -45,9 +47,8 @@ namespace housing.Classes
             return announcement != null ? announcement.GetAnnouncementMessage() : string.Empty;
         }
 
-        public void DeleteAnnouncement(int id)
+        public void DeleteAnnouncement(Announcement announcement)
         {
-            var announcement = this.GetAnnouncement(id);
             if (announcement != null)
                 this.AllAnnouncements.Remove(announcement);
         }

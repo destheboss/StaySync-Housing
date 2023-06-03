@@ -17,11 +17,17 @@ namespace housing
     public partial class TenantAgenda : Form
     {
         private AgendaManager manager;
-        public TenantAgenda()
+        private PersonManager _manager;
+        public TenantAgenda(PersonManager user)
         {
             InitializeComponent();
             manager = new AgendaManager();
             LoadAgendas();
+
+            ButtonDesignHelper.SetButtonStyles(btnClose);
+            ButtonDesignHelper.SetImageButtonStyle(btnClose, btnClose.Image, housing.Properties.Resources.attendance_invert);
+            _manager = user;
+            btnClose.Text = $"  {_manager.CurrentUser.FirstName}";
         }
 
         private void RefreshAgendaList()

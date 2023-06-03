@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TenantMain));
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -45,16 +44,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelBackground = new housing.CustomElements.RoundPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.roundPanelListBox1 = new housing.CustomElements.RoundPanelListBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
             this.panelInformation.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelChildForm.SuspendLayout();
             this.panelBackground.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.roundPanelListBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -86,7 +85,7 @@
             this.button4.ForeColor = System.Drawing.Color.Silver;
             this.button4.Image = global::housing.Properties.Resources.stock;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 439);
+            this.button4.Location = new System.Drawing.Point(0, 437);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(225, 45);
@@ -107,7 +106,7 @@
             this.button3.ForeColor = System.Drawing.Color.Silver;
             this.button3.Image = global::housing.Properties.Resources.complaints;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 394);
+            this.button3.Location = new System.Drawing.Point(0, 392);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(225, 45);
@@ -128,7 +127,7 @@
             this.button2.ForeColor = System.Drawing.Color.Silver;
             this.button2.Image = global::housing.Properties.Resources.agenda;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 349);
+            this.button2.Location = new System.Drawing.Point(0, 347);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.button2.Size = new System.Drawing.Size(225, 45);
@@ -149,7 +148,7 @@
             this.button1.ForeColor = System.Drawing.Color.Silver;
             this.button1.Image = global::housing.Properties.Resources.chores;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 304);
+            this.button1.Location = new System.Drawing.Point(0, 302);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(225, 45);
@@ -170,7 +169,7 @@
             this.btnEqualizer.ForeColor = System.Drawing.Color.Silver;
             this.btnEqualizer.Image = global::housing.Properties.Resources.attendance;
             this.btnEqualizer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEqualizer.Location = new System.Drawing.Point(0, 259);
+            this.btnEqualizer.Location = new System.Drawing.Point(0, 257);
             this.btnEqualizer.Name = "btnEqualizer";
             this.btnEqualizer.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnEqualizer.Size = new System.Drawing.Size(225, 45);
@@ -190,7 +189,7 @@
             this.panelInformation.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInformation.Location = new System.Drawing.Point(0, 137);
             this.panelInformation.Name = "panelInformation";
-            this.panelInformation.Size = new System.Drawing.Size(225, 122);
+            this.panelInformation.Size = new System.Drawing.Size(225, 120);
             this.panelInformation.TabIndex = 14;
             // 
             // btnContact
@@ -335,17 +334,6 @@
             this.panelBackground.Size = new System.Drawing.Size(1011, 543);
             this.panelBackground.TabIndex = 0;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(323, 328);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // roundPanelListBox1
             // 
             this.roundPanelListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
@@ -354,6 +342,17 @@
             this.roundPanelListBox1.Name = "roundPanelListBox1";
             this.roundPanelListBox1.Size = new System.Drawing.Size(323, 328);
             this.roundPanelListBox1.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = global::housing.Properties.Resources.ezgif_com_gif_maker;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(323, 328);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // TenantMain
             // 
@@ -375,8 +374,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelChildForm.ResumeLayout(false);
             this.panelBackground.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.roundPanelListBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

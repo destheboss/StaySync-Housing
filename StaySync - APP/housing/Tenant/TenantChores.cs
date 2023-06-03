@@ -41,11 +41,31 @@ namespace housing
             dgvChores.DefaultCellStyle.SelectionForeColor = Color.White;
             dgvChores.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvChores.EnableHeadersVisualStyles = false;
+            dgvChores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dgvChores.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgvChores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvChores.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvChores.AllowUserToResizeRows = false;
+
             foreach (DataGridViewColumn column in dgvChores.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+
+            foreach (DataGridViewColumn column in dgvChores.Columns)
+            {
+                column.Resizable = DataGridViewTriState.False;
+            }
+
+            foreach (DataGridViewRow row in dgvChores.Rows)
+            {
+                row.Resizable = DataGridViewTriState.False;
+            }
             #endregion
+
+            ButtonDesignHelper.SetButtonStyles(btnClose);
+            ButtonDesignHelper.SetImageButtonStyle(btnClose, btnClose.Image, housing.Properties.Resources.attendance_invert);
+            btnClose.Text = $"  {manager.CurrentUser.FirstName}";
         }
 
         private void TenantChores_Load(object sender, EventArgs e)
@@ -69,8 +89,13 @@ namespace housing
                             chore.AssignedPerson.FirstName == loggedInUser.FirstName &&
                             chore.AssignedPerson.LastName == loggedInUser.LastName)
                         {
-                            choresManager.MarkChoreAsDone(choreId);
-                            choresManager.WriteChoresToFile();
+                            DialogResult result = RJMessageBox.Show("Are you sure you want to mark this chore as done?", "", MessageBoxButtons.YesNo);
+                            if (result == DialogResult.Yes)
+                            {
+                                choresManager.MarkChoreAsDone(choreId);
+                                choresManager.WriteChoresToFile();
+                                RefreshGrid();
+                            }
                         }
                         else
                         {
@@ -86,8 +111,6 @@ namespace housing
                 {
                     RJMessageBox.Show("This chore is not for you!", "", MessageBoxButtons.OK);
                 }
-
-                RefreshGrid();
             }
             catch (Exception)
             {
@@ -122,6 +145,30 @@ namespace housing
         private void dgvChores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indexRow = e.RowIndex;
+        }
+
+        private void dgvChores_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvChores.CurrentRow != null)
+                {
+                    var selectedChore = choresManager.GetChore(Convert.ToInt32(dgvChores.CurrentRow.Cells[0].Value));
+
+                    string choreName = selectedChore.ChoreName;
+                    string assignedPersonName = selectedChore.AssignedPerson != null
+                        ? $"{selectedChore.AssignedPerson.FirstName} {selectedChore.AssignedPerson.LastName}"
+                        : "None";
+
+                    string message = $"▶ Assigned To: {assignedPersonName} ◀";
+
+                    RJMessageBox.Show($"{message}", choreName, MessageBoxButtons.OK);
+                }
+            }
+            catch (Exception)
+            {
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
+            }
         }
     }
 }

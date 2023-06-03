@@ -15,12 +15,19 @@ namespace housing
 {
     public partial class AdminRules : Form
     {
+        private PersonManager _manager;
         private houseruleManager rules;
-        public AdminRules()
+        public AdminRules(PersonManager manager)
         {
             InitializeComponent();
+            _manager = manager;
             rules = new houseruleManager();
             LoadRules();
+
+            ButtonDesignHelper.SetButtonStyles(btnClose);
+            ButtonDesignHelper.SetImageButtonStyle(btnClose, btnClose.Image, housing.Properties.Resources.attendance_invert);
+
+            btnClose.Text = $"  {_manager.CurrentUser.LastName}";
         }
 
         private void RefreshRuleList()
@@ -30,14 +37,13 @@ namespace housing
                 this.lbxRules.Items.Clear();
                 foreach (var rule in rules.GetRules())
                 {
-                    this.lbxRules.Items.Add(rule.GetHouseRule());
+                    this.lbxRules.Items.Add(rule);
                 }
             }
             catch (Exception)
             {
                 RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
             }
-
         }
 
         public void LoadRules()
@@ -69,8 +75,8 @@ namespace housing
                 string rule = tbxMessage.Texts;
                 if (!String.IsNullOrEmpty(rule))
                 {
-                    rules.AddHouseRule(rule);
-                    RefreshRuleList();
+                    houserule newRule = rules.AddHouseRule(rule);
+                    this.lbxRules.Items.Add(newRule);
                     tbxMessage.Texts = "";
                     RJMessageBox.Show("Rule added.", "", MessageBoxButtons.OK);
                 }
@@ -83,7 +89,6 @@ namespace housing
             {
                 RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
             }
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -92,10 +97,11 @@ namespace housing
             {
                 if (lbxRules.SelectedIndex > -1)
                 {
-                    int index = this.lbxRules.SelectedIndex;
+                    DialogResult result = RJMessageBox.Show("Are you sure you want to delete this rule?", "", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
                     {
-                        index++;
-                        rules.DeleteRule(index);
+                        houserule ruleToDelete = (houserule)lbxRules.SelectedItem;
+                        rules.DeleteRule(ruleToDelete);
                         RJMessageBox.Show("Rule deleted.", "", MessageBoxButtons.OK);
                         RefreshRuleList();
                     }
@@ -109,7 +115,6 @@ namespace housing
             {
                 RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
             }
-
         }
 
         private void AdminRules_Leave(object sender, EventArgs e)
@@ -120,6 +125,16 @@ namespace housing
         private void AdminRules_ParentChanged(object sender, EventArgs e)
         {
             rules.WriteRules();
+        }
+
+        private void FocusEvent(object sender, EventArgs e)
+        {
+            btnClose.Focus();
+        }
+
+        private void panel_Click(object sender, EventArgs e)
+        {
+            btnClose.Focus();
         }
     }
 }

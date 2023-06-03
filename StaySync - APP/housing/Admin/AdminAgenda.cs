@@ -17,11 +17,17 @@ namespace housing
     public partial class AdminAgenda : Form
     {
         private AgendaManager manager;
-        public AdminAgenda()
+        private PersonManager _manager;
+        public AdminAgenda(PersonManager m)
         {
+            _manager = m;
             InitializeComponent();
             manager = new AgendaManager();
             LoadAgendas();
+
+            ButtonDesignHelper.SetButtonStyles(btnClose);
+            ButtonDesignHelper.SetImageButtonStyle(btnClose, btnClose.Image, housing.Properties.Resources.attendance_invert);
+            btnClose.Text = $"  {_manager.CurrentUser.LastName}";
         }
 
         private void RefreshAgendaList()
@@ -145,9 +151,13 @@ namespace housing
                         Agenda selectedAgenda = manager.GetAgendaBasedOnId(selectedId);
                         if (selectedAgenda != null)
                         {
-                            manager.DeleteAgenda(selectedId);
-                            RJMessageBox.Show("Agenda deleted.", "", MessageBoxButtons.OK);
-                            RefreshAgendaList();
+                            DialogResult result = RJMessageBox.Show("Are you sure you want to delete this?", "", MessageBoxButtons.YesNo);
+                            if (result == DialogResult.Yes)
+                            {
+                                manager.DeleteAgenda(selectedId);
+                                RJMessageBox.Show("Agenda deleted.", "", MessageBoxButtons.OK);
+                                RefreshAgendaList();
+                            }
                         }
                     }
                 }
@@ -160,7 +170,6 @@ namespace housing
             {
                 RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
             }
-
         }
 
         private void AdminAgenda_Leave(object sender, EventArgs e)

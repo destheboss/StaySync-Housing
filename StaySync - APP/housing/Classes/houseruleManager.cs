@@ -18,10 +18,12 @@ namespace housing.Classes
             this.houserules = new List<houserule>();
         }
 
-        public void AddHouseRule(string houserule)
+        public houserule AddHouseRule(string houserule)
         {
             this.ruleSeeder++;
-            this.houserules.Add(new houserule(ruleSeeder, houserule));
+            houserule newRule = new houserule(ruleSeeder, houserule);
+            this.houserules.Add(newRule);
+            return newRule;
         }
 
         public houserule[] GetRules()
@@ -45,13 +47,9 @@ namespace housing.Classes
             return rule.GetHouseRuleMessage();
         }
 
-        public void DeleteRule(int id)
+        public void DeleteRule(houserule ruleToDelete)
         {
-            foreach (var rule in this.GetRules())
-            {
-                if (id == rule.ID)
-                    this.houserules.Remove(rule);
-            }
+            this.houserules.Remove(ruleToDelete);
         }
 
         public void WriteRules()

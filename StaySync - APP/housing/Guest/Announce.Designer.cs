@@ -33,6 +33,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.roundPanel1 = new housing.CustomElements.RoundPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.moreInfo = new System.Windows.Forms.PictureBox();
             this.btnInfo = new housing.CustomElements.RoundButton();
             this.roundPanelListBox1 = new housing.CustomElements.RoundPanelListBox();
             this.lbxAnnouncements = new System.Windows.Forms.ListBox();
@@ -41,6 +42,7 @@
             this.panelTop.SuspendLayout();
             this.roundPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.moreInfo)).BeginInit();
             this.roundPanelListBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,13 +94,25 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panel2.Controls.Add(this.moreInfo);
             this.panel2.Controls.Add(this.btnInfo);
             this.panel2.Controls.Add(this.roundPanelListBox1);
             this.panel2.Controls.Add(this.btnRefresh);
-            this.panel2.Location = new System.Drawing.Point(13, 24);
+            this.panel2.Location = new System.Drawing.Point(13, 18);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(921, 396);
+            this.panel2.Size = new System.Drawing.Size(921, 415);
             this.panel2.TabIndex = 14;
+            // 
+            // moreInfo
+            // 
+            this.moreInfo.Image = global::housing.Properties.Resources.info;
+            this.moreInfo.Location = new System.Drawing.Point(890, 383);
+            this.moreInfo.Name = "moreInfo";
+            this.moreInfo.Size = new System.Drawing.Size(24, 24);
+            this.moreInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.moreInfo.TabIndex = 18;
+            this.moreInfo.TabStop = false;
+            this.moreInfo.Click += new System.EventHandler(this.moreInfo_Click);
             // 
             // btnInfo
             // 
@@ -112,7 +126,7 @@
             this.btnInfo.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInfo.Location = new System.Drawing.Point(766, 117);
+            this.btnInfo.Location = new System.Drawing.Point(766, 122);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Size = new System.Drawing.Size(121, 43);
             this.btnInfo.TabIndex = 17;
@@ -125,7 +139,7 @@
             // 
             this.roundPanelListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.roundPanelListBox1.Controls.Add(this.lbxAnnouncements);
-            this.roundPanelListBox1.Location = new System.Drawing.Point(38, 65);
+            this.roundPanelListBox1.Location = new System.Drawing.Point(38, 70);
             this.roundPanelListBox1.Name = "roundPanelListBox1";
             this.roundPanelListBox1.Size = new System.Drawing.Size(687, 272);
             this.roundPanelListBox1.TabIndex = 16;
@@ -156,7 +170,7 @@
             this.btnRefresh.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefresh.Location = new System.Drawing.Point(766, 62);
+            this.btnRefresh.Location = new System.Drawing.Point(766, 67);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(121, 43);
             this.btnRefresh.TabIndex = 11;
@@ -205,6 +219,8 @@
             this.panelTop.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.moreInfo)).EndInit();
             this.roundPanelListBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -221,5 +237,6 @@
         private CustomElements.RoundPanelListBox roundPanelListBox1;
         private System.Windows.Forms.ListBox lbxAnnouncements;
         private CustomElements.RoundButton btnInfo;
+        private System.Windows.Forms.PictureBox moreInfo;
     }
 }

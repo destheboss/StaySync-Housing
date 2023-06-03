@@ -1,4 +1,6 @@
-﻿using housing.CustomElements;
+﻿using housing.Classes;
+using housing.CustomElements;
+using Microsoft.Web.WebView2.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +22,20 @@ namespace housing
             string location = "https://www.studenthousingholland.com/faq/";
             webView21.Source = new Uri(location);
 
+            webView21.NavigationCompleted += WebView21_NavigationCompleted;
+
+            ButtonDesignHelper.SetButtonStyles(btnClose);
+            ButtonDesignHelper.SetImageButtonStyle(btnClose, btnClose.Image, housing.Properties.Resources.exit_invert);
+
+        }
+
+        private async void WebView21_NavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
+        {
+            await webView21.EnsureCoreWebView2Async();
+
+            // Scroll down the page by two times
+            string script = "window.scrollBy(0, 40);";
+            await webView21.ExecuteScriptAsync(script);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

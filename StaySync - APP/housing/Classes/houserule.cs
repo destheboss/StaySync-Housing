@@ -30,5 +30,10 @@ namespace housing.Classes
         {
             return $"{this.HouseRule}";
         }
+
+        public override string ToString()
+        {
+            return GetHouseRule();
+        }
     }
 }

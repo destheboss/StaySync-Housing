@@ -120,6 +120,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(921, 396);
             this.panel2.TabIndex = 19;
+            this.panel2.Click += new System.EventHandler(this.FocusEvent);
             // 
             // LBLdisplayInfo
             // 
@@ -357,6 +358,7 @@
             this.btnRemoveStock.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnRemoveStock.BorderRadius = 14;
             this.btnRemoveStock.BorderSize = 0;
+            this.btnRemoveStock.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnRemoveStock.FlatAppearance.BorderSize = 0;
             this.btnRemoveStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveStock.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -377,6 +379,7 @@
             this.btnAddStock.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnAddStock.BorderRadius = 14;
             this.btnAddStock.BorderSize = 0;
+            this.btnAddStock.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnAddStock.FlatAppearance.BorderSize = 0;
             this.btnAddStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddStock.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -406,6 +409,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GuestAttendance";
             this.Load += new System.EventHandler(this.adminstock_Load);
+            this.Click += new System.EventHandler(this.FocusEvent);
             this.Leave += new System.EventHandler(this.adminstock_Leave);
             this.panelTop.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);

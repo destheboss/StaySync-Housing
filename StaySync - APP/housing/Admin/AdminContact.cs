@@ -16,10 +16,16 @@ namespace housing
     public partial class AdminContact : Form
     {
         private contactManager contact;
-        public AdminContact()
+        private PersonManager _manager;
+        public AdminContact(PersonManager manager)
         {
             InitializeComponent();
             contact = new contactManager();
+            _manager = manager;
+
+            ButtonDesignHelper.SetButtonStyles(btnClose);
+            ButtonDesignHelper.SetImageButtonStyle(btnClose, btnClose.Image, housing.Properties.Resources.attendance_invert);
+            btnClose.Text = $"  {_manager.CurrentUser.LastName}";
         }
 
         private void btnChange_Click(object sender, EventArgs e)
@@ -46,6 +52,11 @@ namespace housing
             {
                 RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
             }
+        }
+
+        private void FocusEvent(object sender, EventArgs e)
+        {
+            btnClose.Focus();
         }
     }
 }

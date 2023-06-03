@@ -53,6 +53,11 @@ namespace housing
             RJMessageBox.Show("An SMS has been sent containing a code");
         }
 
+        public bool DoesPhoneNumberExist(string phoneNumber, List<Person> persons)
+        {
+            return persons.Any(person => person.DoesThePhoneMatch(phoneNumber));
+        }
+
         public bool IsRandomNumberCorrect(int input)
         {
             return input == this.randomNumber;

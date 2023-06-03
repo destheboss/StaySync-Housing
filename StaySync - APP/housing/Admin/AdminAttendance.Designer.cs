@@ -105,6 +105,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(921, 396);
             this.panel2.TabIndex = 16;
+            this.panel2.Click += new System.EventHandler(this.FocusEvent);
             // 
             // btnAbsent
             // 
@@ -113,6 +114,7 @@
             this.btnAbsent.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnAbsent.BorderRadius = 14;
             this.btnAbsent.BorderSize = 0;
+            this.btnAbsent.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnAbsent.FlatAppearance.BorderSize = 0;
             this.btnAbsent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbsent.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,6 +205,7 @@
             this.btnPresent.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnPresent.BorderRadius = 14;
             this.btnPresent.BorderSize = 0;
+            this.btnPresent.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnPresent.FlatAppearance.BorderSize = 0;
             this.btnPresent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPresent.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -236,6 +239,7 @@
             this.btnSearchName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnSearchName.BorderRadius = 14;
             this.btnSearchName.BorderSize = 0;
+            this.btnSearchName.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnSearchName.FlatAppearance.BorderSize = 0;
             this.btnSearchName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchName.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -266,6 +270,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GuestAttendance";
             this.Load += new System.EventHandler(this.adminattendance_Load);
+            this.Click += new System.EventHandler(this.FocusEvent);
             this.Leave += new System.EventHandler(this.AdminAttendance_Leave);
             this.panelTop.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);

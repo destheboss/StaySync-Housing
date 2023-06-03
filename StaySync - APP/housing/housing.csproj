@@ -118,6 +118,7 @@
     <Compile Include="Classes\Announcement.cs" />
     <Compile Include="Classes\AnnouncementManager.cs" />
     <Compile Include="Classes\AttendanceManager.cs" />
+    <Compile Include="Classes\ButtonDesignHelper.cs" />
     <Compile Include="Classes\Chore.cs" />
     <Compile Include="Classes\ChoreManager.cs" />
     <Compile Include="Classes\Complaint.cs" />
@@ -293,11 +294,11 @@
     <EmbeddedResource Include="Admin\AdminContact.resx">
       <DependentUpon>AdminContact.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\AdminRules.resx">
-      <DependentUpon>AdminRules.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminMain.resx">
       <DependentUpon>AdminMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminRules.resx">
+      <DependentUpon>AdminRules.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminStock.resx">
       <DependentUpon>AdminStock.cs</DependentUpon>
@@ -415,6 +416,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question-invert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit-invert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock-invert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attendance-invert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agenda-invert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chores-invert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\complaints-invert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1774.30\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1774.30\build\Microsoft.Web.WebView2.targets')" />

@@ -24,5 +24,9 @@
         {
             return $"{this.Message}";
         }
+        public override string ToString()
+        {
+            return GetAnnouncement();
+        }
     }
 }

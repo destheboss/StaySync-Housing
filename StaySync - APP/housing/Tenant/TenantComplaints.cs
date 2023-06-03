@@ -29,6 +29,11 @@ namespace housing
             tenantCMB.Enabled = false;
             adminCMB.Enabled = false;
             roomCMB.Enabled = false;
+
+            ButtonDesignHelper.SetButtonStyles(btnClose);
+            ButtonDesignHelper.SetImageButtonStyle(btnClose, btnClose.Image, housing.Properties.Resources.attendance_invert);
+
+            btnClose.Text = $"  {_manager.CurrentUser.FirstName}";
         }
 
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
@@ -81,9 +86,13 @@ namespace housing
                     return;
                 }
 
-                _complaintManager.FileComplaint(subject, whoOrWhere, complaintText);
-                _complaintManager.WriteComplaints();
-                RJMessageBox.Show("Complaint was filed successfully");
+                DialogResult result = RJMessageBox.Show("Are you sure you want to file this complaint?", "", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    _complaintManager.FileComplaint(subject, whoOrWhere, complaintText);
+                    _complaintManager.WriteComplaints();
+                    RJMessageBox.Show("Complaint was filed successfully");
+                }
             }
             catch (Exception)
             {
@@ -155,6 +164,11 @@ namespace housing
         {
             ComplaintViewer form = new ComplaintViewer();
             form.Show();
+        }
+
+        private void FocusEvent(object sender, EventArgs e)
+        {
+            btnClose.Focus();
         }
     }
 }

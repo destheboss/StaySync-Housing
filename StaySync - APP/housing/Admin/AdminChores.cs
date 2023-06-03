@@ -1,7 +1,9 @@
 ﻿using housing.Classes;
 using housing.CustomElements;
 using System;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -19,12 +21,77 @@ namespace housing
             _choreManager = new ChoreManager(personManager);
             InitializeComponent();
             LoadChores();
+            ButtonDesignHelper.SetButtonStyles(btnClose);
+            ButtonDesignHelper.SetImageButtonStyle(btnClose, btnClose.Image, housing.Properties.Resources.attendance_invert);
+
+            #region COLORS DATAGRID
+            dgvChores.DefaultCellStyle.SelectionBackColor = Color.FromArgb(231, 34, 83);
+            dgvChores.DefaultCellStyle.SelectionForeColor = dgvChores.DefaultCellStyle.ForeColor;
+            dgvChores.RowHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(231, 34, 83);
+            dgvChores.RowHeadersDefaultCellStyle.SelectionForeColor = dgvChores.RowHeadersDefaultCellStyle.ForeColor;
+            dgvChores.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgvChores.AdvancedRowHeadersBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.Single;
+            dgvChores.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgvChores.AdvancedColumnHeadersBorderStyle.Left = DataGridViewAdvancedCellBorderStyle.Single;
+            dgvChores.BackgroundColor = Color.FromArgb(231, 34, 83);
+            dgvChores.GridColor = Color.FromArgb(11, 7, 17);
+            dgvChores.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(231, 34, 83);
+            dgvChores.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(11, 7, 17);
+            dgvChores.DefaultCellStyle.ForeColor = Color.White;
+            dgvChores.DefaultCellStyle.BackColor = Color.FromArgb(11, 7, 17);
+            dgvChores.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgvChores.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvChores.EnableHeadersVisualStyles = false;
+            dgvChores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dgvChores.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgvChores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvChores.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvChores.AllowUserToResizeRows = false;
+
+            foreach (DataGridViewColumn column in dgvChores.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+            foreach (DataGridViewColumn column in dgvChores.Columns)
+            {
+                column.Resizable = DataGridViewTriState.False;
+            }
+
+            foreach (DataGridViewRow row in dgvChores.Rows)
+            {
+                row.Resizable = DataGridViewTriState.False;
+            }
+            dgvChores.CellFormatting += DgvChores_CellFormatting;
+            #endregion
+            btnClose.Text = $"  {_personManager.CurrentUser.LastName}";
         }
 
         private void adminchores_Load(object sender, EventArgs e)
         {
             RefreshChores();
         }
+
+        private void DgvChores_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Assuming the 'Status' column is at index 3
+            if (e.ColumnIndex == 3 && e.Value != null)
+            {
+                string statusValue = e.Value.ToString();
+
+                if (statusValue == "Completed")
+                {
+                    e.CellStyle.BackColor = Color.FromArgb(231, 34, 83);
+                    e.CellStyle.ForeColor = Color.White;
+                }
+                else if (statusValue == "Not Completed")
+                {
+                    e.CellStyle.BackColor = Color.FromArgb(11, 7, 17);
+                    e.CellStyle.ForeColor = Color.White;
+                }
+            }
+        }
+
         public void LoadChores()
         {
             try
@@ -59,6 +126,36 @@ namespace housing
                 }
 
                 RefreshChores();
+
+                dgvChores.AutoGenerateColumns = false;
+                dgvChores.Columns.Clear();
+
+                dgvChores.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    DataPropertyName = "ID",
+                    HeaderText = "ID",
+                    Visible = false,
+                });
+                dgvChores.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    DataPropertyName = "ChoreName",
+                    HeaderText = "Chore",
+                    AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+                });
+                dgvChores.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    DataPropertyName = "AssignedPersonFullName",
+                    HeaderText = "Assigned To",
+                    AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+                });
+                dgvChores.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    DataPropertyName = "CompletedStatus",
+                    HeaderText = "Status",
+                    AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+                });
+
+                dgvChores.DataSource = new BindingList<Chore>(_choreManager.AllChores);
             }
             catch (IOException)
             {
@@ -93,18 +190,20 @@ namespace housing
         {
             try
             {
-                var selectedChoreInfo = (string)lbxChores.SelectedItem;
-                var separatorIndex = selectedChoreInfo.IndexOf('╠');
-                if (separatorIndex >= 0)
+                if (dgvChores.CurrentRow != null)
                 {
-                    var choreId = int.Parse(selectedChoreInfo.Substring(0, separatorIndex).Trim()) - 1;
-                    _choreManager.DeleteChore(choreId);
-                    _choreManager.WriteChoresToFile();
-                    RefreshChores();
+                    DialogResult result = RJMessageBox.Show("Are you sure you want to delete this?", "", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        var selectedChore = (Chore)dgvChores.CurrentRow.DataBoundItem;
+                        _choreManager.DeleteChore(selectedChore.ID);
+                        _choreManager.WriteChoresToFile();
+                        RefreshChores();
+                    }
                 }
                 else
                 {
-                    RJMessageBox.Show("Please select a chore first.");
+                    RJMessageBox.Show("Please select a chore first.", "", MessageBoxButtons.OK);
                 }
             }
             catch (Exception)
@@ -117,53 +216,40 @@ namespace housing
         {
             try
             {
-                lbxChores.Items.Clear();
-                var chores = _choreManager.GetChores();
-                foreach (var chore in chores)
-                {
-                    lbxChores.Items.Add(chore.GetChoreStatusInfo());
-                }
+                dgvChores.DataSource = null;
+                dgvChores.DataSource = new BindingList<Chore>(_choreManager.AllChores);
             }
             catch (Exception)
             {
                 RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
             }
-
         }
 
-        private void lbxChores_DoubleClick(object sender, EventArgs e)
+        private void dgvChores_DoubleClick(object sender, EventArgs e)
         {
             try
             {
-                if (lbxChores.SelectedItem != null)
+                if (dgvChores.CurrentRow != null)
                 {
-                    string selectedChoreInfo = lbxChores.SelectedItem.ToString();
+                    var selectedChore = (Chore)dgvChores.CurrentRow.DataBoundItem;
 
-                    int separatorIndex = selectedChoreInfo.IndexOf('╠');
-                    if (separatorIndex >= 0)
-                    {
-                        int choreId;
-                        if (int.TryParse(selectedChoreInfo.Substring(0, separatorIndex).Trim(), out choreId))
-                        {
-                            choreId--;
+                    string message = $"▶ Assigned To: {selectedChore.AssignedPersonFullName} ◀\n"
+                                   + $"Status: {(selectedChore.IsCompleted ? "Completed" : "Not Completed")}\n";
 
-                            Chore selectedChore = _choreManager.GetChoreById(choreId);
-
-                            if (selectedChore != null)
-                            {
-                                RJMessageBox.Show($" ▶ {(selectedChore.IsCompleted ? "Completed" : "Not Completed")} ◀", $"{selectedChore.GetChoreInfoBasedOnId()}", MessageBoxButtons.OK);
-                                return;
-                            }
-                        }
-                    }
+                    RJMessageBox.Show($"{message}", $"{selectedChore.ChoreName}", MessageBoxButtons.OK);
+                    return;
                 }
 
-                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
+                RJMessageBox.Show("No chore selected.", "", MessageBoxButtons.OK);
             }
             catch (Exception)
             {
                 RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
             }
+        }
+        private void FocusEvent(object sender, EventArgs e)
+        {
+            btnClose.Focus();
         }
     }
 }

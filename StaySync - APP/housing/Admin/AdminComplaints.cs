@@ -15,14 +15,20 @@ namespace housing
 {
     public partial class AdminComplaints : Form
     {
+        private PersonManager _personManager;
         private ComplaintViewerManager _manager = new ComplaintViewerManager();
-        public AdminComplaints()
+        public AdminComplaints(PersonManager m)
         {
             InitializeComponent();
+            _personManager = m;
             InitializeDataGridView(dgvPeople);
             InitializeDataGridView(dgvRoom);
             InitializeDataGridView(dgvGeneral);
             InitializeDataGridView(dgvAdmins);
+
+            ButtonDesignHelper.SetButtonStyles(btnClose);
+            ButtonDesignHelper.SetImageButtonStyle(btnClose, btnClose.Image, housing.Properties.Resources.attendance_invert);
+            btnClose.Text = $"  {_personManager.CurrentUser.LastName}";
         }
 
         private void InitializeDataGridView(DataGridView dataGridView)
@@ -51,9 +57,25 @@ namespace housing
             dataGridView.AllowUserToDeleteRows = false;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.MultiSelect = false;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridView.AllowUserToResizeRows = false;
+
             foreach (DataGridViewColumn column in dataGridView.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+            foreach (DataGridViewColumn column in dataGridView.Columns)
+            {
+                column.Resizable = DataGridViewTriState.False;
+            }
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                row.Resizable = DataGridViewTriState.False;
             }
             #endregion
 
@@ -133,17 +155,20 @@ namespace housing
                 DataGridView currentDataGridView = GetCurrentDataGridView();
                 if (currentDataGridView != null && currentDataGridView.SelectedRows.Count > 0)
                 {
-                    DataGridViewRow row = currentDataGridView.SelectedRows[0];
-                    int complaintId = Convert.ToInt32(row.Cells["ID"].Value);
-                    _manager.ResolveComplaint(complaintId);
-                    ReloadComplaints();
+                    DialogResult result = RJMessageBox.Show("Are you sure you want to delete this?", "", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        DataGridViewRow row = currentDataGridView.SelectedRows[0];
+                        int complaintId = Convert.ToInt32(row.Cells["ID"].Value);
+                        _manager.ResolveComplaint(complaintId);
+                        ReloadComplaints();
+                    }
                 }
             }
             catch (Exception)
             {
                 RJMessageBox.Show("Something went wrong.");
             }
-
         }
 
         private void ReloadComplaints()

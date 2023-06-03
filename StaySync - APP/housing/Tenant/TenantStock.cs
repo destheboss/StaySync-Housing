@@ -16,9 +16,11 @@ namespace housing
     {
         private User _user = new User();
         private StockItemManager _itemManager = new StockItemManager();
-        public TenantStock()
+        private PersonManager _manager;
+        public TenantStock(PersonManager manager)
         {
             InitializeComponent();
+            _manager = manager;
             InitializeListView(LVfoodItems);
             InitializeListView(LVcleaningItems);
             InitializeListView(LVbathroomItems);
@@ -28,6 +30,16 @@ namespace housing
             this.LVcleaningItems.SelectedIndexChanged += new System.EventHandler(this.LVItems_SelectedIndexChanged);
             this.LVbathroomItems.SelectedIndexChanged += new System.EventHandler(this.LVItems_SelectedIndexChanged);
             this.LVtablewareItems.SelectedIndexChanged += new System.EventHandler(this.LVItems_SelectedIndexChanged);
+
+            ButtonDesignHelper.SetButtonStyles(btnClose);
+            ButtonDesignHelper.SetImageButtonStyle(btnClose, btnClose.Image, housing.Properties.Resources.attendance_invert);
+
+            this.LVfoodItems.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LVItems_MouseDoubleClick);
+            this.LVcleaningItems.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LVItems_MouseDoubleClick);
+            this.LVbathroomItems.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LVItems_MouseDoubleClick);
+            this.LVtablewareItems.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LVItems_MouseDoubleClick);
+
+            btnClose.Text = $"  {_manager.CurrentUser.FirstName}";
         }
 
         private void InitializeListView(ListView listView)
@@ -255,6 +267,37 @@ namespace housing
             {
                 e.Handled = true;
             }
+        }
+
+        private void LVItems_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ListView senderListView = (ListView)sender;
+            if (senderListView.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = senderListView.SelectedItems[0];
+                int categoryIndex = -1;
+
+                if (senderListView == LVfoodItems)
+                    categoryIndex = 0;
+                else if (senderListView == LVcleaningItems)
+                    categoryIndex = 1;
+                else if (senderListView == LVbathroomItems)
+                    categoryIndex = 2;
+                else if (senderListView == LVtablewareItems)
+                    categoryIndex = 3;
+
+                if (categoryIndex != -1)
+                {
+                    StockItem item = _itemManager.GetItem(selectedItem.Index, categoryIndex);
+                    string stockInfo = $"▶ {item.GetLeft()} ◀";
+
+                    RJMessageBox.Show(stockInfo, $"{item.Name}", MessageBoxButtons.OK);
+                }
+            }
+        }
+        private void FocusEvent(object sender, EventArgs e)
+        {
+            btnClose.Focus();
         }
     }
 }

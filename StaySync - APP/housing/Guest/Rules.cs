@@ -21,6 +21,9 @@ namespace housing
             InitializeComponent();
             rules = new houseruleManager();
             LoadRules();
+
+            ButtonDesignHelper.SetButtonStyles(btnClose);
+            ButtonDesignHelper.SetImageButtonStyle(btnClose, btnClose.Image, housing.Properties.Resources.exit_invert);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -116,6 +119,11 @@ namespace housing
             {
                 RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
             }
+        }
+
+        private void moreInfo_Click(object sender, EventArgs e)
+        {
+            RJMessageBox.Show("You can also use double clicks to get more information!", "", MessageBoxButtons.OK);
         }
     }
 }

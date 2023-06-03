@@ -58,6 +58,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(657, 426);
             this.panel2.TabIndex = 17;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // tbComplaints
             // 

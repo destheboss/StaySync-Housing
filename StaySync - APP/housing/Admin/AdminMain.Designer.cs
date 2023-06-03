@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMain));
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnEqualizer = new System.Windows.Forms.Button();
+            this.btnAttendance = new System.Windows.Forms.Button();
             this.panelInformation = new System.Windows.Forms.Panel();
             this.btnContact = new System.Windows.Forms.Button();
             this.btnRules = new System.Windows.Forms.Button();
@@ -64,7 +63,7 @@
             this.panelSideMenu.Controls.Add(this.button3);
             this.panelSideMenu.Controls.Add(this.button2);
             this.panelSideMenu.Controls.Add(this.button1);
-            this.panelSideMenu.Controls.Add(this.btnEqualizer);
+            this.panelSideMenu.Controls.Add(this.btnAttendance);
             this.panelSideMenu.Controls.Add(this.panelInformation);
             this.panelSideMenu.Controls.Add(this.btnInformation);
             this.panelSideMenu.Controls.Add(this.btnLogOut);
@@ -86,7 +85,7 @@
             this.button4.ForeColor = System.Drawing.Color.Silver;
             this.button4.Image = global::housing.Properties.Resources.stock;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 439);
+            this.button4.Location = new System.Drawing.Point(0, 437);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(225, 45);
@@ -107,7 +106,7 @@
             this.button3.ForeColor = System.Drawing.Color.Silver;
             this.button3.Image = global::housing.Properties.Resources.complaints;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 394);
+            this.button3.Location = new System.Drawing.Point(0, 392);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(225, 45);
@@ -128,7 +127,7 @@
             this.button2.ForeColor = System.Drawing.Color.Silver;
             this.button2.Image = global::housing.Properties.Resources.agenda;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 349);
+            this.button2.Location = new System.Drawing.Point(0, 347);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.button2.Size = new System.Drawing.Size(225, 45);
@@ -149,7 +148,7 @@
             this.button1.ForeColor = System.Drawing.Color.Silver;
             this.button1.Image = global::housing.Properties.Resources.chores;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 304);
+            this.button1.Location = new System.Drawing.Point(0, 302);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(225, 45);
@@ -160,26 +159,26 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnEqualizer
+            // btnAttendance
             // 
-            this.btnEqualizer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEqualizer.FlatAppearance.BorderSize = 0;
-            this.btnEqualizer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnEqualizer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnEqualizer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEqualizer.ForeColor = System.Drawing.Color.Silver;
-            this.btnEqualizer.Image = global::housing.Properties.Resources.attendance;
-            this.btnEqualizer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEqualizer.Location = new System.Drawing.Point(0, 259);
-            this.btnEqualizer.Name = "btnEqualizer";
-            this.btnEqualizer.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnEqualizer.Size = new System.Drawing.Size(225, 45);
-            this.btnEqualizer.TabIndex = 15;
-            this.btnEqualizer.Text = "  Attendance";
-            this.btnEqualizer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEqualizer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEqualizer.UseVisualStyleBackColor = true;
-            this.btnEqualizer.Click += new System.EventHandler(this.btnEqualizer_Click);
+            this.btnAttendance.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAttendance.FlatAppearance.BorderSize = 0;
+            this.btnAttendance.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnAttendance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btnAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAttendance.ForeColor = System.Drawing.Color.Silver;
+            this.btnAttendance.Image = global::housing.Properties.Resources.attendance;
+            this.btnAttendance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAttendance.Location = new System.Drawing.Point(0, 257);
+            this.btnAttendance.Name = "btnAttendance";
+            this.btnAttendance.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnAttendance.Size = new System.Drawing.Size(225, 45);
+            this.btnAttendance.TabIndex = 15;
+            this.btnAttendance.Text = "  Attendance";
+            this.btnAttendance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAttendance.UseVisualStyleBackColor = true;
+            this.btnAttendance.Click += new System.EventHandler(this.btnEqualizer_Click);
             // 
             // panelInformation
             // 
@@ -190,7 +189,7 @@
             this.panelInformation.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInformation.Location = new System.Drawing.Point(0, 137);
             this.panelInformation.Name = "panelInformation";
-            this.panelInformation.Size = new System.Drawing.Size(225, 122);
+            this.panelInformation.Size = new System.Drawing.Size(225, 120);
             this.panelInformation.TabIndex = 14;
             // 
             // btnContact
@@ -278,10 +277,10 @@
             this.btnLogOut.ForeColor = System.Drawing.Color.Silver;
             this.btnLogOut.Image = global::housing.Properties.Resources.logout;
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.Location = new System.Drawing.Point(0, 528);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 533);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnLogOut.Size = new System.Drawing.Size(225, 45);
+            this.btnLogOut.Size = new System.Drawing.Size(225, 40);
             this.btnLogOut.TabIndex = 12;
             this.btnLogOut.Text = "  Log Out";
             this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -347,7 +346,6 @@
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(323, 328);
@@ -398,7 +396,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnEqualizer;
+        private System.Windows.Forms.Button btnAttendance;
         private CustomElements.RoundPanelListBox roundPanelListBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
     }

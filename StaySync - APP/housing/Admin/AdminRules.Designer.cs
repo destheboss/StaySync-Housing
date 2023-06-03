@@ -98,6 +98,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(921, 396);
             this.panel2.TabIndex = 16;
+            this.panel2.Click += new System.EventHandler(this.panel_Click);
             // 
             // tbxMessage
             // 
@@ -120,6 +121,7 @@
             this.tbxMessage.TabIndex = 28;
             this.tbxMessage.Texts = "";
             this.tbxMessage.UnderlinedStyle = true;
+            this.tbxMessage.Leave += new System.EventHandler(this.FocusEvent);
             // 
             // btnDelete
             // 
@@ -128,6 +130,7 @@
             this.btnDelete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnDelete.BorderRadius = 14;
             this.btnDelete.BorderSize = 0;
+            this.btnDelete.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,6 +174,7 @@
             this.btnCreate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnCreate.BorderRadius = 14;
             this.btnCreate.BorderSize = 0;
+            this.btnCreate.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnCreate.FlatAppearance.BorderSize = 0;
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreate.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -200,6 +204,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GuestAttendance";
+            this.Click += new System.EventHandler(this.FocusEvent);
             this.Leave += new System.EventHandler(this.AdminRules_Leave);
             this.ParentChanged += new System.EventHandler(this.AdminRules_ParentChanged);
             this.panelTop.ResumeLayout(false);

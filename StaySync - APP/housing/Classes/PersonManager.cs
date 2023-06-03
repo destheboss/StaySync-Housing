@@ -17,6 +17,7 @@ namespace housing
     public class PersonManager
     {
         private List<Person> _persons;
+        public Person CurrentUser { get; private set; }
 
         public bool IsTheInputAcceptable(string input)
         {
@@ -87,7 +88,7 @@ namespace housing
                 if (p.DoesTheCodeMatch(code))
                 {
                     p.CreateUser();
-                    RJMessageBox.Show("Welcome back!", "", MessageBoxButtons.OK);
+                    CurrentUser = p;
                     return true;
                 }
             }
@@ -96,7 +97,7 @@ namespace housing
 
         public bool IsThePersonAdmin()
         {
-                User User = new User();
+            User User = new User();
             return User.IsItAdmin();
         }
 

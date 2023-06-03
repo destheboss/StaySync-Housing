@@ -41,11 +41,33 @@ namespace housing
             dgvTenantStatus.DefaultCellStyle.SelectionForeColor = Color.White;
             dgvTenantStatus.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvTenantStatus.EnableHeadersVisualStyles = false;
+            dgvTenantStatus.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dgvTenantStatus.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgvTenantStatus.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvTenantStatus.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvTenantStatus.AllowUserToResizeRows = false;
+
             foreach (DataGridViewColumn column in dgvTenantStatus.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+
+            foreach (DataGridViewColumn column in dgvTenantStatus.Columns)
+            {
+                column.Resizable = DataGridViewTriState.False;
+            }
+
+            foreach (DataGridViewRow row in dgvTenantStatus.Rows)
+            {
+                row.Resizable = DataGridViewTriState.False;
+            }
             #endregion
+
+            dgvTenantStatus.DoubleClick += dgvTenantStatus_DoubleClick;
+            ButtonDesignHelper.SetButtonStyles(btnClose);
+            ButtonDesignHelper.SetImageButtonStyle(btnClose, btnClose.Image, housing.Properties.Resources.attendance_invert);
+
+            btnClose.Text = $"  {manager.CurrentUser.FirstName}";
         }
         private void tenantattendance_Load(object sender, EventArgs e)
         {
@@ -71,9 +93,17 @@ namespace housing
                     attendanceManager.ChangeUserStatus(gettingName, "Absent");
                     RJMessageBox.Show($"You changed your status to < Absent >", "", MessageBoxButtons.OK);
 
+                    int selectedRow = indexRow;
+
                     attendanceManager.RefreshPersonList(manager.GetList());
                     RefreshGrid();
                     attendanceManager.SaveAttendanceFile();
+
+                    if (selectedRow < dgvTenantStatus.Rows.Count)
+                    {
+                        dgvTenantStatus.Rows[selectedRow].Selected = true;
+                        dgvTenantStatus.CurrentCell = dgvTenantStatus[0, selectedRow];
+                    }
                 }
                 else
                 {
@@ -100,9 +130,17 @@ namespace housing
                     attendanceManager.ChangeUserStatus(gettingName, "Present");
                     RJMessageBox.Show($"You changed your status to < Present >", "", MessageBoxButtons.OK);
 
+                    int selectedRow = indexRow;
+
                     attendanceManager.RefreshPersonList(manager.GetList());
                     RefreshGrid();
                     attendanceManager.SaveAttendanceFile();
+
+                    if (selectedRow < dgvTenantStatus.Rows.Count)
+                    {
+                        dgvTenantStatus.Rows[selectedRow].Selected = true;
+                        dgvTenantStatus.CurrentCell = dgvTenantStatus[0, selectedRow];
+                    }
                 }
                 else
                 {
@@ -175,6 +213,31 @@ namespace housing
             {
                 RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
             }
+        }
+
+        private void dgvTenantStatus_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvTenantStatus.CurrentRow != null)
+                {
+                    string fullName = dgvTenantStatus.CurrentRow.Cells[0].Value.ToString();
+                    string status = dgvTenantStatus.CurrentRow.Cells[1].Value.ToString();
+
+                    string message = $"▶ {status} ◀\n";
+
+                    RJMessageBox.Show($"{message}", $"{fullName}", MessageBoxButtons.OK);
+                }
+            }
+            catch (Exception)
+            {
+                RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
+            }
+        }
+
+        private void FocusEvent(object sender, EventArgs e)
+        {
+            btnClose.Focus();
         }
     }
 }

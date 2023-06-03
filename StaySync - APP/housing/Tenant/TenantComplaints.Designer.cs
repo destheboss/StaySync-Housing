@@ -110,6 +110,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(921, 396);
             this.panel2.TabIndex = 17;
+            this.panel2.Click += new System.EventHandler(this.FocusEvent);
             // 
             // roomCMB
             // 
@@ -278,6 +279,7 @@
             this.btnSubmit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnSubmit.BorderRadius = 14;
             this.btnSubmit.BorderSize = 0;
+            this.btnSubmit.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnSubmit.FlatAppearance.BorderSize = 0;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -299,6 +301,7 @@
             this.btnViewComplaints.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnViewComplaints.BorderRadius = 14;
             this.btnViewComplaints.BorderSize = 0;
+            this.btnViewComplaints.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnViewComplaints.FlatAppearance.BorderSize = 0;
             this.btnViewComplaints.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewComplaints.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -329,6 +332,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GuestAttendance";
             this.Load += new System.EventHandler(this.TenantComplaints_Load);
+            this.Click += new System.EventHandler(this.FocusEvent);
             this.panelTop.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

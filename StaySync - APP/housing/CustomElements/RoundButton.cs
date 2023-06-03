@@ -16,7 +16,10 @@ namespace housing.CustomElements
         //Fields
         private int borderSize = 0;
         private int borderRadius = 0;
-        private Color borderColor = Color.PaleVioletRed;
+        private Color borderColor = Color.FromArgb(231, 34, 83);
+        private Color clickedColor = Color.FromArgb(231, 34, 83);
+        private Color originalColor;
+
 
         //Properties
         [Category("RButton Properties")]
@@ -75,6 +78,16 @@ namespace housing.CustomElements
             this.BackColor = Color.MediumSlateBlue;
             this.ForeColor = Color.White;
             this.Resize += new EventHandler(Button_Resize);
+        }
+
+        public Color ClickedColor
+        {
+            get { return clickedColor; }
+            set
+            {
+                clickedColor = value;
+                this.Invalidate();
+            }
         }
 
         //Methods
@@ -138,6 +151,20 @@ namespace housing.CustomElements
                 }
             }
         }
+
+        protected override void OnMouseDown(MouseEventArgs mevent)
+        {
+            base.OnMouseDown(mevent);
+            originalColor = this.BackColor; // Store the original color
+            this.BackColor = clickedColor; // Set the clicked color
+        }
+
+        protected override void OnMouseUp(MouseEventArgs mevent)
+        {
+            base.OnMouseUp(mevent);
+            this.BackColor = originalColor; // Restore the original color
+        }
+
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);

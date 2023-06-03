@@ -35,10 +35,10 @@
             this.btnRefresh = new housing.CustomElements.RoundButton();
             this.roundPanelListBox1 = new housing.CustomElements.RoundPanelListBox();
             this.dgvChores = new System.Windows.Forms.DataGridView();
+            this.btnFinish = new housing.CustomElements.RoundButton();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChoreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AssignedPerson = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnFinish = new housing.CustomElements.RoundButton();
             this.panelTop.SuspendLayout();
             this.roundPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -152,30 +152,7 @@
             this.dgvChores.Size = new System.Drawing.Size(682, 272);
             this.dgvChores.TabIndex = 2;
             this.dgvChores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChores_CellClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // ChoreName
-            // 
-            this.ChoreName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ChoreName.HeaderText = "Chore";
-            this.ChoreName.MinimumWidth = 8;
-            this.ChoreName.Name = "ChoreName";
-            this.ChoreName.ReadOnly = true;
-            // 
-            // AssignedPerson
-            // 
-            this.AssignedPerson.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AssignedPerson.HeaderText = "Assigned to:";
-            this.AssignedPerson.MinimumWidth = 8;
-            this.AssignedPerson.Name = "AssignedPerson";
-            this.AssignedPerson.ReadOnly = true;
-            this.AssignedPerson.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChores.DoubleClick += new System.EventHandler(this.dgvChores_DoubleClick);
             // 
             // btnFinish
             // 
@@ -197,6 +174,30 @@
             this.btnFinish.TextColor = System.Drawing.Color.White;
             this.btnFinish.UseVisualStyleBackColor = false;
             this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // ChoreName
+            // 
+            this.ChoreName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ChoreName.HeaderText = "Chore";
+            this.ChoreName.MinimumWidth = 8;
+            this.ChoreName.Name = "ChoreName";
+            this.ChoreName.ReadOnly = true;
+            // 
+            // AssignedPerson
+            // 
+            this.AssignedPerson.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AssignedPerson.HeaderText = "Assigned to";
+            this.AssignedPerson.MinimumWidth = 8;
+            this.AssignedPerson.Name = "AssignedPerson";
+            this.AssignedPerson.ReadOnly = true;
+            this.AssignedPerson.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // TenantChores
             // 

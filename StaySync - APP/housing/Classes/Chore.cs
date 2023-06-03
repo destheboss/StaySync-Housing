@@ -20,6 +20,11 @@ namespace housing.Classes
             AssignedPerson = assignedPerson;
         }
 
+        public string AssignedPersonFullName => $"{AssignedPerson?.FirstName} {AssignedPerson?.LastName}";
+
+        public string CompletedStatus => IsCompleted ? "Completed" : "Not Completed";
+
+
         public string GetAssignedPersonFullName()
         {
             return $"{AssignedPerson?.FirstName} {AssignedPerson?.LastName}";

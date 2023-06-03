@@ -32,16 +32,17 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.roundPanel1 = new housing.CustomElements.RoundPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.roundPanelListBox1 = new housing.CustomElements.RoundPanelListBox();
+            this.dgvChores = new System.Windows.Forms.DataGridView();
             this.btnDelete = new housing.CustomElements.RoundButton();
             this.tbxNewChore = new housing.CustomElements.RoundTextBox();
-            this.roundPanelListBox1 = new housing.CustomElements.RoundPanelListBox();
-            this.lbxChores = new System.Windows.Forms.ListBox();
             this.lbAddChore = new System.Windows.Forms.Label();
             this.btnAdd = new housing.CustomElements.RoundButton();
             this.panelTop.SuspendLayout();
             this.roundPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.roundPanelListBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChores)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTop
@@ -91,15 +92,43 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panel2.Controls.Add(this.roundPanelListBox1);
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.tbxNewChore);
-            this.panel2.Controls.Add(this.roundPanelListBox1);
             this.panel2.Controls.Add(this.lbAddChore);
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Location = new System.Drawing.Point(13, 23);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(921, 396);
             this.panel2.TabIndex = 15;
+            this.panel2.Click += new System.EventHandler(this.FocusEvent);
+            // 
+            // roundPanelListBox1
+            // 
+            this.roundPanelListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.roundPanelListBox1.Controls.Add(this.dgvChores);
+            this.roundPanelListBox1.Location = new System.Drawing.Point(38, 65);
+            this.roundPanelListBox1.Name = "roundPanelListBox1";
+            this.roundPanelListBox1.Size = new System.Drawing.Size(565, 272);
+            this.roundPanelListBox1.TabIndex = 19;
+            // 
+            // dgvChores
+            // 
+            this.dgvChores.AllowUserToAddRows = false;
+            this.dgvChores.AllowUserToDeleteRows = false;
+            this.dgvChores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.dgvChores.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvChores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvChores.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.dgvChores.Location = new System.Drawing.Point(0, 0);
+            this.dgvChores.Name = "dgvChores";
+            this.dgvChores.ReadOnly = true;
+            this.dgvChores.RowHeadersWidth = 62;
+            this.dgvChores.RowTemplate.Height = 28;
+            this.dgvChores.Size = new System.Drawing.Size(565, 272);
+            this.dgvChores.TabIndex = 2;
+            this.dgvChores.DoubleClick += new System.EventHandler(this.dgvChores_DoubleClick);
             // 
             // btnDelete
             // 
@@ -108,6 +137,7 @@
             this.btnDelete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnDelete.BorderRadius = 14;
             this.btnDelete.BorderSize = 0;
+            this.btnDelete.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -144,29 +174,6 @@
             this.tbxNewChore.Texts = "";
             this.tbxNewChore.UnderlinedStyle = true;
             // 
-            // roundPanelListBox1
-            // 
-            this.roundPanelListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.roundPanelListBox1.Controls.Add(this.lbxChores);
-            this.roundPanelListBox1.Location = new System.Drawing.Point(38, 65);
-            this.roundPanelListBox1.Name = "roundPanelListBox1";
-            this.roundPanelListBox1.Size = new System.Drawing.Size(565, 272);
-            this.roundPanelListBox1.TabIndex = 16;
-            // 
-            // lbxChores
-            // 
-            this.lbxChores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.lbxChores.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbxChores.Font = new System.Drawing.Font("Cascadia Code", 9.75F);
-            this.lbxChores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.lbxChores.FormattingEnabled = true;
-            this.lbxChores.ItemHeight = 17;
-            this.lbxChores.Location = new System.Drawing.Point(-14, 9);
-            this.lbxChores.Name = "lbxChores";
-            this.lbxChores.Size = new System.Drawing.Size(579, 255);
-            this.lbxChores.TabIndex = 10;
-            this.lbxChores.DoubleClick += new System.EventHandler(this.lbxChores_DoubleClick);
-            // 
             // lbAddChore
             // 
             this.lbAddChore.AutoSize = true;
@@ -186,6 +193,7 @@
             this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnAdd.BorderRadius = 14;
             this.btnAdd.BorderSize = 0;
+            this.btnAdd.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -216,11 +224,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GuestAttendance";
             this.Load += new System.EventHandler(this.adminchores_Load);
+            this.Click += new System.EventHandler(this.FocusEvent);
             this.panelTop.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.roundPanelListBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChores)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -232,10 +242,10 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panel2;
         private CustomElements.RoundTextBox tbxNewChore;
-        private CustomElements.RoundPanelListBox roundPanelListBox1;
-        private System.Windows.Forms.ListBox lbxChores;
         private System.Windows.Forms.Label lbAddChore;
         private CustomElements.RoundButton btnAdd;
         private CustomElements.RoundButton btnDelete;
+        private CustomElements.RoundPanelListBox roundPanelListBox1;
+        private System.Windows.Forms.DataGridView dgvChores;
     }
 }

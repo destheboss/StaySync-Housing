@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ namespace housing.Classes
         public Forgot(PersonManager m)
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
             this.btnClose.DialogResult = DialogResult.Cancel;
             _manager = m;
             panelCode.Visible = false;
@@ -38,6 +40,13 @@ namespace housing.Classes
             {
                 if (this._forget.IsPhoneValid(tbxNumber.Texts))
                 {
+                    List<Person> persons = this._manager.GetList();
+                    if (!this._forget.DoesPhoneNumberExist(tbxNumber.Texts, persons))
+                    {
+                        RJMessageBox.Show("This phone number is not associated with any tenant.");
+                        return;
+                    }
+
                     this._forget.GenerateNumber();
                     this._forget.ItIsSMSTime(tbxNumber.Texts);
                     panelCode.Visible = true;
@@ -72,7 +81,23 @@ namespace housing.Classes
             {
                 RJMessageBox.Show("The code is incorrect! Try again.");
             }
+        }
 
+        #region -> Drag Form
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        #endregion
+
+        private void FocusEvent(object sender, EventArgs e)
+        {
+            btnSend.Focus();
         }
     }
 }
