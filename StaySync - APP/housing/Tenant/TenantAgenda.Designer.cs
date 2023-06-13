@@ -32,12 +32,14 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.roundPanel1 = new housing.CustomElements.RoundPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.moreInfo = new System.Windows.Forms.PictureBox();
             this.roundPanelListBox1 = new housing.CustomElements.RoundPanelListBox();
             this.lbxEvents = new System.Windows.Forms.ListBox();
             this.btnCreate = new housing.CustomElements.RoundButton();
             this.panelTop.SuspendLayout();
             this.roundPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.moreInfo)).BeginInit();
             this.roundPanelListBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,12 +90,24 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panel2.Controls.Add(this.moreInfo);
             this.panel2.Controls.Add(this.roundPanelListBox1);
             this.panel2.Controls.Add(this.btnCreate);
             this.panel2.Location = new System.Drawing.Point(13, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(921, 396);
+            this.panel2.Size = new System.Drawing.Size(921, 410);
             this.panel2.TabIndex = 16;
+            // 
+            // moreInfo
+            // 
+            this.moreInfo.Image = global::housing.Properties.Resources.info;
+            this.moreInfo.Location = new System.Drawing.Point(890, 378);
+            this.moreInfo.Name = "moreInfo";
+            this.moreInfo.Size = new System.Drawing.Size(24, 24);
+            this.moreInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.moreInfo.TabIndex = 19;
+            this.moreInfo.TabStop = false;
+            this.moreInfo.Click += new System.EventHandler(this.moreInfo_Click);
             // 
             // roundPanelListBox1
             // 
@@ -125,6 +139,7 @@
             this.btnCreate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnCreate.BorderRadius = 14;
             this.btnCreate.BorderSize = 0;
+            this.btnCreate.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnCreate.FlatAppearance.BorderSize = 0;
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreate.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -159,6 +174,8 @@
             this.panelTop.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.moreInfo)).EndInit();
             this.roundPanelListBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -173,5 +190,6 @@
         private CustomElements.RoundPanelListBox roundPanelListBox1;
         private System.Windows.Forms.ListBox lbxEvents;
         private CustomElements.RoundButton btnCreate;
+        private System.Windows.Forms.PictureBox moreInfo;
     }
 }

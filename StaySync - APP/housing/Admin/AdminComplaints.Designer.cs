@@ -42,6 +42,7 @@
             this.tabAdmins = new System.Windows.Forms.TabPage();
             this.dgvAdmins = new System.Windows.Forms.DataGridView();
             this.btnDelete = new housing.CustomElements.RoundButton();
+            this.moreInfo = new System.Windows.Forms.PictureBox();
             this.panelTop.SuspendLayout();
             this.roundPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -54,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGeneral)).BeginInit();
             this.tabAdmins.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdmins)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moreInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTop
@@ -103,11 +105,12 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panel2.Controls.Add(this.moreInfo);
             this.panel2.Controls.Add(this.tbComplaints);
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Location = new System.Drawing.Point(13, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(921, 396);
+            this.panel2.Size = new System.Drawing.Size(921, 410);
             this.panel2.TabIndex = 18;
             // 
             // tbComplaints
@@ -158,7 +161,7 @@
             this.tabRoom.Location = new System.Drawing.Point(4, 25);
             this.tabRoom.Name = "tabRoom";
             this.tabRoom.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRoom.Size = new System.Drawing.Size(603, 275);
+            this.tabRoom.Size = new System.Drawing.Size(674, 276);
             this.tabRoom.TabIndex = 1;
             this.tabRoom.Text = "Rooms";
             // 
@@ -176,7 +179,7 @@
             this.dgvRoom.ReadOnly = true;
             this.dgvRoom.RowHeadersWidth = 62;
             this.dgvRoom.RowTemplate.Height = 28;
-            this.dgvRoom.Size = new System.Drawing.Size(597, 269);
+            this.dgvRoom.Size = new System.Drawing.Size(668, 270);
             this.dgvRoom.TabIndex = 6;
             this.dgvRoom.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoom_CellDoubleClick);
             // 
@@ -187,7 +190,7 @@
             this.tabGeneral.Location = new System.Drawing.Point(4, 25);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGeneral.Size = new System.Drawing.Size(603, 275);
+            this.tabGeneral.Size = new System.Drawing.Size(674, 276);
             this.tabGeneral.TabIndex = 2;
             this.tabGeneral.Text = "General";
             // 
@@ -205,7 +208,7 @@
             this.dgvGeneral.ReadOnly = true;
             this.dgvGeneral.RowHeadersWidth = 62;
             this.dgvGeneral.RowTemplate.Height = 28;
-            this.dgvGeneral.Size = new System.Drawing.Size(597, 269);
+            this.dgvGeneral.Size = new System.Drawing.Size(668, 270);
             this.dgvGeneral.TabIndex = 6;
             this.dgvGeneral.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGeneral_CellDoubleClick);
             // 
@@ -216,7 +219,7 @@
             this.tabAdmins.Location = new System.Drawing.Point(4, 25);
             this.tabAdmins.Name = "tabAdmins";
             this.tabAdmins.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdmins.Size = new System.Drawing.Size(603, 275);
+            this.tabAdmins.Size = new System.Drawing.Size(674, 276);
             this.tabAdmins.TabIndex = 3;
             this.tabAdmins.Text = "Admins";
             // 
@@ -234,7 +237,7 @@
             this.dgvAdmins.ReadOnly = true;
             this.dgvAdmins.RowHeadersWidth = 62;
             this.dgvAdmins.RowTemplate.Height = 28;
-            this.dgvAdmins.Size = new System.Drawing.Size(597, 269);
+            this.dgvAdmins.Size = new System.Drawing.Size(668, 270);
             this.dgvAdmins.TabIndex = 7;
             this.dgvAdmins.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdmins_CellDoubleClick);
             // 
@@ -245,6 +248,7 @@
             this.btnDelete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnDelete.BorderRadius = 14;
             this.btnDelete.BorderSize = 0;
+            this.btnDelete.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -258,6 +262,17 @@
             this.btnDelete.TextColor = System.Drawing.Color.White;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // moreInfo
+            // 
+            this.moreInfo.Image = global::housing.Properties.Resources.info;
+            this.moreInfo.Location = new System.Drawing.Point(890, 378);
+            this.moreInfo.Name = "moreInfo";
+            this.moreInfo.Size = new System.Drawing.Size(24, 24);
+            this.moreInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.moreInfo.TabIndex = 49;
+            this.moreInfo.TabStop = false;
+            this.moreInfo.Click += new System.EventHandler(this.moreInfo_Click);
             // 
             // AdminComplaints
             // 
@@ -278,6 +293,7 @@
             this.panelTop.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.tbComplaints.ResumeLayout(false);
             this.tabPeople.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).EndInit();
@@ -287,6 +303,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGeneral)).EndInit();
             this.tabAdmins.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdmins)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moreInfo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -307,5 +324,6 @@
         private System.Windows.Forms.DataGridView dgvRoom;
         private System.Windows.Forms.DataGridView dgvGeneral;
         private System.Windows.Forms.DataGridView dgvAdmins;
+        private System.Windows.Forms.PictureBox moreInfo;
     }
 }

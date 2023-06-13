@@ -66,6 +66,7 @@ namespace housing
             ButtonDesignHelper.SetButtonStyles(btnClose);
             ButtonDesignHelper.SetImageButtonStyle(btnClose, btnClose.Image, housing.Properties.Resources.attendance_invert);
             btnClose.Text = $"  {manager.CurrentUser.FirstName}";
+            btnFinish.Visible = false;
         }
 
         private void TenantChores_Load(object sender, EventArgs e)
@@ -133,6 +134,7 @@ namespace housing
                     dgvChores.Rows.Add(id, choreName, assignedPerson);
                 }
             }
+            btnFinish.Visible = false;
         }
 
 
@@ -144,7 +146,18 @@ namespace housing
 
         private void dgvChores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            indexRow = e.RowIndex;
+            if (e.RowIndex >= 0 && e.RowIndex < dgvChores.Rows.Count)
+            {
+                indexRow = e.RowIndex;
+
+                var selectedChore = choresManager.GetChore(Convert.ToInt32(dgvChores.Rows[indexRow].Cells[0].Value));
+                bool isChoreAssignedToCurrentUser = selectedChore?.AssignedPerson?.FirstName == loggedInUser.FirstName
+                                                    && selectedChore?.AssignedPerson?.LastName == loggedInUser.LastName;
+
+                btnFinish.Visible = isChoreAssignedToCurrentUser;
+
+                dgvChores.Rows[indexRow].Selected = true;
+            }
         }
 
         private void dgvChores_DoubleClick(object sender, EventArgs e)
@@ -169,6 +182,11 @@ namespace housing
             {
                 RJMessageBox.Show("Something went wrong.", "", MessageBoxButtons.OK);
             }
+        }
+
+        private void moreInfo_Click(object sender, EventArgs e)
+        {
+            RJMessageBox.Show("You can also use double clicks to get more information!", "", MessageBoxButtons.OK);
         }
     }
 }

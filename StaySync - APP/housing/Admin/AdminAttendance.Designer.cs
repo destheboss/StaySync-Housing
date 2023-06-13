@@ -41,11 +41,13 @@
             this.btnPresent = new housing.CustomElements.RoundButton();
             this.lbTenant = new System.Windows.Forms.Label();
             this.btnSearchName = new housing.CustomElements.RoundButton();
+            this.moreInfo = new System.Windows.Forms.PictureBox();
             this.panelTop.SuspendLayout();
             this.roundPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.roundPanelListBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTenantStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moreInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTop
@@ -95,6 +97,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panel2.Controls.Add(this.moreInfo);
             this.panel2.Controls.Add(this.btnAbsent);
             this.panel2.Controls.Add(this.tbxSearchName);
             this.panel2.Controls.Add(this.roundPanelListBox1);
@@ -103,7 +106,7 @@
             this.panel2.Controls.Add(this.btnSearchName);
             this.panel2.Location = new System.Drawing.Point(13, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(921, 396);
+            this.panel2.Size = new System.Drawing.Size(921, 404);
             this.panel2.TabIndex = 16;
             this.panel2.Click += new System.EventHandler(this.FocusEvent);
             // 
@@ -254,6 +257,17 @@
             this.btnSearchName.UseVisualStyleBackColor = false;
             this.btnSearchName.Click += new System.EventHandler(this.btnSearchName_Click);
             // 
+            // moreInfo
+            // 
+            this.moreInfo.Image = global::housing.Properties.Resources.info;
+            this.moreInfo.Location = new System.Drawing.Point(890, 378);
+            this.moreInfo.Name = "moreInfo";
+            this.moreInfo.Size = new System.Drawing.Size(24, 24);
+            this.moreInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.moreInfo.TabIndex = 47;
+            this.moreInfo.TabStop = false;
+            this.moreInfo.Click += new System.EventHandler(this.moreInfo_Click);
+            // 
             // AdminAttendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -278,6 +292,7 @@
             this.panel2.PerformLayout();
             this.roundPanelListBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTenantStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moreInfo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -297,5 +312,6 @@
         private CustomElements.RoundButton btnPresent;
         private System.Windows.Forms.Label lbTenant;
         private CustomElements.RoundButton btnSearchName;
+        private System.Windows.Forms.PictureBox moreInfo;
     }
 }

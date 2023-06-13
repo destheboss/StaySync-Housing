@@ -38,11 +38,13 @@
             this.tbxNewChore = new housing.CustomElements.RoundTextBox();
             this.lbAddChore = new System.Windows.Forms.Label();
             this.btnAdd = new housing.CustomElements.RoundButton();
+            this.moreInfo = new System.Windows.Forms.PictureBox();
             this.panelTop.SuspendLayout();
             this.roundPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.roundPanelListBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moreInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTop
@@ -92,6 +94,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panel2.Controls.Add(this.moreInfo);
             this.panel2.Controls.Add(this.roundPanelListBox1);
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.tbxNewChore);
@@ -99,7 +102,7 @@
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Location = new System.Drawing.Point(13, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(921, 396);
+            this.panel2.Size = new System.Drawing.Size(921, 410);
             this.panel2.TabIndex = 15;
             this.panel2.Click += new System.EventHandler(this.FocusEvent);
             // 
@@ -208,6 +211,17 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // moreInfo
+            // 
+            this.moreInfo.Image = global::housing.Properties.Resources.info;
+            this.moreInfo.Location = new System.Drawing.Point(890, 378);
+            this.moreInfo.Name = "moreInfo";
+            this.moreInfo.Size = new System.Drawing.Size(24, 24);
+            this.moreInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.moreInfo.TabIndex = 48;
+            this.moreInfo.TabStop = false;
+            this.moreInfo.Click += new System.EventHandler(this.moreInfo_Click);
+            // 
             // AdminChores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -231,6 +245,7 @@
             this.panel2.PerformLayout();
             this.roundPanelListBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moreInfo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -247,5 +262,6 @@
         private CustomElements.RoundButton btnDelete;
         private CustomElements.RoundPanelListBox roundPanelListBox1;
         private System.Windows.Forms.DataGridView dgvChores;
+        private System.Windows.Forms.PictureBox moreInfo;
     }
 }

@@ -26,21 +26,22 @@ namespace housing
             adminRbtn.CheckedChanged += RadioButton_CheckedChanged;
             roomRbtn.CheckedChanged += RadioButton_CheckedChanged;
 
-            tenantCMB.Enabled = false;
-            adminCMB.Enabled = false;
-            roomCMB.Enabled = false;
+            tenantCMB.Visible = false;
+            adminCMB.Visible = false;
+            roomCMB.Visible = false;
 
             ButtonDesignHelper.SetButtonStyles(btnClose);
             ButtonDesignHelper.SetImageButtonStyle(btnClose, btnClose.Image, housing.Properties.Resources.attendance_invert);
 
             btnClose.Text = $"  {_manager.CurrentUser.FirstName}";
+
         }
 
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            tenantCMB.Enabled = tenantRbtn.Checked;
-            adminCMB.Enabled = adminRbtn.Checked;
-            roomCMB.Enabled = roomRbtn.Checked;
+            tenantCMB.Visible = tenantRbtn.Checked;
+            adminCMB.Visible = adminRbtn.Checked;
+            roomCMB.Visible = roomRbtn.Checked;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -92,6 +93,17 @@ namespace housing
                     _complaintManager.FileComplaint(subject, whoOrWhere, complaintText);
                     _complaintManager.WriteComplaints();
                     RJMessageBox.Show("Complaint was filed successfully");
+                    tbxComplaint.Texts = "";
+                    tenantRbtn.Checked = false;
+                    adminRbtn.Checked = false;
+                    roomRbtn.Checked = false;
+                    generalRbtn.Checked = false;
+                    tenantCMB.Texts = "Tenant";
+                    tenantCMB.Visible = false;
+                    adminCMB.Texts = "Admin";
+                    adminCMB.Visible = false;
+                    roomCMB.Texts = "Room";
+                    roomCMB.Visible = false;
                 }
             }
             catch (Exception)

@@ -231,11 +231,11 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.label1.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.label1.Location = new System.Drawing.Point(215, 297);
+            this.label1.Location = new System.Drawing.Point(210, 297);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(586, 21);
+            this.label1.Size = new System.Drawing.Size(596, 21);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Welcome, Guest! To gain entry, please scan the provided QR code!";
+            this.label1.Text = "Welcome, Guest! To gain entry, please scan your personal QR code!";
             // 
             // Forgotbtn
             // 

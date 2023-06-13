@@ -68,6 +68,8 @@ namespace housing
             ButtonDesignHelper.SetImageButtonStyle(btnClose, btnClose.Image, housing.Properties.Resources.attendance_invert);
 
             btnClose.Text = $"  {manager.CurrentUser.FirstName}";
+            btnAbsent.Visible = false;
+            btnPresent.Visible = false;
         }
         private void tenantattendance_Load(object sender, EventArgs e)
         {
@@ -79,6 +81,12 @@ namespace housing
         {
             indexRow = dgvTenantStatus.CurrentCell.RowIndex;
             dgvTenantStatus.Rows[indexRow].Selected = true;
+
+            string selectedPersonName = dgvTenantStatus.Rows[indexRow].Cells[0].Value.ToString();
+            string currentUserName = manager.CurrentUser.FirstName + " " + manager.CurrentUser.LastName;
+
+            btnAbsent.Visible = selectedPersonName == currentUserName;
+            btnPresent.Visible = selectedPersonName == currentUserName;
         }
 
         private void btnAbsent_Click(object sender, EventArgs e)
@@ -238,6 +246,11 @@ namespace housing
         private void FocusEvent(object sender, EventArgs e)
         {
             btnClose.Focus();
+        }
+
+        private void moreInfo_Click(object sender, EventArgs e)
+        {
+            RJMessageBox.Show("You can also use double clicks to get more information!", "", MessageBoxButtons.OK);
         }
     }
 }

@@ -251,5 +251,10 @@ namespace housing
         {
             btnClose.Focus();
         }
+
+        private void moreInfo_Click(object sender, EventArgs e)
+        {
+            RJMessageBox.Show("You can also use double clicks to get more information!", "", MessageBoxButtons.OK);
+        }
     }
 }

@@ -32,16 +32,18 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.roundPanel1 = new housing.CustomElements.RoundPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.moreInfo = new System.Windows.Forms.PictureBox();
             this.btnRefresh = new housing.CustomElements.RoundButton();
             this.roundPanelListBox1 = new housing.CustomElements.RoundPanelListBox();
             this.dgvChores = new System.Windows.Forms.DataGridView();
-            this.btnFinish = new housing.CustomElements.RoundButton();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChoreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AssignedPerson = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnFinish = new housing.CustomElements.RoundButton();
             this.panelTop.SuspendLayout();
             this.roundPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.moreInfo)).BeginInit();
             this.roundPanelListBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChores)).BeginInit();
             this.SuspendLayout();
@@ -93,13 +95,25 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panel2.Controls.Add(this.moreInfo);
             this.panel2.Controls.Add(this.btnRefresh);
             this.panel2.Controls.Add(this.roundPanelListBox1);
             this.panel2.Controls.Add(this.btnFinish);
             this.panel2.Location = new System.Drawing.Point(13, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(921, 396);
+            this.panel2.Size = new System.Drawing.Size(921, 410);
             this.panel2.TabIndex = 16;
+            // 
+            // moreInfo
+            // 
+            this.moreInfo.Image = global::housing.Properties.Resources.info;
+            this.moreInfo.Location = new System.Drawing.Point(890, 378);
+            this.moreInfo.Name = "moreInfo";
+            this.moreInfo.Size = new System.Drawing.Size(24, 24);
+            this.moreInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.moreInfo.TabIndex = 21;
+            this.moreInfo.TabStop = false;
+            this.moreInfo.Click += new System.EventHandler(this.moreInfo_Click);
             // 
             // btnRefresh
             // 
@@ -108,12 +122,13 @@
             this.btnRefresh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnRefresh.BorderRadius = 14;
             this.btnRefresh.BorderSize = 0;
+            this.btnRefresh.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
             this.btnRefresh.FlatAppearance.BorderSize = 0;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefresh.Location = new System.Drawing.Point(766, 117);
+            this.btnRefresh.Location = new System.Drawing.Point(766, 62);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(121, 43);
             this.btnRefresh.TabIndex = 18;
@@ -154,27 +169,6 @@
             this.dgvChores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChores_CellClick);
             this.dgvChores.DoubleClick += new System.EventHandler(this.dgvChores_DoubleClick);
             // 
-            // btnFinish
-            // 
-            this.btnFinish.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.btnFinish.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.btnFinish.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
-            this.btnFinish.BorderRadius = 14;
-            this.btnFinish.BorderSize = 0;
-            this.btnFinish.FlatAppearance.BorderSize = 0;
-            this.btnFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinish.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinish.ForeColor = System.Drawing.Color.White;
-            this.btnFinish.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFinish.Location = new System.Drawing.Point(766, 62);
-            this.btnFinish.Name = "btnFinish";
-            this.btnFinish.Size = new System.Drawing.Size(121, 43);
-            this.btnFinish.TabIndex = 11;
-            this.btnFinish.Text = "Finish Chore";
-            this.btnFinish.TextColor = System.Drawing.Color.White;
-            this.btnFinish.UseVisualStyleBackColor = false;
-            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
-            // 
             // ID
             // 
             this.ID.HeaderText = "ID";
@@ -199,6 +193,28 @@
             this.AssignedPerson.ReadOnly = true;
             this.AssignedPerson.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
+            // btnFinish
+            // 
+            this.btnFinish.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.btnFinish.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.btnFinish.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.btnFinish.BorderRadius = 14;
+            this.btnFinish.BorderSize = 0;
+            this.btnFinish.ClickedColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(34)))), ((int)(((byte)(83)))));
+            this.btnFinish.FlatAppearance.BorderSize = 0;
+            this.btnFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinish.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinish.ForeColor = System.Drawing.Color.White;
+            this.btnFinish.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFinish.Location = new System.Drawing.Point(766, 117);
+            this.btnFinish.Name = "btnFinish";
+            this.btnFinish.Size = new System.Drawing.Size(121, 43);
+            this.btnFinish.TabIndex = 11;
+            this.btnFinish.Text = "Finish Chore";
+            this.btnFinish.TextColor = System.Drawing.Color.White;
+            this.btnFinish.UseVisualStyleBackColor = false;
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
+            // 
             // TenantChores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -218,6 +234,8 @@
             this.panelTop.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.moreInfo)).EndInit();
             this.roundPanelListBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChores)).EndInit();
             this.ResumeLayout(false);
@@ -237,5 +255,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChoreName;
         private System.Windows.Forms.DataGridViewTextBoxColumn AssignedPerson;
+        private System.Windows.Forms.PictureBox moreInfo;
     }
 }
